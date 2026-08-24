@@ -2,7 +2,8 @@ backend:
   name: github
   repo: nextmarketinghk/nextmarketinghk
   branch: main
-  base_url: https://decap-cms-oauth-provider.vercel.app
+  site_domain: nextmarketinghk.pages.dev
+  base_url: https://decap-cms-oauth.vercel.app
 
 media_folder: "images"
 public_folder: "/images"
