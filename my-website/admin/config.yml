@@ -2,7 +2,7 @@ backend:
   name: github
   repo: nextmarketinghk/nextmarketinghk
   branch: main
-  base_url: https://smedian-decap-cms-auth.vercel.app
+  auth_type: implicit
 
 media_folder: "images"
 public_folder: "/images"
