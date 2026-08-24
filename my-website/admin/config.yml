@@ -3,6 +3,7 @@ backend:
   repo: nextmarketinghk/nextmarketinghk
   branch: main
   auth_type: pkce
+  app_id: Ov23lisb7Bbb4YfvNRTu
 
 media_folder: "images"
 public_folder: "/images"
