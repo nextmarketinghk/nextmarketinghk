@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: 你的GitHub帳號/你的Repository名稱
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "網頁內容"
+    files:
+      - file: "content/site.json"
+        label: "主頁文字設定"
+        name: "homepage"
+        fields:
+          - { label: "Hero 標題", name: "hero_title", widget: "string" }
+          - { label: "Hero 副標題 (EN)", name: "hero_tagline_en", widget: "text" }
+          - { label: "Hero 副標題 (繁中)", name: "hero_tagline_zh", widget: "text" }
+          - { label: "聯絡 Email", name: "contact_email", widget: "string" }
