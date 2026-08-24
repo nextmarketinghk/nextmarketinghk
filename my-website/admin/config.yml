@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: 你的GitHub帳號/你的Repository名稱
+  repo: nextmarketinghk-cyber/next-marketing
   branch: main
 
 media_folder: "images"
