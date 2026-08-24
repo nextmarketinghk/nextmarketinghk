@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: nextmarketinghk-cyber/next-marketing
+  repo: nextmarketinghk/nextmarketinghk
   branch: main
 
 media_folder: "images"
