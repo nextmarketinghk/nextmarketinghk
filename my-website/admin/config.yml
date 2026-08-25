@@ -1,107 +1,271 @@
-backend:
-  name: git-gateway
-  branch: main
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Marketing HK | Integrated Marketing, PR & Design Agency</title>
+    <style>
+        :root {
+            --bg-midnight: #0b0726;
+            --bg-navy: #0a192f;
+            --accent-yellow: #ffea00;
+            --accent-pink: #ff007a;
+            --text-light: #ffffff;
+            --card-bg: #130d36;
+            --border-thick: 4px solid #000000;
+        }
 
-media_folder: "images"
-public_folder: "/images"
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Impact", "Arial Black", -apple-system, "PingFang HK", "Microsoft JhengHei", sans-serif; }
+        body { background-color: var(--bg-midnight); color: var(--text-light); line-height: 1.5; overflow-x: hidden; border: 8px solid var(--accent-pink); }
+        p, span, li, a { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang HK", "Microsoft JhengHei", sans-serif; }
 
-collections:
-  - name: "content"
-    label: "Website Content"
-    files:
-      - file: "content/site.json"
-        label: "Site Copies & Colors"
-        name: "site_data"
-        fields:
-          # Navigation
-          - name: "nav_sec"
-            label: "Navigation Bar"
-            widget: "object"
-            fields:
-              - { label: "Nav 1 (English)", name: "nav_1_en", widget: "string" }
-              - { label: "Nav 1 (Chinese)", name: "nav_1_zh", widget: "string" }
-              - { label: "Nav 1 Color", name: "nav_1_color", widget: "color", default: "#ffffff" }
-              - { label: "Nav 2 (English)", name: "nav_2_en", widget: "string" }
-              - { label: "Nav 2 (Chinese)", name: "nav_2_zh", widget: "string" }
-              - { label: "Nav 2 Color", name: "nav_2_color", widget: "color", default: "#ffffff" }
-              - { label: "Nav 3 (English)", name: "nav_3_en", widget: "string" }
-              - { label: "Nav 3 (Chinese)", name: "nav_3_zh", widget: "string" }
-              - { label: "Nav 3 Color", name: "nav_3_color", widget: "color", default: "#ffffff" }
+        .checkered-bar { height: 16px; background-image: repeating-linear-gradient(45deg, var(--accent-yellow) 0, var(--accent-yellow) 10px, #000000 10px, #000000 20px); width: 100%; }
 
-          # Hero Section
-          - name: "hero_sec"
-            label: "Hero Section"
-            widget: "object"
-            fields:
-              - { label: "Subtitle Text", name: "subtitle", widget: "string" }
-              - { label: "Subtitle Color", name: "subtitle_color", widget: "color", default: "#ffffff" }
-              - { label: "H1 Prefix Text", name: "h1_prefix", widget: "string" }
-              - { label: "H1 Prefix Color", name: "h1_prefix_color", widget: "color", default: "#ffffff" }
-              - { label: "H1 Highlight Text", name: "h1_highlight", widget: "string" }
-              - { label: "H1 Highlight Color", name: "h1_highlight_color", widget: "color", default: "#ffea00" }
-              - { label: "H1 Suffix Text", name: "h1_suffix", widget: "string" }
-              - { label: "H1 Suffix Color", name: "h1_suffix_color", widget: "color", default: "#ffffff" }
-              - { label: "Tagline Text", name: "tagline", widget: "text" }
-              - { label: "Tagline Color", name: "tagline_color", widget: "color", default: "#ffffff" }
-              - { label: "Button Text", name: "btn", widget: "string" }
-              - { label: "Button Color", name: "btn_color", widget: "color", default: "#000000" }
+        /* Navigation */
+        header { position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; background-color: var(--bg-navy) !important; z-index: 1000; border-bottom: 4px solid var(--accent-yellow); }
+        .logo-container { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 70px; width: auto; display: block; object-fit: contain; }
+        .nav-right { display: flex; align-items: center; gap: 2rem; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: #ffffff; text-decoration: none; font-size: 1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
+        nav a:hover { color: var(--accent-yellow); }
 
-          # About Section
-          - name: "about_sec"
-            label: "About Section"
-            widget: "object"
-            fields:
-              - { label: "Section Label", name: "section_label", widget: "string" }
-              - { label: "Section Label Color", name: "section_label_color", widget: "color", default: "#ff007a" }
-              - { label: "Main Title", name: "main_title", widget: "string" }
-              - { label: "Main Title Color", name: "main_title_color", widget: "color", default: "#000000" }
-              - { label: "Card Left Text", name: "card_left", widget: "text" }
-              - { label: "Card Left Color", name: "card_left_color", widget: "color", default: "#ffffff" }
-              - { label: "Card Right Text", name: "card_right", widget: "text" }
-              - { label: "Card Right Color", name: "card_right_color", widget: "color", default: "#ffffff" }
+        .lang-switch { display: flex; align-items: center; background: #ffffff; border: 2px solid #000000; border-radius: 30px; padding: 2px; cursor: pointer; user-select: none; box-shadow: 3px 3px 0px #000000; }
+        .lang-switch span { padding: 0.2rem 0.7rem; font-size: 0.85rem; font-weight: 900; border-radius: 20px; transition: all 0.2s ease; color: #000000; }
+        body.lang-en .lang-switch .opt-en, body.lang-zh .lang-switch .opt-zh { background: var(--accent-pink); color: #ffffff; }
 
-          # Services Section
-          - name: "services_sec"
-            label: "Services Section"
-            widget: "object"
-            fields:
-              - { label: "Section Label", name: "section_label", widget: "string" }
-              - { label: "Section Label Color", name: "section_label_color", widget: "color", default: "#ffea00" }
-              - { label: "Service 1 Title", name: "s1_title", widget: "string" }
-              - { label: "Service 1 Title Color", name: "s1_title_color", widget: "color", default: "#ffea00" }
-              - { label: "Service 1 Item 1", name: "s1_item1", widget: "string" }
-              - { label: "Service 1 Item 1 Color", name: "s1_item1_color", widget: "color", default: "#ffffff" }
-              - { label: "Service 1 Item 2", name: "s1_item2", widget: "string" }
-              - { label: "Service 1 Item 2 Color", name: "s1_item2_color", widget: "color", default: "#ffffff" }
-              - { label: "Service 1 Item 3", name: "s1_item3", widget: "string" }
-              - { label: "Service 1 Item 3 Color", name: "s1_item3_color", widget: "color", default: "#ffffff" }
-              - { label: "Service 1 Item 4", name: "s1_item4", widget: "string" }
-              - { label: "Service 1 Item 4 Color", name: "s1_item4_color", widget: "color", default: "#ffffff" }
-              - { label: "Service 2 Title", name: "s2_title", widget: "string" }
-              - { label: "Service 2 Title Color", name: "s2_title_color", widget: "color", default: "#ffea00" }
-              - { label: "Service 2 Item 1", name: "s2_item1", widget: "string" }
-              - { label: "Service 2 Item 1 Color", name: "s2_item1_color", widget: "color", default: "#ffffff" }
-              - { label: "Service 2 Item 2", name: "s2_item2", widget: "string" }
-              - { label: "Service 2 Item 2 Color", name: "s2_item2_color", widget: "color", default: "#ffffff" }
-              - { label: "Service 3 Title", name: "s3_title", widget: "string" }
-              - { label: "Service 3 Title Color", name: "s3_title_color", widget: "color", default: "#ffea00" }
-              - { label: "Service 3 Item 1", name: "s3_item1", widget: "string" }
-              - { label: "Service 3 Item 1 Color", name: "s3_item1_color", widget: "color", default: "#ffffff" }
-              - { label: "Service 3 Item 2", name: "s3_item2", widget: "string" }
-              - { label: "Service 3 Item 2 Color", name: "s3_item2_color", widget: "color", default: "#ffffff" }
+        /* Hero Section */
+        .hero { min-height: 85vh; padding: 12rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; max-width: 1200px; margin: 0 auto; position: relative; }
+        .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 1.2rem; font-weight: 900; text-transform: uppercase; margin-bottom: 1.5rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
+        .hero h1 { font-size: 4.5rem; font-weight: 900; line-height: 0.95; margin-bottom: 2rem; color: #ffffff; text-shadow: 4px 4px 0px #000; letter-spacing: 1px; word-break: break-word; }
+        .hero h1 span.highlight { color: var(--accent-yellow); }
+        .hero-tagline { font-size: 1.3rem; font-weight: 600; color: #ffffff; margin-bottom: 2.5rem; max-width: 800px; line-height: 1.6; background: rgba(0, 0, 0, 0.5); padding: 1.5rem; border-left: 6px solid var(--accent-yellow); }
 
-          # Contact Section
-          - name: "contact_sec"
-            label: "Contact Section"
-            widget: "object"
-            fields:
-              - { label: "Section Label", name: "section_label", widget: "string" }
-              - { label: "Section Label Color", name: "section_label_color", widget: "color", default: "#ffffff" }
-              - { label: "Main Title", name: "main_title", widget: "string" }
-              - { label: "Main Title Color", name: "main_title_color", widget: "color", default: "#ffffff" }
-              - { label: "Subtitle", name: "sub_title", widget: "string" }
-              - { label: "Subtitle Color", name: "sub_title_color", widget: "color", default: "#ffffff" }
-              - { label: "Email Address", name: "email", widget: "string" }
-              - { label: "Email Color", name: "email_color", widget: "color", default: "#ffffff" }
-              - { label: "Copyright Text", name: "copyright", widget: "string" }
-              - { label: "Copyright Color", name: "copyright_color", widget: "color", default: "#a1a1a1" }
+        .btn { display: inline-block; background: var(--accent-yellow); color: #000000; padding: 1.2rem 3rem; text-decoration: none; font-weight: 900; font-size: 1.2rem; text-transform: uppercase; border: 3px solid #000000; box-shadow: 6px 6px 0px #000000; transition: all 0.2s ease; }
+        .btn:hover { background: var(--accent-pink); color: #ffffff; transform: translate(-3px, -3px); box-shadow: 9px 9px 0px #000000; }
+
+        /* About Section */
+        .about { padding: 6rem 5%; background: var(--accent-yellow); color: #000000; border-top: 4px solid #000; border-bottom: 4px solid #000; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 1.5rem; font-weight: 900; color: var(--accent-pink); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .about h2 { font-size: 3rem; margin-bottom: 2rem; font-weight: 900; text-transform: uppercase; line-height: 1; color: #000000; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .about-text { font-size: 1.2rem; font-weight: 600; color: #ffffff; border: 3px solid #000; padding: 2rem; background: var(--bg-midnight); box-shadow: 6px 6px 0px #000; }
+
+        /* Services Section */
+        .services { padding: 6rem 5%; background: var(--bg-midnight); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
+        .service-card { background: var(--card-bg); padding: 2.5rem; border: 4px solid #000000; box-shadow: 8px 8px 0px var(--accent-yellow); transition: transform 0.2s; }
+        .service-card:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px var(--accent-pink); }
+        .service-card h3 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--accent-yellow); font-weight: 900; text-transform: uppercase; border-bottom: 2px dashed var(--accent-yellow); padding-bottom: 0.5rem; }
+        .service-card ul { list-style: none; }
+        .service-card ul li { color: #ffffff; margin-bottom: 1rem; font-size: 1.05rem; font-weight: 600; display: flex; align-items: center; }
+        .service-card ul li::before { content: "★"; margin-right: 10px; color: var(--accent-pink); }
+
+        /* Contact Section */
+        .contact { padding: 6rem 5%; background: var(--accent-pink); color: #ffffff; border-top: 4px solid #000; }
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .contact-info h2 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 900; text-shadow: 3px 3px 0px #000; line-height: 1; }
+        .contact-info p { color: #ffffff; margin-bottom: 2rem; font-size: 1.2rem; font-weight: 600; }
+        .contact-details { background: #000000; padding: 2.5rem; border: 3px solid #ffffff; box-shadow: 8px 8px 0px #000; }
+        .contact-details div { margin-bottom: 1.5rem; }
+        .contact-details h4 { color: var(--accent-yellow); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; font-weight: 900; }
+        .contact-details a { color: #ffffff; text-decoration: none; font-size: 1.3rem; font-weight: 700; transition: color 0.2s; word-break: break-all; }
+        .contact-details a:hover { color: var(--accent-yellow); }
+        .contact-details a svg { transition: stroke 0.2s ease; flex-shrink: 0; }
+        .contact-details a:hover svg { stroke: var(--accent-yellow); }
+
+        footer { padding: 2rem 5%; background: #000000; text-align: center; color: #a1a1a1; font-size: 0.9rem; font-weight: 600; border-top: 2px solid var(--accent-yellow); }
+
+        /* Mobile Optimization Rules */
+        @media (max-width: 768px) {
+            body { border-width: 4px; }
+            header { padding: 0.8rem 4%; flex-direction: column; gap: 0.6rem; }
+            .logo-img { height: 45px; }
+            .nav-right { gap: 1rem; width: 100%; justify-content: space-between; }
+            nav ul { gap: 1rem; }
+            nav a { font-size: 0.85rem; }
+
+            .hero { padding: 9rem 4% 3rem; min-height: auto; }
+            .hero-subtitle { font-size: 1rem; padding: 0.2rem 0.8rem; }
+            .hero h1 { font-size: 2.7rem; margin-bottom: 1.2rem; }
+            .hero-tagline { font-size: 1.05rem; padding: 1rem; margin-bottom: 2rem; }
+            .btn { width: 100%; text-align: center; padding: 1rem; font-size: 1.1rem; }
+
+            .about, .services, .contact { padding: 4rem 4%; }
+            .about h2 { font-size: 2.2rem; }
+            .about-grid, .contact-content { grid-template-columns: 1fr; gap: 2rem; }
+            .about-text { padding: 1.2rem; font-size: 1rem; }
+
+            .services-grid { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
+            .service-card { padding: 1.5rem; }
+            .service-card h3 { font-size: 1.6rem; }
+
+            .contact-info h2 { font-size: 2.4rem; }
+            .contact-details { padding: 1.5rem; }
+            .contact-details a { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body class="lang-en">
+
+    <div class="checkered-bar"></div>
+
+    <header>
+        <a href="#" class="logo-container">
+            <img src="weblogo.png" alt="Next Marketing HK Logo" class="logo-img">
+        </a>
+        <div class="nav-right">
+            <nav>
+                <ul>
+                    <li><a href="#about" data-cms="nav_sec.nav_1">About</a></li>
+                    <li><a href="#services" data-cms="nav_sec.nav_2">Services</a></li>
+                    <li><a href="#contact" data-cms="nav_sec.nav_3">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switch" onclick="toggleLanguage()">
+                <span class="opt-en">EN</span>
+                <span class="opt-zh">繁</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-subtitle" data-cms="hero_sec.subtitle">Next Marketing HK</div>
+        <h1>
+            <span data-cms="hero_sec.h1_prefix">DEFINING WHAT’S </span><span class="highlight" data-cms="hero_sec.h1_highlight">NEXT</span><span data-cms="hero_sec.h1_suffix"> IN MARKETING!</span>
+        </h1>
+        <div class="hero-tagline" data-cms="hero_sec.tagline">
+            Next Marketing HK is an integrated marketing, PR, and design agency...
+        </div>
+        <div>
+            <a href="#contact" class="btn" data-cms="hero_sec.btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <div class="checkered-bar"></div>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title" data-cms="about_sec.section_label">About Us</div>
+            <h2 data-cms="about_sec.main_title">Strategic Vision. Creative Excellence.</h2>
+            <div class="about-grid">
+                <div class="about-text"><p data-cms="about_sec.card_left"></p></div>
+                <div class="about-text"><p data-cms="about_sec.card_right"></p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title" style="color: var(--accent-yellow);" data-cms="services_sec.section_label">Core Services</div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 data-cms="services_sec.s1_title">Marketing</h3>
+                    <ul>
+                        <li data-cms="services_sec.s1_item1">Integrated Marketing Strategy</li>
+                        <li data-cms="services_sec.s1_item2">Social Media Management</li>
+                        <li data-cms="services_sec.s1_item3">Campaign Strategy & Execution</li>
+                        <li data-cms="services_sec.s1_item4">Content Marketing & Copywriting</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3 data-cms="services_sec.s2_title">Public Relations</h3>
+                    <ul>
+                        <li data-cms="services_sec.s2_item1">Media Relations & Communication</li>
+                        <li data-cms="services_sec.s2_item2">Press Release & Media Kit</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3 data-cms="services_sec.s3_title">Graphic Design</h3>
+                    <ul>
+                        <li data-cms="services_sec.s3_item1">Brand Identity & Key Visual</li>
+                        <li data-cms="services_sec.s3_item2">Social Media Feed & Digital Design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container contact-content">
+            <div class="contact-info">
+                <div class="section-title" style="color: #ffffff;" data-cms="contact_sec.section_label">GET IN TOUCH</div>
+                <h2 data-cms="contact_sec.main_title">LET’S WORK TOGETHER.</h2>
+                <p data-cms="contact_sec.sub_title">Ready to define what's NEXT for your brand?</p>
+            </div>
+            <div class="contact-details">
+                <div>
+                    <h4>Email Us</h4>
+                    <a href="mailto:info@nextmarketing.hk" data-cms="contact_sec.email">info@nextmarketing.hk</a>
+                </div>
+                <div>
+                    <h4>Follow Us</h4>
+                    <a href="https://www.instagram.com/nextmarketinghk" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.6rem;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span>@nextmarketinghk</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p data-cms="contact_sec.copyright">&copy; 2026 Next Marketing Limited. All rights reserved.</p>
+    </footer>
+
+<script>
+  let siteData = null;
+
+  function renderContent() {
+    if (!siteData) return;
+    const isEn = document.body.classList.contains('lang-en');
+    const langKey = isEn ? '_en' : '_zh';
+
+    document.querySelectorAll('[data-cms]').forEach(el => {
+      const keyPath = el.getAttribute('data-cms');
+      const path = keyPath.split('.');
+      const secKey = path[0];
+      const fieldKey = path[1];
+
+      let val = siteData;
+      for (let p of path) { val = val ? val[p] : null; }
+      
+      if (!val && typeof siteData === 'object') {
+        let parent = siteData[secKey];
+        if (parent) val = parent[fieldKey + langKey] || parent[fieldKey];
+      }
+      
+      // Update Text Content
+      if (val) el.innerText = val;
+
+      // Update Text Color dynamically if set in CMS
+      let parentObj = siteData[secKey];
+      if (parentObj) {
+        let colorVal = parentObj[fieldKey + '_color'];
+        if (colorVal) {
+          el.style.color = colorVal;
+        }
+      }
+    });
+  }
+
+  function toggleLanguage() {
+    document.body.classList.toggle('lang-en');
+    document.body.classList.toggle('lang-zh');
+    renderContent();
+  }
+
+  fetch('/content/site.json')
+    .then(res => res.json())
+    .then(data => {
+      siteData = data;
+      renderContent();
+    });
+</script>
+</body>
+</html>
