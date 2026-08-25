@@ -329,21 +329,23 @@
         <p>&copy; 2026 Next Marketing Limited. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript 切換邏輯 -->
-    <script>
-        function toggleLanguage() {
-            const body = document.body;
-            body.classList.toggle('lang-en');
-            body.classList.toggle('lang-zh');
-        }
-    </script>
+  <!-- JavaScript 切換邏輯 -->
+<script>
+  function toggleLanguage() {
+    const body = document.body;
+    body.classList.toggle('lang-en');
+    body.classList.toggle('lang-zh');
+  }
+</script>
+
+<script>
   fetch('/content/site.json')
     .then(response => response.json())
     .then(data => {
-      document.querySelectorAll('[data-cms="hero-highlight"]').forEach(el => el.innerText = data.hero_title);
-      document.querySelectorAll('[data-cms="hero-tag-en"]').forEach(el => el.innerText = data.hero_tagline_en);
-      document.querySelectorAll('[data-cms="hero-tag-zh"]').forEach(el => el.innerText = data.hero_tagline_zh);
-      document.querySelectorAll('[data-cms="contact-email"]').forEach(el => el.innerText = data.contact_email);
+      document.querySelectorAll('[data-cms="hero-highlight"]').forEach(el => el.innerText = data.hero_sec.hero_title);
+      document.querySelectorAll('[data-cms="hero-tag-en"]').forEach(el => el.innerText = data.hero_sec.hero_tagline_en);
+      document.querySelectorAll('[data-cms="hero-tag-zh"]').forEach(el => el.innerText = data.hero_sec.hero_tagline_zh);
+      document.querySelectorAll('[data-cms="contact-email"]').forEach(el => el.innerText = data.footer_sec.contact_email);
     });
 </script>
 </body>
