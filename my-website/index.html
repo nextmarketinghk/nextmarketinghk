@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next Marketing HK | Integrated Marketing, PR & Design Agency</title>
+    <!-- 引入 Identity 模組，確保首頁與 Admin 頁面授權同步 -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
         :root {
             --bg-midnight: #0b0726;
@@ -240,10 +242,8 @@
         if (parent) val = parent[fieldKey + langKey] || parent[fieldKey];
       }
       
-      // Update Text Content
       if (val) el.innerText = val;
 
-      // Dynamic color rendering based on Hex Code from CMS
       let parentObj = siteData[secKey];
       if (parentObj) {
         let colorVal = parentObj[fieldKey + '_color'];
@@ -266,6 +266,17 @@
       siteData = data;
       renderContent();
     });
+
+  // Netlify Identity 自動重新導向腳本
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function(user) {
+      if (!user) {
+        window.netlifyIdentity.on("login", function() {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
 </script>
 </body>
 </html>
