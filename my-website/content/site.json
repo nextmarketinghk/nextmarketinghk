@@ -1,70 +1,71 @@
 {
   "nav_sec": {
-    "logo_text": "NEXT MARKETING HK",
     "nav_1_zh": "關於我們",
-    "nav_1_en": "About Us",
+    "nav_1_en": "About",
     "nav_2_zh": "服務範疇",
     "nav_2_en": "Services",
     "nav_3_zh": "聯絡我們",
-    "nav_3_en": "Contact Us",
-    "lang_button_zh": "EN",
-    "lang_button_en": "繁"
+    "nav_3_en": "Contact"
   },
   "hero_sec": {
-    "hero_title_zh": "打造最具影響力的數位行銷策略",
-    "hero_title_en": "Crafting High-Impact Digital Marketing Strategies",
-    "hero_tagline_zh": "全方位線上行銷方案，助力品牌成長與轉化",
-    "hero_tagline_en": "Elevate Your Brand with Next-Gen Marketing Solutions",
-    "hero_btn_main_zh": "立即諮詢",
-    "hero_btn_main_en": "Get Started",
-    "hero_btn_sub_zh": "了解更多",
-    "hero_btn_sub_en": "Learn More"
+    "subtitle": "Next Marketing HK",
+    "h1_prefix_zh": "打造下一個",
+    "h1_prefix_en": "DEFINING WHAT’S",
+    "h1_highlight_zh": "行銷新局",
+    "h1_highlight_en": "NEXT",
+    "h1_suffix_zh": "！",
+    "h1_suffix_en": "IN MARKETING!",
+    "tagline_zh": "Next Marketing HK 為全方位整合行銷、公關及視覺設計 Agency。我們結合前瞻性 Marketing 策略、精準 PR 網絡與高質感 Graphic Design，為具遠見的品牌奠定市場影響力。",
+    "tagline_en": "Next Marketing HK is an integrated marketing, PR, and design agency. We deliver strategic marketing solutions, high-impact PR, and sharp graphic design tailored for forward-thinking brands.",
+    "btn_zh": "預約諮詢",
+    "btn_en": "Get In Touch"
   },
   "about_sec": {
     "section_label_zh": "關於我們",
-    "section_label_en": "ABOUT US",
+    "section_label_en": "About Us",
     "main_title_zh": "專業戰略，實效創意。",
-    "main_title_en": "Professional Strategy, Effective Creativity.",
+    "main_title_en": "Strategic Vision. Creative Excellence.",
     "card_left_zh": "作為立足香港的品牌行銷顧問，我們將戰略視野與創意落實完美結合，協助企業拓展市場版圖，建立具深度影響力的品牌體驗，實現長遠商業增長。",
-    "card_left_en": "As a brand marketing consultancy based in Hong Kong, we combine strategic vision with creative execution to help businesses expand their market presence and build impactful brand experiences.",
+    "card_left_en": "As a Hong Kong-based agency, we bridge brand vision with execution. We help businesses expand their market reach, build meaningful engagement, and drive real growth.",
     "card_right_zh": "從整體 Marketing 策略、Social Media 營運，到 PR 公關佈局與品牌視覺設計，我們為企業提供邁向未來所需的全套藍圖。",
-    "card_right_en": "From overall marketing strategy and social media management to PR execution and brand visual design, we provide comprehensive solutions for future growth."
+    "card_right_en": "From overall marketing strategy and social media management to PR distribution and visual design, we provide the ultimate blueprint for what's next."
   },
   "services_sec": {
-    "section_label_zh": "服務範疇",
-    "section_label_en": "OUR SERVICES",
-    "main_title_zh": "全方位整合行銷方案",
-    "main_title_en": "Comprehensive Integrated Marketing Solutions",
-    "items": [
-      {
-        "item_title_zh": "社群媒體營運 (Social Media Management)",
-        "item_title_en": "Social Media Management",
-        "item_desc_zh": "內容企劃、視覺設計與廣告投放，建立高互動社群品牌，引爆線上流量。",
-        "item_desc_en": "Content planning, visual design, and ad campaigns to build engaging social brands."
-      },
-      {
-        "item_title_zh": "品牌策略與公關 (Brand Strategy & PR)",
-        "item_title_en": "Brand Strategy & PR",
-        "item_desc_zh": "量身打造品牌定位、新聞稿發布與跨界合作企劃，極速提升品牌聲量與信任度。",
-        "item_desc_en": "Tailored brand positioning, PR releases, and cross-industry collaborations to boost reach."
-      },
-      {
-        "item_title_zh": "活動企劃與線下體驗 (Event & Offline Experience)",
-        "item_title_en": "Event & Offline Marketing",
-        "item_desc_zh": "打造具吸引力的沉浸式線下快閃店、發布會與大型主題活動，實現線上線下雙向轉化。",
-        "item_desc_en": "Creating immersive pop-ups, product launches, and large-scale experiential marketing."
-      }
-    ]
+    "section_label_zh": "核心服務範疇",
+    "section_label_en": "Core Services",
+    "s1_title_zh": "整合行銷",
+    "s1_title_en": "Marketing",
+    "s1_item1_zh": "全方位 Marketing 策略佈局",
+    "s1_item1_en": "Integrated Marketing Strategy",
+    "s2_title_zh": "公共關係 (PR)",
+    "s2_title_en": "Public Relations",
+    "s3_title_zh": "視覺與平面設計",
+    "s3_title_en": "Graphic Design",
+    "s1_item2_zh": "社群媒體營運與內容企劃",
+    "s1_item2_en": "Social Media Management",
+    "s1_item3_zh": "大型企劃策劃與執行",
+    "s1_item3_en": "Campaign Strategy & Execution",
+    "s1_item4_zh": "品牌內容行銷與專業文案",
+    "s1_item4_en": "Content Marketing & Copywriting",
+    "s2_item1_zh": "媒體關係建立與發佈",
+    "s2_item1_en": "Media Relations & Communication",
+    "s2_item2_zh": "新聞稿撰寫及 Media Kit 製作",
+    "s2_item2_en": "Press Release & Media Kit",
+    "s3_item1_zh": "品牌識別與 Key Visual 設計",
+    "s3_item1_en": "Brand Identity & Key Visual",
+    "s3_item2_zh": "Social Media 專屬視覺設計",
+    "s3_item2_en": "Social Media Feed & Digital Design"
   },
-  "footer_sec": {
-    "contact_title_zh": "準備好提升你的品牌影響力？",
-    "contact_title_en": "Ready to elevate your brand impact?",
-    "contact_btn_zh": "立即與我們聯絡",
-    "contact_btn_en": "Contact Us Today",
-    "contact_email": "info@nextmarketing.hk",
-    "contact_phone": "+852 1234 5678",
-    "location_zh": "Hong Kong",
+  "contact_sec": {
+    "main_title_zh": "攜手打造下一個成功企劃。",
+    "main_title_en": "Partner with us for what’s next.",
+    "desc_zh": "歡迎與我們聯絡，探討最符合您品牌目標的 Marketing、PR 及 Graphic Design 方案。",
+    "desc_en": "Get in touch to discuss your next marketing campaign, PR strategy, or design project.",
+    "email": "info@nextmarketing.hk",
+    "copyright": "© 2026 Next Marketing HK. All rights reserved.",
     "location_en": "Hong Kong",
-    "copyright": "© 2026 Next Marketing Limited. All rights reserved."
+    "location_zh": "香港",
+    "section_label_en": "Contact Us",
+    "section_label_zh": "聯絡我們"
   }
 }
