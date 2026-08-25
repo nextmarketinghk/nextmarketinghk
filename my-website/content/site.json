@@ -1,40 +1,56 @@
 {
   "nav_sec": {
     "logo_text": "NEXT MARKETING",
-    "nav_1": "關於我們",
-    "nav_2": "服務範疇",
-    "nav_3": "最新案例",
-    "nav_button": "聯絡我們"
+    "nav_1_zh": "關於我們",
+    "nav_1_en": "About Us",
+    "nav_2_zh": "服務範疇",
+    "nav_2_en": "Services",
+    "nav_3_zh": "最新案例",
+    "nav_3_en": "Cases",
+    "nav_button_zh": "聯絡我們",
+    "nav_button_en": "Contact Us"
   },
   "hero_sec": {
-    "hero_title": "打造最具影響力的數位行銷策略",
-    "hero_tagline_en": "Elevate Your Brand with Next-Gen Marketing",
+    "hero_title_zh": "打造最具影響力的數位行銷策略",
+    "hero_title_en": "Crafting High-Impact Digital Marketing Strategies",
     "hero_tagline_zh": "全方位線上行銷方案，助力品牌成長與轉化",
-    "hero_btn_main": "立即諮詢",
-    "hero_btn_sub": "了解更多"
+    "hero_tagline_en": "Elevate Your Brand with Next-Gen Marketing Solutions",
+    "hero_btn_main_zh": "立即諮詢",
+    "hero_btn_main_en": "Get Started",
+    "hero_btn_sub_zh": "了解更多",
+    "hero_btn_sub_en": "Learn More"
   },
   "services_sec": {
-    "title": "我們的核心服務",
-    "subtitle": "提供一站式整合行銷策略，精準觸達目標客群",
+    "title_zh": "我們的核心服務",
+    "title_en": "Our Core Services",
+    "subtitle_zh": "提供一站式整合行銷策略，精準觸達目標客群",
+    "subtitle_en": "One-stop integrated marketing strategies to precisely target your audience",
     "items": [
       {
-        "item_title": "社群媒體營運",
-        "item_desc": "內容企劃、視覺設計與廣告投放，建立高互動社群品牌。"
+        "item_title_zh": "社群媒體營運",
+        "item_title_en": "Social Media Management",
+        "item_desc_zh": "內容企劃、視覺設計與廣告投放，建立高互動社群品牌。",
+        "item_desc_en": "Content planning, visual design, and ad campaigns to build engaging social brands."
       },
       {
-        "item_title": "品牌策略與公關",
-        "item_desc": "量身打造品牌定位與跨界合作企劃，提升品牌聲量。"
+        "item_title_zh": "品牌策略與公關",
+        "item_title_en": "Brand Strategy & PR",
+        "item_desc_zh": "量身打造品牌定位與跨界合作企劃，提升品牌聲量。",
+        "item_desc_en": "Tailored brand positioning and cross-industry collaborations to boost reach."
       }
     ]
   },
   "about_sec": {
-    "title": "關於 NEXT MARKETING",
-    "body_content": "我們是一支充滿活力的行銷團隊，專注於運動娛樂、餐飲與數位品牌營運。"
+    "title_zh": "關於 NEXT MARKETING",
+    "title_en": "About NEXT MARKETING",
+    "body_content_zh": "我們是一支充滿活力的行銷團隊，專注於運動娛樂、餐飲與數位品牌營運。",
+    "body_content_en": "We are a dynamic marketing agency specializing in sports entertainment, F&B, and digital brand management."
   },
   "footer_sec": {
     "contact_email": "hello@nextmarketing.hk",
     "contact_phone": "+852 1234 5678",
-    "address": "香港九龍",
+    "address_zh": "香港九龍",
+    "address_en": "Kowloon, Hong Kong",
     "copyright": "© 2026 NEXT MARKETING. All Rights Reserved."
   }
 }
