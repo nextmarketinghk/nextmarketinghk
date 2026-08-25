@@ -13,6 +13,7 @@ collections:
       - file: "content/site.json"
         label: "全站文字設定 (Full Site Content)"
         name: "homepage"
+        format: "json"
         fields:
           - name: "nav_sec"
             label: "1. 頂部導航欄"
