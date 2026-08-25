@@ -12,11 +12,12 @@
             --accent-pink: #ff007a;
             --text-light: #ffffff;
             --card-bg: #130d36;
+            --border-thick: 4px solid #000000;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang HK", "Microsoft JhengHei", sans-serif; }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Impact", "Arial Black", -apple-system, "PingFang HK", "Microsoft JhengHei", sans-serif; }
         body { background-color: var(--bg-midnight); color: var(--text-light); line-height: 1.5; overflow-x: hidden; border: 8px solid var(--accent-pink); }
+        p, span, li, a { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang HK", "Microsoft JhengHei", sans-serif; }
 
         .checkered-bar { height: 16px; background-image: repeating-linear-gradient(45deg, var(--accent-yellow) 0, var(--accent-yellow) 10px, #000000 10px, #000000 20px); width: 100%; }
 
@@ -25,63 +26,50 @@
         .logo-img { height: 60px; width: auto; display: block; object-fit: contain; }
         .nav-right { display: flex; align-items: center; gap: 1.5rem; }
         nav ul { display: flex; list-style: none; gap: 1.5rem; }
-        nav a { color: #ffffff; text-decoration: none; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
+        nav a { color: #ffffff; text-decoration: none; font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
         nav a:hover { color: var(--accent-yellow); }
 
         .lang-switch { display: flex; align-items: center; background: #ffffff; border: 2px solid #000000; border-radius: 30px; padding: 2px; cursor: pointer; user-select: none; box-shadow: 3px 3px 0px #000000; }
-        .lang-switch span { padding: 0.2rem 0.6rem; font-size: 0.8rem; font-weight: 700; border-radius: 20px; transition: all 0.2s ease; color: #000000; }
+        .lang-switch span { padding: 0.2rem 0.6rem; font-size: 0.8rem; font-weight: 900; border-radius: 20px; transition: all 0.2s ease; color: #000000; }
         body.lang-en .lang-switch .opt-en, body.lang-zh .lang-switch .opt-zh { background: var(--accent-pink); color: #ffffff; }
 
-        .hero { min-height: 85vh; padding: 10rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; max-width: 1300px; margin: 0 auto; position: relative; }
-        .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
-        
-        /* 保持單行完美呈現與適當間距 */
-        .hero h1 { font-size: 3.2rem; font-weight: 600; line-height: 1.2; margin-bottom: 2rem; color: #ffffff; text-shadow: 2px 2px 0px #000; white-space: nowrap; }
+        .hero { min-height: 85vh; padding: 10rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; max-width: 1200px; margin: 0 auto; position: relative; }
+        .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 1rem; font-weight: 900; text-transform: uppercase; margin-bottom: 1.5rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
+        .hero h1 { font-size: 4.5rem; font-weight: 900; line-height: 0.95; margin-bottom: 2rem; color: #ffffff; text-shadow: 4px 4px 0px #000; letter-spacing: 1px; word-break: break-word; }
         .hero h1 span.highlight { color: var(--accent-yellow); }
-        
-        /* 自動幫中英夾雜文字加上微距，改善黏在一起的問題 */
-        .hero h1 span { margin-left: 0.15em; margin-right: 0.15em; }
-        .hero h1 span:first-child { margin-left: 0; }
 
-        .hero-tagline { font-size: 1.15rem; font-weight: 400; color: #ffffff; margin-bottom: 2.5rem; max-width: 800px; line-height: 1.6; background: rgba(0, 0, 0, 0.5); padding: 1.2rem; border-left: 6px solid var(--accent-yellow); }
+        .hero-tagline { font-size: 1.15rem; font-weight: 600; color: #ffffff; margin-bottom: 2.5rem; max-width: 800px; line-height: 1.6; background: rgba(0, 0, 0, 0.5); padding: 1.2rem; border-left: 6px solid var(--accent-yellow); }
 
-        .btn { display: inline-block; background: var(--accent-yellow); color: #000000; padding: 1rem 2.5rem; text-decoration: none; font-weight: 700; font-size: 1.1rem; text-transform: uppercase; border: 3px solid #000000; box-shadow: 6px 6px 0px #000000; transition: all 0.2s ease; text-align: center; }
+        .btn { display: inline-block; background: var(--accent-yellow); color: #000000; padding: 1rem 2.5rem; text-decoration: none; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; border: 3px solid #000000; box-shadow: 6px 6px 0px #000000; transition: all 0.2s ease; text-align: center; }
         .btn:hover { background: var(--accent-pink); color: #ffffff; transform: translate(-3px, -3px); box-shadow: 9px 9px 0px #000000; }
 
         .about { padding: 5rem 5%; background: var(--accent-yellow); color: #000000; border-top: 4px solid #000; border-bottom: 4px solid #000; }
         .container { max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 1.3rem; font-weight: 700; color: var(--accent-pink); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
-        .about h2 { font-size: 2.2rem; margin-bottom: 2rem; font-weight: 700; text-transform: uppercase; line-height: 1.2; color: #000000; }
+        .section-title { font-size: 1.3rem; font-weight: 900; color: var(--accent-pink); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .about h2 { font-size: 2.5rem; margin-bottom: 2rem; font-weight: 900; text-transform: uppercase; line-height: 1.1; color: #000000; }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-        .about-text { font-size: 1.1rem; font-weight: 400; color: #ffffff; border: 3px solid #000; padding: 1.8rem; background: var(--bg-midnight); box-shadow: 6px 6px 0px #000; }
+        .about-text { font-size: 1.1rem; font-weight: 600; color: #ffffff; border: 3px solid #000; padding: 1.8rem; background: var(--bg-midnight); box-shadow: 6px 6px 0px #000; }
 
         .services { padding: 5rem 5%; background: var(--bg-midnight); }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
         .service-card { background: var(--card-bg); padding: 2rem; border: 4px solid #000000; box-shadow: 8px 8px 0px var(--accent-yellow); transition: transform 0.2s; }
         .service-card:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px var(--accent-pink); }
-        .service-card h3 { font-size: 1.6rem; margin-bottom: 1.2rem; color: var(--accent-yellow); font-weight: 700; text-transform: uppercase; border-bottom: 2px dashed var(--accent-yellow); padding-bottom: 0.5rem; }
+        .service-card h3 { font-size: 1.8rem; margin-bottom: 1.2rem; color: var(--accent-yellow); font-weight: 900; text-transform: uppercase; border-bottom: 2px dashed var(--accent-yellow); padding-bottom: 0.5rem; }
         .service-card ul { list-style: none; }
-        .service-card ul li { color: #ffffff; margin-bottom: 0.8rem; font-size: 1rem; font-weight: 400; display: flex; align-items: flex-start; }
+        .service-card ul li { color: #ffffff; margin-bottom: 0.8rem; font-size: 1rem; font-weight: 600; display: flex; align-items: flex-start; }
         .service-card ul li::before { content: "★"; margin-right: 10px; color: var(--accent-pink); flex-shrink: 0; }
 
         .contact { padding: 5rem 5%; background: var(--accent-pink); color: #ffffff; border-top: 4px solid #000; }
         .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-        
-        .contact-info h2 { font-size: 2.4rem !important; font-weight: 600 !important; margin-bottom: 1rem; text-shadow: 2px 2px 0px #000; line-height: 1.2; text-transform: none !important; }
-        
-        .contact-info p { color: #ffffff; margin-bottom: 2rem; font-size: 1.1rem; font-weight: 400; }
+        .contact-info h2 { font-size: 2.8rem; margin-bottom: 1rem; font-weight: 900; text-shadow: 3px 3px 0px #000; line-height: 1.1; }
+        .contact-info p { color: #ffffff; margin-bottom: 2rem; font-size: 1.1rem; font-weight: 600; }
         .contact-details { background: #000000; padding: 2rem; border: 3px solid #ffffff; box-shadow: 8px 8px 0px #000; }
         .contact-details div { margin-bottom: 1.5rem; }
-        .contact-details h4 { color: var(--accent-yellow); font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-        .contact-details h4 svg { width: 16px; height: 16px; fill: var(--accent-yellow); flex-shrink: 0; }
-        .contact-details a { color: #ffffff; text-decoration: none; font-size: 1.15rem; font-weight: 500; word-break: break-all; transition: color 0.2s; }
-        .contact-details a:hover { color: var(--accent-pink); }
+        .contact-details h4 { color: var(--accent-yellow); font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; font-weight: 900; }
+        .contact-details a { color: #ffffff; text-decoration: none; font-size: 1.15rem; font-weight: 700; word-break: break-all; transition: color 0.2s; }
+        .contact-details a:hover { color: var(--accent-yellow); }
 
-        footer { padding: 2rem 5%; background: #000000; text-align: center; color: #a1a1a1; font-size: 0.85rem; font-weight: 400; border-top: 2px solid var(--accent-yellow); }
-
-        @media (max-width: 1024px) {
-            .hero h1 { white-space: normal; font-size: 2.4rem; }
-        }
+        footer { padding: 2rem 5%; background: #000000; text-align: center; color: #a1a1a1; font-size: 0.85rem; font-weight: 600; border-top: 2px solid var(--accent-yellow); }
 
         @media (max-width: 768px) {
             body { border-width: 4px; }
@@ -89,13 +77,13 @@
             .logo-img { height: 45px; }
             .nav-right { gap: 1rem; }
             nav ul { gap: 0.8rem; }
-            nav a { font-size: 0.85rem; }
+            nav a { font-size: 0.85rem; letter-spacing: 0px; }
             .hero { padding: 8rem 4% 3rem; min-height: auto; }
-            .hero h1 { font-size: 1.9rem; white-space: normal; }
+            .hero h1 { font-size: 2.6rem; }
             .hero-tagline { font-size: 1rem; padding: 1rem; }
             .about-grid, .contact-content { grid-template-columns: 1fr; gap: 1.5rem; }
-            .about h2 { font-size: 2rem; }
-            .contact-info h2 { font-size: 2rem; }
+            .about h2 { font-size: 2.2rem; }
+            .contact-info h2 { font-size: 2.2rem; }
             .contact-details { padding: 1.5rem; }
         }
     </style>
@@ -126,10 +114,7 @@
     <section class="hero">
         <div class="hero-subtitle" data-cms="hero_sec.subtitle">Next Marketing HK</div>
         <h1>
-            <span data-cms="hero_sec.h1_prefix">DEFINING </span>
-            <span data-cms="hero_sec.h1_mid">WHAT'S </span>
-            <span class="highlight" data-cms="hero_sec.h1_highlight">NEXT</span>
-            <span data-cms="hero_sec.h1_suffix"> IN MARKETING!</span>
+            <span data-cms="hero_sec.h1_prefix">DEFINING WHAT’S </span><span class="highlight" data-cms="hero_sec.h1_highlight">NEXT</span><span data-cms="hero_sec.h1_suffix"> IN MARKETING!</span>
         </h1>
         <div class="hero-tagline" data-cms="hero_sec.tagline">
             Next Marketing HK is an integrated marketing, PR, and design agency...
@@ -192,17 +177,11 @@
             </div>
             <div class="contact-details">
                 <div>
-                    <h4>
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Email Us
-                    </h4>
+                    <h4>Email Us</h4>
                     <a href="mailto:info@nextmarketing.hk" data-cms="contact_sec.email">info@nextmarketing.hk</a>
                 </div>
                 <div>
-                    <h4>
-                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        Instagram
-                    </h4>
+                    <h4>Instagram</h4>
                     <a href="https://instagram.com/nextmarketing.hk" target="_blank" data-cms="contact_sec.instagram">@nextmarketing.hk</a>
                 </div>
             </div>
@@ -225,13 +204,11 @@
       const path = el.getAttribute('data-cms').split('.');
       let val = siteData;
       for (let p of path) { val = val ? val[p] : null; }
-      
-      // Fallback for language keys if nested format uses suffix
       if (!val && typeof siteData === 'object') {
         let parent = siteData[path[0]];
         if (parent) val = parent[path[1] + langKey] || parent[path[1]];
       }
-      if (val !== null && val !== undefined) el.innerText = val;
+      if (val) el.innerText = val;
     });
   }
 
