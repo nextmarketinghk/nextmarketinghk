@@ -1,82 +1,107 @@
 backend:
-  name: github
-  repo: nextmarketinghk/nextmarketinghk
+  name: git-gateway
   branch: main
 
-media_folder: "my-website/public/images"
+media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "pages"
-    label: "網頁內容管理"
+  - name: "content"
+    label: "Website Content"
     files:
-      - file: "my-website/content/site.json"
-        label: "全站文字文案管理 (Full Site Content)"
-        name: "homepage"
-        format: "json"
+      - file: "content/site.json"
+        label: "Site Copies & Colors"
+        name: "site_data"
         fields:
+          # Navigation
           - name: "nav_sec"
-            label: "1. 頂部導覽列 (Navigation)"
+            label: "Navigation Bar"
             widget: "object"
             fields:
-              - { label: "選單 1 (中)", name: "nav_1_zh", widget: "string" }
-              - { label: "選單 1 (EN)", name: "nav_1_en", widget: "string" }
-              - { label: "選單 2 (中)", name: "nav_2_zh", widget: "string" }
-              - { label: "選單 2 (EN)", name: "nav_2_en", widget: "string" }
-              - { label: "選單 3 (中)", name: "nav_3_zh", widget: "string" }
-              - { label: "選單 3 (EN)", name: "nav_3_en", widget: "string" }
+              - { label: "Nav 1 (English)", name: "nav_1_en", widget: "string" }
+              - { label: "Nav 1 (Chinese)", name: "nav_1_zh", widget: "string" }
+              - { label: "Nav 1 Color", name: "nav_1_color", widget: "color", default: "#ffffff" }
+              - { label: "Nav 2 (English)", name: "nav_2_en", widget: "string" }
+              - { label: "Nav 2 (Chinese)", name: "nav_2_zh", widget: "string" }
+              - { label: "Nav 2 Color", name: "nav_2_color", widget: "color", default: "#ffffff" }
+              - { label: "Nav 3 (English)", name: "nav_3_en", widget: "string" }
+              - { label: "Nav 3 (Chinese)", name: "nav_3_zh", widget: "string" }
+              - { label: "Nav 3 Color", name: "nav_3_color", widget: "color", default: "#ffffff" }
 
+          # Hero Section
           - name: "hero_sec"
-            label: "2. 首頁 Hero 主視覺區塊"
+            label: "Hero Section"
             widget: "object"
             fields:
-              - { label: "小標題", name: "subtitle", widget: "string" }
-              - { label: "大標題前段 (中)", name: "h1_prefix_zh", widget: "string" }
-              - { label: "大標題前段 (EN)", name: "h1_prefix_en", widget: "string" }
-              - { label: "大標題螢光黃字 (中)", name: "h1_highlight_zh", widget: "string" }
-              - { label: "大標題螢光黃字 (EN)", name: "h1_highlight_en", widget: "string" }
-              - { label: "大標題後段 (中)", name: "h1_suffix_zh", widget: "string" }
-              - { label: "大標題後段 (EN)", name: "h1_suffix_en", widget: "string" }
-              - { label: "簡介敘述 (中)", name: "tagline_zh", widget: "text" }
-              - { label: "簡介敘述 (EN)", name: "tagline_en", widget: "text" }
-              - { label: "按鈕文字 (中)", name: "btn_zh", widget: "string" }
-              - { label: "按鈕文字 (EN)", name: "btn_en", widget: "string" }
+              - { label: "Subtitle Text", name: "subtitle", widget: "string" }
+              - { label: "Subtitle Color", name: "subtitle_color", widget: "color", default: "#ffffff" }
+              - { label: "H1 Prefix Text", name: "h1_prefix", widget: "string" }
+              - { label: "H1 Prefix Color", name: "h1_prefix_color", widget: "color", default: "#ffffff" }
+              - { label: "H1 Highlight Text", name: "h1_highlight", widget: "string" }
+              - { label: "H1 Highlight Color", name: "h1_highlight_color", widget: "color", default: "#ffea00" }
+              - { label: "H1 Suffix Text", name: "h1_suffix", widget: "string" }
+              - { label: "H1 Suffix Color", name: "h1_suffix_color", widget: "color", default: "#ffffff" }
+              - { label: "Tagline Text", name: "tagline", widget: "text" }
+              - { label: "Tagline Color", name: "tagline_color", widget: "color", default: "#ffffff" }
+              - { label: "Button Text", name: "btn", widget: "string" }
+              - { label: "Button Color", name: "btn_color", widget: "color", default: "#000000" }
 
+          # About Section
           - name: "about_sec"
-            label: "3. 關於我們 (About Section)"
+            label: "About Section"
             widget: "object"
             fields:
-              - { label: "區塊小標題 (中)", name: "section_label_zh", widget: "string" }
-              - { label: "區塊小標題 (EN)", name: "section_label_en", widget: "string" }
-              - { label: "主標題 (中)", name: "main_title_zh", widget: "string" }
-              - { label: "主標題 (EN)", name: "main_title_en", widget: "string" }
-              - { label: "左側卡片 (中)", name: "card_left_zh", widget: "text" }
-              - { label: "左側卡片 (EN)", name: "card_left_en", widget: "text" }
-              - { label: "右側卡片 (中)", name: "card_right_zh", widget: "text" }
-              - { label: "右側卡片 (EN)", name: "card_right_en", widget: "text" }
+              - { label: "Section Label", name: "section_label", widget: "string" }
+              - { label: "Section Label Color", name: "section_label_color", widget: "color", default: "#ff007a" }
+              - { label: "Main Title", name: "main_title", widget: "string" }
+              - { label: "Main Title Color", name: "main_title_color", widget: "color", default: "#000000" }
+              - { label: "Card Left Text", name: "card_left", widget: "text" }
+              - { label: "Card Left Color", name: "card_left_color", widget: "color", default: "#ffffff" }
+              - { label: "Card Right Text", name: "card_right", widget: "text" }
+              - { label: "Card Right Color", name: "card_right_color", widget: "color", default: "#ffffff" }
 
+          # Services Section
           - name: "services_sec"
-            label: "4. 服務範疇 (Services Section)"
+            label: "Services Section"
             widget: "object"
             fields:
-              - { label: "區塊標題 (中)", name: "section_label_zh", widget: "string" }
-              - { label: "區塊標題 (EN)", name: "section_label_en", widget: "string" }
-              - { label: "服務 1 標題 (中)", name: "s1_title_zh", widget: "string" }
-              - { label: "服務 1 標題 (EN)", name: "s1_title_en", widget: "string" }
-              - { label: "服務 1 項目 1 (中)", name: "s1_item1_zh", widget: "string" }
-              - { label: "服務 1 項目 1 (EN)", name: "s1_item1_en", widget: "string" }
-              - { label: "服務 2 標題 (中)", name: "s2_title_zh", widget: "string" }
-              - { label: "服務 2 標題 (EN)", name: "s2_title_en", widget: "string" }
-              - { label: "服務 3 標題 (中)", name: "s3_title_zh", widget: "string" }
-              - { label: "服務 3 標題 (EN)", name: "s3_title_en", widget: "string" }
+              - { label: "Section Label", name: "section_label", widget: "string" }
+              - { label: "Section Label Color", name: "section_label_color", widget: "color", default: "#ffea00" }
+              - { label: "Service 1 Title", name: "s1_title", widget: "string" }
+              - { label: "Service 1 Title Color", name: "s1_title_color", widget: "color", default: "#ffea00" }
+              - { label: "Service 1 Item 1", name: "s1_item1", widget: "string" }
+              - { label: "Service 1 Item 1 Color", name: "s1_item1_color", widget: "color", default: "#ffffff" }
+              - { label: "Service 1 Item 2", name: "s1_item2", widget: "string" }
+              - { label: "Service 1 Item 2 Color", name: "s1_item2_color", widget: "color", default: "#ffffff" }
+              - { label: "Service 1 Item 3", name: "s1_item3", widget: "string" }
+              - { label: "Service 1 Item 3 Color", name: "s1_item3_color", widget: "color", default: "#ffffff" }
+              - { label: "Service 1 Item 4", name: "s1_item4", widget: "string" }
+              - { label: "Service 1 Item 4 Color", name: "s1_item4_color", widget: "color", default: "#ffffff" }
+              - { label: "Service 2 Title", name: "s2_title", widget: "string" }
+              - { label: "Service 2 Title Color", name: "s2_title_color", widget: "color", default: "#ffea00" }
+              - { label: "Service 2 Item 1", name: "s2_item1", widget: "string" }
+              - { label: "Service 2 Item 1 Color", name: "s2_item1_color", widget: "color", default: "#ffffff" }
+              - { label: "Service 2 Item 2", name: "s2_item2", widget: "string" }
+              - { label: "Service 2 Item 2 Color", name: "s2_item2_color", widget: "color", default: "#ffffff" }
+              - { label: "Service 3 Title", name: "s3_title", widget: "string" }
+              - { label: "Service 3 Title Color", name: "s3_title_color", widget: "color", default: "#ffea00" }
+              - { label: "Service 3 Item 1", name: "s3_item1", widget: "string" }
+              - { label: "Service 3 Item 1 Color", name: "s3_item1_color", widget: "color", default: "#ffffff" }
+              - { label: "Service 3 Item 2", name: "s3_item2", widget: "string" }
+              - { label: "Service 3 Item 2 Color", name: "s3_item2_color", widget: "color", default: "#ffffff" }
 
+          # Contact Section
           - name: "contact_sec"
-            label: "5. 聯絡我們與頁尾 (Contact & Footer)"
+            label: "Contact Section"
             widget: "object"
             fields:
-              - { label: "標題 (中)", name: "main_title_zh", widget: "string" }
-              - { label: "標題 (EN)", name: "main_title_en", widget: "string" }
-              - { label: "描述 (中)", name: "desc_zh", widget: "text" }
-              - { label: "描述 (EN)", name: "desc_en", widget: "text" }
-              - { label: "Email", name: "email", widget: "string" }
-              - { label: "版權宣告", name: "copyright", widget: "string" }
+              - { label: "Section Label", name: "section_label", widget: "string" }
+              - { label: "Section Label Color", name: "section_label_color", widget: "color", default: "#ffffff" }
+              - { label: "Main Title", name: "main_title", widget: "string" }
+              - { label: "Main Title Color", name: "main_title_color", widget: "color", default: "#ffffff" }
+              - { label: "Subtitle", name: "sub_title", widget: "string" }
+              - { label: "Subtitle Color", name: "sub_title_color", widget: "color", default: "#ffffff" }
+              - { label: "Email Address", name: "email", widget: "string" }
+              - { label: "Email Color", name: "email_color", widget: "color", default: "#ffffff" }
+              - { label: "Copyright Text", name: "copyright", widget: "string" }
+              - { label: "Copyright Color", name: "copyright_color", widget: "color", default: "#a1a1a1" }
