@@ -6,20 +6,23 @@
     "nav_2_en": "Services",
     "nav_3_zh": "聯絡我們",
     "nav_3_en": "Contact"
-  },
+  {
   "hero_sec": {
     "subtitle": "Next Marketing HK",
+    "subtitle_zh": "Next Marketing HK",
+    "h1_prefix": "DEFINING ",
     "h1_prefix_zh": "打造下一個",
-    "h1_prefix_en": "DEFINING WHAT’S",
-    "h1_highlight_zh": "行銷新局",
-    "h1_highlight_en": "NEXT",
-    "h1_suffix_zh": "！",
-    "h1_suffix_en": "IN MARKETING!",
-    "tagline_zh": "Next Marketing HK 為全方位整合行銷、公關及視覺設計 Agency。我們結合前瞻性 Marketing 策略、精準 PR 網絡與高質感 Graphic Design，為具遠見的品牌奠定市場影響力。",
-    "tagline_en": "Next Marketing HK is an integrated marketing, PR, and design agency. We deliver strategic marketing solutions, high-impact PR, and sharp graphic design tailored for forward-thinking brands.",
-    "btn_zh": "預約諮詢",
-    "btn_en": "Get In Touch"
-  },
+    "h1_mid": "WHAT'S ",
+    "h1_mid_zh": "WHAT'S ",
+    "h1_highlight": "NEXT",
+    "h1_highlight_zh": "行銷",
+    "h1_suffix": " IN MARKETING!",
+    "h1_suffix_zh": "新局！",
+    "tagline": "Next Marketing HK is an integrated marketing, PR, and design agency...",
+    "tagline_zh": "Next Marketing HK 為全方位整合行銷、公關及視覺設計...",
+    "btn": "Get In Touch",
+    "btn_zh": "預約諮詢"
+  }
   "about_sec": {
     "section_label_zh": "關於我們",
     "section_label_en": "About Us",
