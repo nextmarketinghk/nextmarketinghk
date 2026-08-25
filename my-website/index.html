@@ -68,6 +68,8 @@
         .contact-details h4 { color: var(--accent-yellow); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; font-weight: 900; }
         .contact-details a { color: #ffffff; text-decoration: none; font-size: 1.3rem; font-weight: 700; transition: color 0.2s; }
         .contact-details a:hover { color: var(--accent-yellow); }
+        .contact-details a svg { transition: stroke 0.2s ease; }
+        .contact-details a:hover svg { stroke: var(--accent-yellow); }
 
         footer { padding: 2rem 5%; background: #000000; text-align: center; color: #a1a1a1; font-size: 0.9rem; font-weight: 600; border-top: 2px solid var(--accent-yellow); }
 
@@ -163,6 +165,21 @@
 
 <div class="contact-details">
                 <div>
+                    <h4>Email Us</h4>
+                    <a href="mailto:info@nextmarketing.hk" data-cms="contact_sec.email">info@nextmarketing.hk</a>
+                </div>
+                <div>
+                    <h4>Follow Us</h4>
+                    <a href="https://www.instagram.com/nextmarketinghk" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.6rem;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span>@nextmarketinghk</span>
+                    </a>
+                </div>
+            </div>
                     <h4>Email Us</h4>
                     <a href="mailto:info@nextmarketing.hk" data-cms="contact_sec.email">info@nextmarketing.hk</a>
                 </div>
