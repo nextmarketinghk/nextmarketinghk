@@ -106,20 +106,6 @@
             position: relative; 
         }
 
-        /* 復古貼紙徽章 (Starburst Badge) */
-        .badge-tag {
-            position: absolute;
-            right: 5%;
-            top: 22%;
-            background: var(--accent-yellow);
-            color: #000000;
-            padding: 1.5rem 1rem;
-            font-size: 1.2rem;
-            font-weight: 900;
-            text-align: center;
-            transform: rotate(12deg);
-            clip-path: polygon(100% 50%, 85% 75%, 100% 100%, 75% 85%, 50% 100%, 25% 85%, 0 100%, 15% 75%, 0 50%, 15% 25%, 0 0%, 25% 15%, 50% 0, 75% 15%, 100% 0, 85% 25%);
-            box-shadow: 5px 5px 0px #000;
         }
 
         .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 1.2rem; font-weight: 900; text-transform: uppercase; margin-bottom: 1.5rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
@@ -166,7 +152,7 @@
         /* 手機版響應式 */
         @media (max-width: 768px) {
             .hero h1 { font-size: 3rem; }
-            .badge-tag { display: none; }
+            
             .about-grid, .contact-content { grid-template-columns: 1fr; gap: 2rem; }
             .nav-right { gap: 1rem; }
             nav ul { gap: 1rem; }
@@ -204,7 +190,7 @@
 
     <!-- Hero 主視覺區塊 -->
     <section class="hero">
-        <div class="badge-tag">HYPE<br>AGENCY</div>
+
         <div class="hero-subtitle">Next Marketing HK</div>
         
         <h1>DEFINING WHAT’S <span class="highlight">NEXT</span> IN MARKETING!</h1>
