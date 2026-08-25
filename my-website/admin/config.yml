@@ -17,54 +17,68 @@ collections:
         fields:
           # 1. 頂部導航欄
           - name: "nav_sec"
-            label: "1. 頂部導航欄"
+            label: "1. 頂部導航欄 (Navigation)"
             widget: "object"
             fields:
               - { label: "Logo文字", name: "logo_text", widget: "string" }
-              - { label: "選單 1", name: "nav_1", widget: "string" }
-              - { label: "選單 2", name: "nav_2", widget: "string" }
-              - { label: "選單 3", name: "nav_3", widget: "string" }
-              - { label: "按鈕文字", name: "nav_button", widget: "string" }
+              - { label: "選單 1 (中)", name: "nav_1_zh", widget: "string" }
+              - { label: "選單 1 (EN)", name: "nav_1_en", widget: "string" }
+              - { label: "選單 2 (中)", name: "nav_2_zh", widget: "string" }
+              - { label: "選單 2 (EN)", name: "nav_2_en", widget: "string" }
+              - { label: "選單 3 (中)", name: "nav_3_zh", widget: "string" }
+              - { label: "選單 3 (EN)", name: "nav_3_en", widget: "string" }
+              - { label: "按鈕文字 (中)", name: "nav_button_zh", widget: "string" }
+              - { label: "按鈕文字 (EN)", name: "nav_button_en", widget: "string" }
 
-          # 2. 首頁主視覺 (Hero) - 已加入英文標題
+          # 2. 首頁主視覺
           - name: "hero_sec"
             label: "2. 首頁主視覺 (Hero)"
             widget: "object"
             fields:
-              - { label: "主標題", name: "hero_title", widget: "string" }
-              - { label: "英文副標題 (Tagline EN)", name: "hero_tagline_en", widget: "text" }
-              - { label: "中文副標題 (Tagline ZH)", name: "hero_tagline_zh", widget: "text" }
-              - { label: "主要按鈕文字", name: "hero_btn_main", widget: "string" }
-              - { label: "次要按鈕文字", name: "hero_btn_sub", widget: "string" }
+              - { label: "主標題 (中)", name: "hero_title_zh", widget: "string" }
+              - { label: "主標題 (EN)", name: "hero_title_en", widget: "string" }
+              - { label: "副標題 (中)", name: "hero_tagline_zh", widget: "text" }
+              - { label: "副標題 (EN)", name: "hero_tagline_en", widget: "text" }
+              - { label: "主按鈕 (中)", name: "hero_btn_main_zh", widget: "string" }
+              - { label: "主按鈕 (EN)", name: "hero_btn_main_en", widget: "string" }
+              - { label: "次按鈕 (中)", name: "hero_btn_sub_zh", widget: "string" }
+              - { label: "次按鈕 (EN)", name: "hero_btn_sub_en", widget: "string" }
 
           # 3. 服務與優勢
           - name: "services_sec"
-            label: "3. 服務與優勢"
+            label: "3. 服務與優勢 (Services)"
             widget: "object"
             fields:
-              - { label: "區塊標題", name: "title", widget: "string" }
-              - { label: "區塊副標題", name: "subtitle", widget: "text" }
+              - { label: "區塊標題 (中)", name: "title_zh", widget: "string" }
+              - { label: "區塊標題 (EN)", name: "title_en", widget: "string" }
+              - { label: "區塊副標題 (中)", name: "subtitle_zh", widget: "text" }
+              - { label: "區塊副標題 (EN)", name: "subtitle_en", widget: "text" }
               - name: "items"
                 label: "服務項目列表"
                 widget: "list"
                 fields:
-                  - { label: "服務名稱", name: "item_title", widget: "string" }
-                  - { label: "服務內容描述", name: "item_desc", widget: "text" }
+                  - { label: "服務名稱 (中)", name: "item_title_zh", widget: "string" }
+                  - { label: "服務名稱 (EN)", name: "item_title_en", widget: "string" }
+                  - { label: "服務內容描述 (中)", name: "item_desc_zh", widget: "text" }
+                  - { label: "服務內容描述 (EN)", name: "item_desc_en", widget: "text" }
 
           # 4. 關於我們
           - name: "about_sec"
-            label: "4. 關於我們"
+            label: "4. 關於我們 (About Us)"
             widget: "object"
             fields:
-              - { label: "區塊標題", name: "title", widget: "string" }
-              - { label: "詳細介紹內容", name: "body_content", widget: "markdown" }
+              - { label: "區塊標題 (中)", name: "title_zh", widget: "string" }
+              - { label: "區塊標題 (EN)", name: "title_en", widget: "string" }
+              - { label: "詳細內容 (中)", name: "body_content_zh", widget: "markdown" }
+              - { label: "詳細內容 (EN)", name: "body_content_en", widget: "markdown" }
 
           # 5. 頁尾與聯絡資料
           - name: "footer_sec"
-            label: "5. 頁尾與聯絡資料"
+            label: "5. 頁尾與聯絡資料 (Footer)"
             widget: "object"
             fields:
               - { label: "聯絡 Email", name: "contact_email", widget: "string" }
               - { label: "聯絡電話", name: "contact_phone", widget: "string" }
-              - { label: "公司地址", name: "address", widget: "string" }
+              - { label: "地址 (中)", name: "address_zh", widget: "string" }
+              - { label: "地址 (EN)", name: "address_en", widget: "string" }
               - { label: "版權宣告", name: "copyright", widget: "string" }
