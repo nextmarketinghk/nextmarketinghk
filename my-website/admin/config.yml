@@ -11,12 +11,42 @@ collections:
     label: "網頁內容管理"
     files:
       - file: "my-website/content/site.json"
-        label: "首頁內容 (Homepage Content)"
+        label: "全站文字文案管理 (Full Site Content)"
         name: "homepage"
         format: "json"
         fields:
+          # 1. 頂部導覽列 (Navigation)
+          - name: "nav_sec"
+            label: "1. 頂部導覽列 (Navigation)"
+            widget: "object"
+            fields:
+              - { label: "Logo 文字", name: "logo_text", widget: "string" }
+              - { label: "選單 1 (中)", name: "nav_1_zh", widget: "string" }
+              - { label: "選單 1 (EN)", name: "nav_1_en", widget: "string" }
+              - { label: "選單 2 (中)", name: "nav_2_zh", widget: "string" }
+              - { label: "選單 2 (EN)", name: "nav_2_en", widget: "string" }
+              - { label: "選單 3 (中)", name: "nav_3_zh", widget: "string" }
+              - { label: "選單 3 (EN)", name: "nav_3_en", widget: "string" }
+              - { label: "切換語言按鈕 (中)", name: "lang_button_zh", widget: "string" }
+              - { label: "切換語言按鈕 (EN)", name: "lang_button_en", widget: "string" }
+
+          # 2. 首頁主視覺 (Hero Section)
+          - name: "hero_sec"
+            label: "2. 首頁主視覺 (Hero Section)"
+            widget: "object"
+            fields:
+              - { label: "主標題 (中)", name: "hero_title_zh", widget: "string" }
+              - { label: "主標題 (EN)", name: "hero_title_en", widget: "string" }
+              - { label: "副標題 (中)", name: "hero_tagline_zh", widget: "text" }
+              - { label: "副標題 (EN)", name: "hero_tagline_en", widget: "text" }
+              - { label: "主要按鈕 (中)", name: "hero_btn_main_zh", widget: "string" }
+              - { label: "主要按鈕 (EN)", name: "hero_btn_main_en", widget: "string" }
+              - { label: "次要按鈕 (中)", name: "hero_btn_sub_zh", widget: "string" }
+              - { label: "次要按鈕 (EN)", name: "hero_btn_sub_en", widget: "string" }
+
+          # 3. 關於我們 (About Section)
           - name: "about_sec"
-            label: "關於我們區塊 (About Section)"
+            label: "3. 關於我們 (About Section)"
             widget: "object"
             fields:
               - { label: "區塊小標題 (中)", name: "section_label_zh", widget: "string" }
@@ -27,3 +57,36 @@ collections:
               - { label: "左側卡片文字 (EN)", name: "card_left_en", widget: "text" }
               - { label: "右側卡片文字 (中)", name: "card_right_zh", widget: "text" }
               - { label: "右側卡片文字 (EN)", name: "card_right_en", widget: "text" }
+
+          # 4. 服務範疇 (Services Section)
+          - name: "services_sec"
+            label: "4. 服務範疇 (Services Section)"
+            widget: "object"
+            fields:
+              - { label: "區塊小標題 (中)", name: "section_label_zh", widget: "string" }
+              - { label: "區塊小標題 (EN)", name: "section_label_en", widget: "string" }
+              - { label: "主標題 (中)", name: "main_title_zh", widget: "string" }
+              - { label: "主標題 (EN)", name: "main_title_en", widget: "string" }
+              - name: "items"
+                label: "服務項目列表"
+                widget: "list"
+                fields:
+                  - { label: "服務名稱 (中)", name: "item_title_zh", widget: "string" }
+                  - { label: "服務名稱 (EN)", name: "item_title_en", widget: "string" }
+                  - { label: "服務內容描述 (中)", name: "item_desc_zh", widget: "text" }
+                  - { label: "服務內容描述 (EN)", name: "item_desc_en", widget: "text" }
+
+          # 5. 頁尾與聯絡資料 (Footer)
+          - name: "footer_sec"
+            label: "5. 頁尾與聯絡資料 (Footer)"
+            widget: "object"
+            fields:
+              - { label: "號召標題 (中)", name: "contact_title_zh", widget: "string" }
+              - { label: "號召標題 (EN)", name: "contact_title_en", widget: "string" }
+              - { label: "號召按鈕 (中)", name: "contact_btn_zh", widget: "string" }
+              - { label: "號召按鈕 (EN)", name: "contact_btn_en", widget: "string" }
+              - { label: "聯絡 Email", name: "contact_email", widget: "string" }
+              - { label: "聯絡電話", name: "contact_phone", widget: "string" }
+              - { label: "地址 (中)", name: "location_zh", widget: "string" }
+              - { label: "地址 (EN)", name: "location_en", widget: "string" }
+              - { label: "版權宣告", name: "copyright", widget: "string" }
