@@ -12,10 +12,8 @@
             --accent-pink: #ff007a;
             --text-light: #ffffff;
             --card-bg: #130d36;
-            --border-thick: 4px solid #000000;
         }
 
-        /* 全站統一使用乾淨、清晰的系統字體 */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang HK", "Microsoft JhengHei", sans-serif; }
         
         body { background-color: var(--bg-midnight); color: var(--text-light); line-height: 1.5; overflow-x: hidden; border: 8px solid var(--accent-pink); }
@@ -37,9 +35,13 @@
         .hero { min-height: 85vh; padding: 10rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; max-width: 1300px; margin: 0 auto; position: relative; }
         .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
         
-        /* 調整為 3.2rem 讓標題完美呈現在同一行 */
-        .hero h1 { font-size: 3.2rem; font-weight: 600; line-height: 1.2; margin-bottom: 2rem; color: #ffffff; text-shadow: 2px 2px 0px #000; letter-spacing: 0px; word-break: normal; white-space: nowrap; }
+        /* 保持單行完美呈現與適當間距 */
+        .hero h1 { font-size: 3.2rem; font-weight: 600; line-height: 1.2; margin-bottom: 2rem; color: #ffffff; text-shadow: 2px 2px 0px #000; white-space: nowrap; }
         .hero h1 span.highlight { color: var(--accent-yellow); }
+        
+        /* 自動幫中英夾雜文字加上微距，改善黏在一起的問題 */
+        .hero h1 span { margin-left: 0.15em; margin-right: 0.15em; }
+        .hero h1 span:first-child { margin-left: 0; }
 
         .hero-tagline { font-size: 1.15rem; font-weight: 400; color: #ffffff; margin-bottom: 2.5rem; max-width: 800px; line-height: 1.6; background: rgba(0, 0, 0, 0.5); padding: 1.2rem; border-left: 6px solid var(--accent-yellow); }
 
@@ -65,7 +67,7 @@
         .contact { padding: 5rem 5%; background: var(--accent-pink); color: #ffffff; border-top: 4px solid #000; }
         .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
         
-        .contact-info h2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang HK", "Microsoft JhengHei", sans-serif !important; font-size: 2.4rem !important; font-weight: 600 !important; margin-bottom: 1rem; text-shadow: 2px 2px 0px #000; line-height: 1.2; letter-spacing: 0px !important; text-transform: none !important; }
+        .contact-info h2 { font-size: 2.4rem !important; font-weight: 600 !important; margin-bottom: 1rem; text-shadow: 2px 2px 0px #000; line-height: 1.2; text-transform: none !important; }
         
         .contact-info p { color: #ffffff; margin-bottom: 2rem; font-size: 1.1rem; font-weight: 400; }
         .contact-details { background: #000000; padding: 2rem; border: 3px solid #ffffff; box-shadow: 8px 8px 0px #000; }
@@ -78,7 +80,7 @@
         footer { padding: 2rem 5%; background: #000000; text-align: center; color: #a1a1a1; font-size: 0.85rem; font-weight: 400; border-top: 2px solid var(--accent-yellow); }
 
         @media (max-width: 1024px) {
-            .hero h1 { white-space: normal; font-size: 2.6rem; }
+            .hero h1 { white-space: normal; font-size: 2.4rem; }
         }
 
         @media (max-width: 768px) {
@@ -87,9 +89,9 @@
             .logo-img { height: 45px; }
             .nav-right { gap: 1rem; }
             nav ul { gap: 0.8rem; }
-            nav a { font-size: 0.85rem; letter-spacing: 0px; }
+            nav a { font-size: 0.85rem; }
             .hero { padding: 8rem 4% 3rem; min-height: auto; }
-            .hero h1 { font-size: 2.2rem; white-space: normal; }
+            .hero h1 { font-size: 1.9rem; white-space: normal; }
             .hero-tagline { font-size: 1rem; padding: 1rem; }
             .about-grid, .contact-content { grid-template-columns: 1fr; gap: 1.5rem; }
             .about h2 { font-size: 2rem; }
@@ -124,7 +126,10 @@
     <section class="hero">
         <div class="hero-subtitle" data-cms="hero_sec.subtitle">Next Marketing HK</div>
         <h1>
-            <span data-cms="hero_sec.h1_prefix">DEFINING </span><span data-cms="hero_sec.h1_mid">WHAT'S </span><span class="highlight" data-cms="hero_sec.h1_highlight">NEXT</span><span data-cms="hero_sec.h1_suffix"> IN MARKETING!</span>
+            <span data-cms="hero_sec.h1_prefix">DEFINING </span>
+            <span data-cms="hero_sec.h1_mid">WHAT'S </span>
+            <span class="highlight" data-cms="hero_sec.h1_highlight">NEXT</span>
+            <span data-cms="hero_sec.h1_suffix"> IN MARKETING!</span>
         </h1>
         <div class="hero-tagline" data-cms="hero_sec.tagline">
             Next Marketing HK is an integrated marketing, PR, and design agency...
@@ -220,11 +225,13 @@
       const path = el.getAttribute('data-cms').split('.');
       let val = siteData;
       for (let p of path) { val = val ? val[p] : null; }
+      
+      // Fallback for language keys if nested format uses suffix
       if (!val && typeof siteData === 'object') {
         let parent = siteData[path[0]];
         if (parent) val = parent[path[1] + langKey] || parent[path[1]];
       }
-      if (val) el.innerText = val;
+      if (val !== null && val !== undefined) el.innerText = val;
     });
   }
 
