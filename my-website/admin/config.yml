@@ -6,73 +6,24 @@ backend:
 media_folder: "my-website/public/images"
 public_folder: "/images"
 
-# 開啟 Decap CMS 的 i18n 語系切換功能
-i18n:
-  structure: single_file
-  locales: [zh, en]
-  default_locale: zh
-
 collections:
   - name: "pages"
     label: "網頁內容管理"
     files:
       - file: "my-website/content/site.json"
-        label: "全站文字設定 (Full Site Content)"
+        label: "首頁內容 (Homepage Content)"
         name: "homepage"
         format: "json"
-        i18n: true
         fields:
-          - name: "nav_sec"
-            label: "1. 頂部導航欄"
-            widget: "object"
-            i18n: true
-            fields:
-              - { label: "Logo文字", name: "logo_text", widget: "string", i18n: duplicate }
-              - { label: "選單 1", name: "nav_1", widget: "string", i18n: translate }
-              - { label: "選單 2", name: "nav_2", widget: "string", i18n: translate }
-              - { label: "選單 3", name: "nav_3", widget: "string", i18n: translate }
-              - { label: "按鈕文字", name: "nav_button", widget: "string", i18n: translate }
-
-          - name: "hero_sec"
-            label: "2. 首頁主視覺 (Hero)"
-            widget: "object"
-            i18n: true
-            fields:
-              - { label: "主標題", name: "hero_title", widget: "string", i18n: translate }
-              - { label: "英文副標題", name: "hero_tagline_en", widget: "text", i18n: duplicate }
-              - { label: "中文副標題", name: "hero_tagline_zh", widget: "text", i18n: duplicate }
-              - { label: "主要按鈕", name: "hero_btn_main", widget: "string", i18n: translate }
-              - { label: "次要按鈕", name: "hero_btn_sub", widget: "string", i18n: translate }
-
-          - name: "services_sec"
-            label: "3. 服務與優勢"
-            widget: "object"
-            i18n: true
-            fields:
-              - { label: "區塊標題", name: "title", widget: "string", i18n: translate }
-              - { label: "區塊副標題", name: "subtitle", widget: "text", i18n: translate }
-              - name: "items"
-                label: "服務項目列表"
-                widget: "list"
-                i18n: true
-                fields:
-                  - { label: "服務名稱", name: "item_title", widget: "string", i18n: translate }
-                  - { label: "服務內容描述", name: "item_desc", widget: "text", i18n: translate }
-
           - name: "about_sec"
-            label: "4. 關於我們"
+            label: "關於我們區塊 (About Section)"
             widget: "object"
-            i18n: true
             fields:
-              - { label: "區塊標題", name: "title", widget: "string", i18n: translate }
-              - { label: "詳細介紹內容", name: "body_content", widget: "markdown", i18n: translate }
-
-          - name: "footer_sec"
-            label: "5. 頁尾與聯絡資料"
-            widget: "object"
-            i18n: true
-            fields:
-              - { label: "聯絡 Email", name: "contact_email", widget: "string", i18n: duplicate }
-              - { label: "聯絡電話", name: "contact_phone", widget: "string", i18n: duplicate }
-              - { label: "公司地址", name: "address", widget: "string", i18n: translate }
-              - { label: "版權宣告", name: "copyright", widget: "string", i18n: duplicate }
+              - { label: "區塊小標題 (中)", name: "section_label_zh", widget: "string" }
+              - { label: "區塊小標題 (EN)", name: "section_label_en", widget: "string" }
+              - { label: "主標題 (中)", name: "main_title_zh", widget: "string" }
+              - { label: "主標題 (EN)", name: "main_title_en", widget: "string" }
+              - { label: "左側卡片文字 (中)", name: "card_left_zh", widget: "text" }
+              - { label: "左側卡片文字 (EN)", name: "card_left_en", widget: "text" }
+              - { label: "右側卡片文字 (中)", name: "card_right_zh", widget: "text" }
+              - { label: "右側卡片文字 (EN)", name: "card_right_en", widget: "text" }
