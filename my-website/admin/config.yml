@@ -2,8 +2,9 @@ backend:
   name: github
   repo: nextmarketinghk/nextmarketinghk
   branch: main
+  auth_type: implicit 
 
-media_folder: "public/images"
+media_folder: "content/images"
 public_folder: "/images"
 
 collections:
@@ -92,5 +93,9 @@ collections:
               - { label: "區塊標題 (EN)", name: "section_label_en", widget: "string" }
               - { label: "標題 (中)", name: "main_title_zh", widget: "string" }
               - { label: "標題 (EN)", name: "main_title_en", widget: "string" }
+              - { label: "描述 (中)", name: "desc_zh", widget: "text" }
+              - { label: "描述 (EN)", name: "desc_en", widget: "text" }
               - { label: "Email", name: "email", widget: "string" }
+              - { label: "地點 (中)", name: "location_zh", widget: "string" }
+              - { label: "地點 (EN)", name: "location_en", widget: "string" }
               - { label: "版權宣告", name: "copyright", widget: "string" }
