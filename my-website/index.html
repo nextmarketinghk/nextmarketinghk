@@ -336,8 +336,8 @@
             body.classList.toggle('lang-en');
             body.classList.toggle('lang-zh');
         }
-  <script>
-  fetch('./content/site.json')
+    </script>
+  fetch('/content/site.json')
     .then(response => response.json())
     .then(data => {
       document.querySelectorAll('[data-cms="hero-highlight"]').forEach(el => el.innerText = data.hero_title);
