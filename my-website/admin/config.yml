@@ -15,6 +15,7 @@ collections:
         name: "homepage"
         format: "json"
         fields:
+          # 1. 頂部導航欄
           - name: "nav_sec"
             label: "1. 頂部導航欄"
             widget: "object"
@@ -25,16 +26,18 @@ collections:
               - { label: "選單 3", name: "nav_3", widget: "string" }
               - { label: "按鈕文字", name: "nav_button", widget: "string" }
 
+          # 2. 首頁主視覺 (Hero) - 已加入英文標題
           - name: "hero_sec"
             label: "2. 首頁主視覺 (Hero)"
             widget: "object"
             fields:
               - { label: "主標題", name: "hero_title", widget: "string" }
-              - { label: "英文副標題", name: "hero_tagline_en", widget: "text" }
-              - { label: "中文副標題", name: "hero_tagline_zh", widget: "text" }
-              - { label: "主要按鈕", name: "hero_btn_main", widget: "string" }
-              - { label: "次要按鈕", name: "hero_btn_sub", widget: "string" }
+              - { label: "英文副標題 (Tagline EN)", name: "hero_tagline_en", widget: "text" }
+              - { label: "中文副標題 (Tagline ZH)", name: "hero_tagline_zh", widget: "text" }
+              - { label: "主要按鈕文字", name: "hero_btn_main", widget: "string" }
+              - { label: "次要按鈕文字", name: "hero_btn_sub", widget: "string" }
 
+          # 3. 服務與優勢
           - name: "services_sec"
             label: "3. 服務與優勢"
             widget: "object"
@@ -48,6 +51,7 @@ collections:
                   - { label: "服務名稱", name: "item_title", widget: "string" }
                   - { label: "服務內容描述", name: "item_desc", widget: "text" }
 
+          # 4. 關於我們
           - name: "about_sec"
             label: "4. 關於我們"
             widget: "object"
@@ -55,6 +59,7 @@ collections:
               - { label: "區塊標題", name: "title", widget: "string" }
               - { label: "詳細介紹內容", name: "body_content", widget: "markdown" }
 
+          # 5. 頁尾與聯絡資料
           - name: "footer_sec"
             label: "5. 頁尾與聯絡資料"
             widget: "object"
