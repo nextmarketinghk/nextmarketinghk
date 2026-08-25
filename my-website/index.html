@@ -15,7 +15,7 @@
             --border-thick: 4px solid #000000;
         }
 
-        /* 全站統一使用乾淨、清晰的系統字體，不再使用過粗的字體 */
+        /* 全站統一使用乾淨、清晰的系統字體 */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang HK", "Microsoft JhengHei", sans-serif; }
         
         body { background-color: var(--bg-midnight); color: var(--text-light); line-height: 1.5; overflow-x: hidden; border: 8px solid var(--accent-pink); }
@@ -37,7 +37,6 @@
         .hero { min-height: 85vh; padding: 10rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; max-width: 1200px; margin: 0 auto; position: relative; }
         .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
         
-        /* 將大標題改為精緻、筆畫適中的現代字重 (font-weight: 600) */
         .hero h1 { font-size: 3.8rem; font-weight: 600; line-height: 1.1; margin-bottom: 2rem; color: #ffffff; text-shadow: 2px 2px 0px #000; letter-spacing: 0px; word-break: break-word; }
         .hero h1 span.highlight { color: var(--accent-yellow); }
 
@@ -65,7 +64,9 @@
         .contact { padding: 5rem 5%; background: var(--accent-pink); color: #ffffff; border-top: 4px solid #000; }
         .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
         
-        .contact-info h2 { font-size: 2.4rem; margin-bottom: 1rem; font-weight: 700; text-shadow: 2px 2px 0px #000; line-height: 1.2; }
+        /* 強制覆蓋聯絡區塊大標題的字體、字重與形狀 */
+        .contact-info h2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang HK", "Microsoft JhengHei", sans-serif !important; font-size: 2.4rem !important; font-weight: 600 !important; margin-bottom: 1rem; text-shadow: 2px 2px 0px #000; line-height: 1.2; letter-spacing: 0px !important; text-transform: none !important; }
+        
         .contact-info p { color: #ffffff; margin-bottom: 2rem; font-size: 1.1rem; font-weight: 400; }
         .contact-details { background: #000000; padding: 2rem; border: 3px solid #ffffff; box-shadow: 8px 8px 0px #000; }
         .contact-details div { margin-bottom: 1.5rem; }
@@ -151,7 +152,7 @@
                         <li data-cms="services_sec.s1_item1">Integrated Marketing Strategy</li>
                         <li data-cms="services_sec.s1_item2">Social Media Management</li>
                         <li data-cms="services_sec.s1_item3">Campaign Strategy & Execution</li>
-                        <li data-cms="services_sec.s1_item4">Content Marketing & Copywriting</li>
+                        <li data.cms="services_sec.s1_item4">Content Marketing & Copywriting</li>
                     </ul>
                 </div>
                 <div class="service-card">
@@ -203,10 +204,6 @@
     if (!siteData) return;
     const isEn = document.body.classList.contains('lang-en');
     const langKey = isEn ? '_en' : '_zh';
-
-    document.querySelectorAll('[data-cms]').forEach, el => {
-      // (safe render)
-    }
 
     document.querySelectorAll('[data-cms]').forEach(el => {
       const path = el.getAttribute('data-cms').split('.');
