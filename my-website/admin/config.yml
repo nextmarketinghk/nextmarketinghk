@@ -37,8 +37,8 @@ collections:
               - { label: "大標題螢光黃字 (EN)", name: "h1_highlight_en", widget: "string" }
               - { label: "大標題後段 (中)", name: "h1_suffix_zh", widget: "string" }
               - { label: "大標題後段 (EN)", name: "h1_suffix_en", widget: "string" }
-              - { label: "簡介敘述 (中)", name: "tagline_zh", widget: "text" }
-              - { label: "簡介敘述 (EN)", name: "tagline_en", widget: "text" }
+              - { label: "簡介敘述 (中)", name: "tagline_zh", widget: "richtext" }
+              - { label: "簡介敘述 (EN)", name: "tagline_en", widget: "richtext" }
               - { label: "按鈕文字 (中)", name: "btn_zh", widget: "string" }
               - { label: "按鈕文字 (EN)", name: "btn_en", widget: "string" }
 
@@ -50,10 +50,10 @@ collections:
               - { label: "區塊小標題 (EN)", name: "section_label_en", widget: "string" }
               - { label: "主標題 (中)", name: "main_title_zh", widget: "string" }
               - { label: "主標題 (EN)", name: "main_title_en", widget: "string" }
-              - { label: "左側卡片 (中)", name: "card_left_zh", widget: "text" }
-              - { label: "左側卡片 (EN)", name: "card_left_en", widget: "text" }
-              - { label: "右側卡片 (中)", name: "card_right_zh", widget: "text" }
-              - { label: "右側卡片 (EN)", name: "card_right_en", widget: "text" }
+              - { label: "左側卡片 (中)", name: "card_left_zh", widget: "richtext" }
+              - { label: "左側卡片 (EN)", name: "card_left_en", widget: "richtext" }
+              - { label: "右側卡片 (中)", name: "card_right_zh", widget: "richtext" }
+              - { label: "右側卡片 (EN)", name: "card_right_en", widget: "richtext" }
 
           - name: "services_sec"
             label: "4. 服務範疇 (Services Section)"
@@ -93,8 +93,8 @@ collections:
             fields:
               - { label: "標題 (中)", name: "main_title_zh", widget: "string" }
               - { label: "標題 (EN)", name: "main_title_en", widget: "string" }
-              - { label: "描述 (中)", name: "desc_zh", widget: "text" }
-              - { label: "描述 (EN)", name: "desc_en", widget: "text" }
+              - { label: "描述 (中)", name: "desc_zh", widget: "richtext" }
+              - { label: "描述 (EN)", name: "desc_en", widget: "richtext" }
               - { label: "Email", name: "email", widget: "string" }
               - { label: "Instagram", name: "instagram", widget: "string" }
               - { label: "版權宣告", name: "copyright", widget: "string" }
