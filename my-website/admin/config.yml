@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: nextmarketinghk/nextmarketinghk  # Update to your exact repo
+  repo: nextmarketinghk/nextmarketinghk
   branch: main
 
 media_folder: "public/images"
