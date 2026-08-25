@@ -1,40 +1,21 @@
 {
   "nav_sec": {
-    "logo_text": "NEXT MARKETING",
-    "nav_1": "關於我們",
-    "nav_2": "服務範疇",
-    "nav_3": "最新案例",
-    "nav_button": "聯絡我們"
-  },
-  "hero_sec": {
-    "hero_title": "打造最具影響力的數位行銷策略",
-    "hero_tagline_en": "Elevate Your Brand with Next-Gen Marketing",
-    "hero_tagline_zh": "全方位線上行銷方案，助力品牌成長與轉化",
-    "hero_btn_main": "立即諮詢",
-    "hero_btn_sub": "了解更多"
-  },
-  "services_sec": {
-    "title": "我們的核心服務",
-    "subtitle": "提供一站式整合行銷策略，精準觸達目標客群",
-    "items": [
-      {
-        "item_title": "社群媒體營運",
-        "item_desc": "內容企劃、視覺設計與廣告投放，建立高互動社群品牌。"
-      },
-      {
-        "item_title": "品牌策略與公關",
-        "item_desc": "量身打造品牌定位與跨界合作企劃，提升品牌聲量。"
-      }
-    ]
+    "logo_text": "NEXT MARKETING HK",
+    "nav_1_zh": "關於我們",
+    "nav_1_en": "About Us",
+    "nav_2_zh": "服務範疇",
+    "nav_2_en": "Services",
+    "nav_3_zh": "聯絡我們",
+    "nav_3_en": "Contact Us"
   },
   "about_sec": {
-    "title": "關於 NEXT MARKETING",
-    "body_content": "我們是一支充滿活力的行銷團隊，專注於運動娛樂、餐飲與數位品牌營運。"
-  },
-  "footer_sec": {
-    "contact_email": "hello@nextmarketing.hk",
-    "contact_phone": "+852 1234 5678",
-    "address": "香港九龍",
-    "copyright": "© 2026 NEXT MARKETING. All Rights Reserved."
+    "section_label_zh": "關於我們",
+    "section_label_en": "ABOUT US",
+    "main_title_zh": "專業戰略，實效創意。",
+    "main_title_en": "Professional Strategy, Effective Creativity.",
+    "card_left_zh": "作為立足香港的品牌行銷顧問，我們將戰略視野與創意落實完美結合，協助企業拓展市場版圖，建立具深度影響力的品牌體驗，實現長遠商業增長。",
+    "card_left_en": "As a brand marketing consultancy based in Hong Kong, we combine strategic vision with creative execution to help businesses expand their market presence and build impactful brand experiences.",
+    "card_right_zh": "從整體 Marketing 策略、Social Media 營運，到 PR 公關佈局與品牌視覺設計，我們為企業提供邁向未來所需的全套藍圖。",
+    "card_right_en": "From overall marketing strategy and social media management to PR execution and brand visual design, we provide comprehensive solutions for future growth."
   }
 }
