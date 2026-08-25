@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <!-- 必須載入 Netlify Identity 模組 -->
+  <!-- 1. 載入 Identity 彈出視窗 UI 組件 -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Decap CMS 主程式 -->
+  <!-- 2. 載入 Decap CMS 主程式 -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-  <!-- 登入監聽與自動重新整理腳本 -->
+  <!-- 3. 正確連結登入按鈕與彈出視窗的觸發腳本 -->
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", function(user) {
@@ -22,6 +22,17 @@
         }
       });
     }
+
+    // 解決按鈕點擊沒反應的核心修正：強制讓 CMS 按鈕綁定跳窗事件
+    document.addEventListener("DOMContentLoaded", function() {
+      document.body.addEventListener("click", function(e) {
+        if (e.target && (e.target.matches(".nc-githubAuthenticationPage-button") || e.target.innerText.includes("Login with Netlify Identity"))) {
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.open();
+          }
+        }
+      });
+    });
   </script>
 </body>
 </html>
