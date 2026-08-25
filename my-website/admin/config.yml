@@ -1,9 +1,10 @@
 backend:
-  name: github
-  repo: nextmarketinghk/nextmarketinghk
+  name: nextmarketinghk/你nextmarketinghk
   branch: main
+  auth_type: pkce
 
 media_folder: "images"
 public_folder: "/images"
 
 collections:
+  # 底下的 collections 保持原樣不動 ...
