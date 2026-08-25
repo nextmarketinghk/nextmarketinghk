@@ -227,14 +227,30 @@
     const langKey = isEn ? '_en' : '_zh';
 
     document.querySelectorAll('[data-cms]').forEach(el => {
-      const path = el.getAttribute('data-cms').split('.');
+      const keyPath = el.getAttribute('data-cms');
+      const path = keyPath.split('.');
+      const secKey = path[0];
+      const fieldKey = path[1];
+
       let val = siteData;
       for (let p of path) { val = val ? val[p] : null; }
+      
       if (!val && typeof siteData === 'object') {
-        let parent = siteData[path[0]];
-        if (parent) val = parent[path[1] + langKey] || parent[path[1]];
+        let parent = siteData[secKey];
+        if (parent) val = parent[fieldKey + langKey] || parent[fieldKey];
       }
+      
+      // Update Text Content
       if (val) el.innerText = val;
+
+      // Dynamic color rendering based on Hex Code from CMS
+      let parentObj = siteData[secKey];
+      if (parentObj) {
+        let colorVal = parentObj[fieldKey + '_color'];
+        if (colorVal) {
+          el.style.color = colorVal;
+        }
+      }
     });
   }
 
