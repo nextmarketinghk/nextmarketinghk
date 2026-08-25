@@ -6,7 +6,19 @@
     "nav_2_zh": "服務範疇",
     "nav_2_en": "Services",
     "nav_3_zh": "聯絡我們",
-    "nav_3_en": "Contact Us"
+    "nav_3_en": "Contact Us",
+    "lang_button_zh": "EN",
+    "lang_button_en": "繁"
+  },
+  "hero_sec": {
+    "hero_title_zh": "打造最具影響力的數位行銷策略",
+    "hero_title_en": "Crafting High-Impact Digital Marketing Strategies",
+    "hero_tagline_zh": "全方位線上行銷方案，助力品牌成長與轉化",
+    "hero_tagline_en": "Elevate Your Brand with Next-Gen Marketing Solutions",
+    "hero_btn_main_zh": "立即諮詢",
+    "hero_btn_main_en": "Get Started",
+    "hero_btn_sub_zh": "了解更多",
+    "hero_btn_sub_en": "Learn More"
   },
   "about_sec": {
     "section_label_zh": "關於我們",
@@ -17,5 +29,42 @@
     "card_left_en": "As a brand marketing consultancy based in Hong Kong, we combine strategic vision with creative execution to help businesses expand their market presence and build impactful brand experiences.",
     "card_right_zh": "從整體 Marketing 策略、Social Media 營運，到 PR 公關佈局與品牌視覺設計，我們為企業提供邁向未來所需的全套藍圖。",
     "card_right_en": "From overall marketing strategy and social media management to PR execution and brand visual design, we provide comprehensive solutions for future growth."
+  },
+  "services_sec": {
+    "section_label_zh": "服務範疇",
+    "section_label_en": "OUR SERVICES",
+    "main_title_zh": "全方位整合行銷方案",
+    "main_title_en": "Comprehensive Integrated Marketing Solutions",
+    "items": [
+      {
+        "item_title_zh": "社群媒體營運 (Social Media Management)",
+        "item_title_en": "Social Media Management",
+        "item_desc_zh": "內容企劃、視覺設計與廣告投放，建立高互動社群品牌，引爆線上流量。",
+        "item_desc_en": "Content planning, visual design, and ad campaigns to build engaging social brands."
+      },
+      {
+        "item_title_zh": "品牌策略與公關 (Brand Strategy & PR)",
+        "item_title_en": "Brand Strategy & PR",
+        "item_desc_zh": "量身打造品牌定位、新聞稿發布與跨界合作企劃，極速提升品牌聲量與信任度。",
+        "item_desc_en": "Tailored brand positioning, PR releases, and cross-industry collaborations to boost reach."
+      },
+      {
+        "item_title_zh": "活動企劃與線下體驗 (Event & Offline Experience)",
+        "item_title_en": "Event & Offline Marketing",
+        "item_desc_zh": "打造具吸引力的沉浸式線下快閃店、發布會與大型主題活動，實現線上線下雙向轉化。",
+        "item_desc_en": "Creating immersive pop-ups, product launches, and large-scale experiential marketing."
+      }
+    ]
+  },
+  "footer_sec": {
+    "contact_title_zh": "準備好提升你的品牌影響力？",
+    "contact_title_en": "Ready to elevate your brand impact?",
+    "contact_btn_zh": "立即與我們聯絡",
+    "contact_btn_en": "Contact Us Today",
+    "contact_email": "info@nextmarketing.hk",
+    "contact_phone": "+852 1234 5678",
+    "location_zh": "Hong Kong",
+    "location_en": "Hong Kong",
+    "copyright": "© 2026 Next Marketing Limited. All rights reserved."
   }
 }
