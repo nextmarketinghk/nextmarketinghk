@@ -2,47 +2,49 @@ backend:
   name: github
   repo: nextmarketinghk/nextmarketinghk
   branch: main
-  auth_type: implicit 
 
-media_folder: "content/images"
+media_folder: "my-website/public/images"
 public_folder: "/images"
 
 collections:
   - name: "pages"
     label: "網頁內容管理"
     files:
-      - file: "content/site.json"
-        label: "全站文字文案管理"
+      - file: "my-website/content/site.json"
+        label: "全站文字文案管理 (Full Site Content)"
         name: "homepage"
         format: "json"
         fields:
+          # 1. 頂部導覽列 (Navigation)
           - name: "nav_sec"
             label: "1. 頂部導覽列 (Navigation)"
             widget: "object"
             fields:
+              - { label: "Logo 文字", name: "logo_text", widget: "string" }
               - { label: "選單 1 (中)", name: "nav_1_zh", widget: "string" }
               - { label: "選單 1 (EN)", name: "nav_1_en", widget: "string" }
               - { label: "選單 2 (中)", name: "nav_2_zh", widget: "string" }
               - { label: "選單 2 (EN)", name: "nav_2_en", widget: "string" }
               - { label: "選單 3 (中)", name: "nav_3_zh", widget: "string" }
               - { label: "選單 3 (EN)", name: "nav_3_en", widget: "string" }
+              - { label: "切換語言按鈕 (中)", name: "lang_button_zh", widget: "string" }
+              - { label: "切換語言按鈕 (EN)", name: "lang_button_en", widget: "string" }
 
+          # 2. 首頁主視覺 (Hero Section)
           - name: "hero_sec"
-            label: "2. 首頁 Hero 主視覺區塊"
+            label: "2. 首頁主視覺 (Hero Section)"
             widget: "object"
             fields:
-              - { label: "小標題", name: "subtitle", widget: "string" }
-              - { label: "大標題前段 (中)", name: "h1_prefix_zh", widget: "string" }
-              - { label: "大標題前段 (EN)", name: "h1_prefix_en", widget: "string" }
-              - { label: "大標題螢光黃字 (中)", name: "h1_highlight_zh", widget: "string" }
-              - { label: "大標題螢光黃字 (EN)", name: "h1_highlight_en", widget: "string" }
-              - { label: "大標題後段 (中)", name: "h1_suffix_zh", widget: "string" }
-              - { label: "大標題後段 (EN)", name: "h1_suffix_en", widget: "string" }
-              - { label: "簡介敘述 (中)", name: "tagline_zh", widget: "text" }
-              - { label: "簡介敘述 (EN)", name: "tagline_en", widget: "text" }
-              - { label: "按鈕文字 (中)", name: "btn_zh", widget: "string" }
-              - { label: "按鈕文字 (EN)", name: "btn_en", widget: "string" }
+              - { label: "主標題 (中)", name: "hero_title_zh", widget: "string" }
+              - { label: "主標題 (EN)", name: "hero_title_en", widget: "string" }
+              - { label: "副標題 (中)", name: "hero_tagline_zh", widget: "text" }
+              - { label: "副標題 (EN)", name: "hero_tagline_en", widget: "text" }
+              - { label: "主要按鈕 (中)", name: "hero_btn_main_zh", widget: "string" }
+              - { label: "主要按鈕 (EN)", name: "hero_btn_main_en", widget: "string" }
+              - { label: "次要按鈕 (中)", name: "hero_btn_sub_zh", widget: "string" }
+              - { label: "次要按鈕 (EN)", name: "hero_btn_sub_en", widget: "string" }
 
+          # 3. 關於我們 (About Section)
           - name: "about_sec"
             label: "3. 關於我們 (About Section)"
             widget: "object"
@@ -51,51 +53,40 @@ collections:
               - { label: "區塊小標題 (EN)", name: "section_label_en", widget: "string" }
               - { label: "主標題 (中)", name: "main_title_zh", widget: "string" }
               - { label: "主標題 (EN)", name: "main_title_en", widget: "string" }
-              - { label: "左側卡片 (中)", name: "card_left_zh", widget: "text" }
-              - { label: "左側卡片 (EN)", name: "card_left_en", widget: "text" }
-              - { label: "右側卡片 (中)", name: "card_right_zh", widget: "text" }
-              - { label: "右側卡片 (EN)", name: "card_right_en", widget: "text" }
+              - { label: "左側卡片文字 (中)", name: "card_left_zh", widget: "text" }
+              - { label: "左側卡片文字 (EN)", name: "card_left_en", widget: "text" }
+              - { label: "右側卡片文字 (中)", name: "card_right_zh", widget: "text" }
+              - { label: "右側卡片文字 (EN)", name: "card_right_en", widget: "text" }
 
+          # 4. 服務範疇 (Services Section)
           - name: "services_sec"
             label: "4. 服務範疇 (Services Section)"
             widget: "object"
             fields:
-              - { label: "區塊標題 (中)", name: "section_label_zh", widget: "string" }
-              - { label: "區塊標題 (EN)", name: "section_label_en", widget: "string" }
-              - { label: "服務 1 標題 (中)", name: "s1_title_zh", widget: "string" }
-              - { label: "服務 1 標題 (EN)", name: "s1_title_en", widget: "string" }
-              - { label: "服務 1 項目 1 (中)", name: "s1_item1_zh", widget: "string" }
-              - { label: "服務 1 項目 1 (EN)", name: "s1_item1_en", widget: "string" }
-              - { label: "服務 1 項目 2 (中)", name: "s1_item2_zh", widget: "string" }
-              - { label: "服務 1 項目 2 (EN)", name: "s1_item2_en", widget: "string" }
-              - { label: "服務 1 項目 3 (中)", name: "s1_item3_zh", widget: "string" }
-              - { label: "服務 1 項目 3 (EN)", name: "s1_item3_en", widget: "string" }
-              - { label: "服務 1 項目 4 (中)", name: "s1_item4_zh", widget: "string" }
-              - { label: "服務 1 項目 4 (EN)", name: "s1_item4_en", widget: "string" }
-              - { label: "服務 2 標題 (中)", name: "s2_title_zh", widget: "string" }
-              - { label: "服務 2 標題 (EN)", name: "s2_title_en", widget: "string" }
-              - { label: "服務 2 項目 1 (中)", name: "s2_item1_zh", widget: "string" }
-              - { label: "服務 2 項目 1 (EN)", name: "s2_item1_en", widget: "string" }
-              - { label: "服務 2 項目 2 (中)", name: "s2_item2_zh", widget: "string" }
-              - { label: "服務 2 項目 2 (EN)", name: "s2_item2_en", widget: "string" }
-              - { label: "服務 3 標題 (中)", name: "s3_title_zh", widget: "string" }
-              - { label: "服務 3 標題 (EN)", name: "s3_title_en", widget: "string" }
-              - { label: "服務 3 項目 1 (中)", name: "s3_item1_zh", widget: "string" }
-              - { label: "服務 3 項目 1 (EN)", name: "s3_item1_en", widget: "string" }
-              - { label: "服務 3 項目 2 (中)", name: "s3_item2_zh", widget: "string" }
-              - { label: "服務 3 項目 2 (EN)", name: "s3_item2_en", widget: "string" }
+              - { label: "區塊小標題 (中)", name: "section_label_zh", widget: "string" }
+              - { label: "區塊小標題 (EN)", name: "section_label_en", widget: "string" }
+              - { label: "主標題 (中)", name: "main_title_zh", widget: "string" }
+              - { label: "主標題 (EN)", name: "main_title_en", widget: "string" }
+              - name: "items"
+                label: "服務項目列表"
+                widget: "list"
+                fields:
+                  - { label: "服務名稱 (中)", name: "item_title_zh", widget: "string" }
+                  - { label: "服務名稱 (EN)", name: "item_title_en", widget: "string" }
+                  - { label: "服務內容描述 (中)", name: "item_desc_zh", widget: "text" }
+                  - { label: "服務內容描述 (EN)", name: "item_desc_en", widget: "text" }
 
-          - name: "contact_sec"
-            label: "5. 聯絡我們與頁尾 (Contact & Footer)"
+          # 5. 頁尾與聯絡資料 (Footer)
+          - name: "footer_sec"
+            label: "5. 頁尾與聯絡資料 (Footer)"
             widget: "object"
             fields:
-              - { label: "區塊標題 (中)", name: "section_label_zh", widget: "string" }
-              - { label: "區塊標題 (EN)", name: "section_label_en", widget: "string" }
-              - { label: "標題 (中)", name: "main_title_zh", widget: "string" }
-              - { label: "標題 (EN)", name: "main_title_en", widget: "string" }
-              - { label: "描述 (中)", name: "desc_zh", widget: "text" }
-              - { label: "描述 (EN)", name: "desc_en", widget: "text" }
-              - { label: "Email", name: "email", widget: "string" }
-              - { label: "地點 (中)", name: "location_zh", widget: "string" }
-              - { label: "地點 (EN)", name: "location_en", widget: "string" }
+              - { label: "號召標題 (中)", name: "contact_title_zh", widget: "string" }
+              - { label: "號召標題 (EN)", name: "contact_title_en", widget: "string" }
+              - { label: "號召按鈕 (中)", name: "contact_btn_zh", widget: "string" }
+              - { label: "號召按鈕 (EN)", name: "contact_btn_en", widget: "string" }
+              - { label: "聯絡 Email", name: "contact_email", widget: "string" }
+              - { label: "聯絡電話", name: "contact_phone", widget: "string" }
+              - { label: "地址 (中)", name: "location_zh", widget: "string" }
+              - { label: "地址 (EN)", name: "location_en", widget: "string" }
               - { label: "版權宣告", name: "copyright", widget: "string" }

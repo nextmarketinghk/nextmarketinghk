@@ -1,100 +1,70 @@
-backend:
-  name: github
-  repo: nextmarketinghk/nextmarketinghk
-  branch: main
-
-media_folder: "my-website/public/images"
-public_folder: "/images"
-
-collections:
-  - name: "pages"
-    label: "網頁內容管理"
-    files:
-      - file: "my-website/content/site.json"
-        label: "全站文字文案管理"
-        name: "homepage"
-        format: "json"
-        fields:
-          - name: "nav_sec"
-            label: "1. 頂部導覽列 (Navigation)"
-            widget: "object"
-            fields:
-              - { label: "選單 1 (中)", name: "nav_1_zh", widget: "string" }
-              - { label: "選單 1 (EN)", name: "nav_1_en", widget: "string" }
-              - { label: "選單 2 (中)", name: "nav_2_zh", widget: "string" }
-              - { label: "選單 2 (EN)", name: "nav_2_en", widget: "string" }
-              - { label: "選單 3 (中)", name: "nav_3_zh", widget: "string" }
-              - { label: "選單 3 (EN)", name: "nav_3_en", widget: "string" }
-
-          - name: "hero_sec"
-            label: "2. 首頁 Hero 主視覺區塊"
-            widget: "object"
-            fields:
-              - { label: "小標題", name: "subtitle", widget: "string" }
-              - { label: "大標題前段 (中)", name: "h1_prefix_zh", widget: "string" }
-              - { label: "大標題前段 (EN)", name: "h1_prefix_en", widget: "string" }
-              - { label: "大標題螢光黃字 (中)", name: "h1_highlight_zh", widget: "string" }
-              - { label: "大標題螢光黃字 (EN)", name: "h1_highlight_en", widget: "string" }
-              - { label: "大標題後段 (中)", name: "h1_suffix_zh", widget: "string" }
-              - { label: "大標題後段 (EN)", name: "h1_suffix_en", widget: "string" }
-              - { label: "簡介敘述 (中)", name: "tagline_zh", widget: "text" }
-              - { label: "簡介敘述 (EN)", name: "tagline_en", widget: "text" }
-              - { label: "按鈕文字 (中)", name: "btn_zh", widget: "string" }
-              - { label: "按鈕文字 (EN)", name: "btn_en", widget: "string" }
-
-          - name: "about_sec"
-            label: "3. 關於我們 (About Section)"
-            widget: "object"
-            fields:
-              - { label: "區塊小標題 (中)", name: "section_label_zh", widget: "string" }
-              - { label: "區塊小標題 (EN)", name: "section_label_en", widget: "string" }
-              - { label: "主標題 (中)", name: "main_title_zh", widget: "string" }
-              - { label: "主標題 (EN)", name: "main_title_en", widget: "string" }
-              - { label: "左側卡片 (中)", name: "card_left_zh", widget: "text" }
-              - { label: "左側卡片 (EN)", name: "card_left_en", widget: "text" }
-              - { label: "右側卡片 (中)", name: "card_right_zh", widget: "text" }
-              - { label: "右側卡片 (EN)", name: "card_right_en", widget: "text" }
-
-          - name: "services_sec"
-            label: "4. 服務範疇 (Services Section)"
-            widget: "object"
-            fields:
-              - { label: "區塊標題 (中)", name: "section_label_zh", widget: "string" }
-              - { label: "區塊標題 (EN)", name: "section_label_en", widget: "string" }
-              - { label: "服務 1 標題 (中)", name: "s1_title_zh", widget: "string" }
-              - { label: "服務 1 標題 (EN)", name: "s1_title_en", widget: "string" }
-              - { label: "服務 1 項目 1 (中)", name: "s1_item1_zh", widget: "string" }
-              - { label: "服務 1 項目 1 (EN)", name: "s1_item1_en", widget: "string" }
-              - { label: "服務 1 項目 2 (中)", name: "s1_item2_zh", widget: "string" }
-              - { label: "服務 1 項目 2 (EN)", name: "s1_item2_en", widget: "string" }
-              - { label: "服務 1 項目 3 (中)", name: "s1_item3_zh", widget: "string" }
-              - { label: "服務 1 項目 3 (EN)", name: "s1_item3_en", widget: "string" }
-              - { label: "服務 1 項目 4 (中)", name: "s1_item4_zh", widget: "string" }
-              - { label: "服務 1 項目 4 (EN)", name: "s1_item4_en", widget: "string" }
-              - { label: "服務 2 標題 (中)", name: "s2_title_zh", widget: "string" }
-              - { label: "服務 2 標題 (EN)", name: "s2_title_en", widget: "string" }
-              - { label: "服務 2 項目 1 (中)", name: "s2_item1_zh", widget: "string" }
-              - { label: "服務 2 項目 1 (EN)", name: "s2_item1_en", widget: "string" }
-              - { label: "服務 2 項目 2 (中)", name: "s2_item2_zh", widget: "string" }
-              - { label: "服務 2 項目 2 (EN)", name: "s2_item2_en", widget: "string" }
-              - { label: "服務 3 標題 (中)", name: "s3_title_zh", widget: "string" }
-              - { label: "服務 3 標題 (EN)", name: "s3_title_en", widget: "string" }
-              - { label: "服務 3 項目 1 (中)", name: "s3_item1_zh", widget: "string" }
-              - { label: "服務 3 項目 1 (EN)", name: "s3_item1_en", widget: "string" }
-              - { label: "服務 3 項目 2 (中)", name: "s3_item2_zh", widget: "string" }
-              - { label: "服務 3 項目 2 (EN)", name: "s3_item2_en", widget: "string" }
-
-          - name: "contact_sec"
-            label: "5. 聯絡我們與頁尾 (Contact & Footer)"
-            widget: "object"
-            fields:
-              - { label: "區塊標題 (中)", name: "section_label_zh", widget: "string" }
-              - { label: "區塊標題 (EN)", name: "section_label_en", widget: "string" }
-              - { label: "標題 (中)", name: "main_title_zh", widget: "string" }
-              - { label: "標題 (EN)", name: "main_title_en", widget: "string" }
-              - { label: "描述 (中)", name: "desc_zh", widget: "text" }
-              - { label: "描述 (EN)", name: "desc_en", widget: "text" }
-              - { label: "Email", name: "email", widget: "string" }
-              - { label: "地點 (中)", name: "location_zh", widget: "string" }
-              - { label: "地點 (EN)", name: "location_en", widget: "string" }
-              - { label: "版權宣告", name: "copyright", widget: "string" }
+{
+  "nav_sec": {
+    "logo_text": "NEXT MARKETING HK",
+    "nav_1_zh": "關於我們",
+    "nav_1_en": "About Us",
+    "nav_2_zh": "服務範疇",
+    "nav_2_en": "Services",
+    "nav_3_zh": "聯絡我們",
+    "nav_3_en": "Contact Us",
+    "lang_button_zh": "EN",
+    "lang_button_en": "繁"
+  },
+  "hero_sec": {
+    "hero_title_zh": "打造最具影響力的數位行銷策略",
+    "hero_title_en": "Crafting High-Impact Digital Marketing Strategies",
+    "hero_tagline_zh": "全方位線上行銷方案，助力品牌成長與轉化",
+    "hero_tagline_en": "Elevate Your Brand with Next-Gen Marketing Solutions",
+    "hero_btn_main_zh": "立即諮詢",
+    "hero_btn_main_en": "Get Started",
+    "hero_btn_sub_zh": "了解更多",
+    "hero_btn_sub_en": "Learn More"
+  },
+  "about_sec": {
+    "section_label_zh": "關於我們",
+    "section_label_en": "ABOUT US",
+    "main_title_zh": "專業戰略，實效創意。",
+    "main_title_en": "Professional Strategy, Effective Creativity.",
+    "card_left_zh": "作為立足香港的品牌行銷顧問，我們將戰略視野與創意落實完美結合，協助企業拓展市場版圖，建立具深度影響力的品牌體驗，實現長遠商業增長。",
+    "card_left_en": "As a brand marketing consultancy based in Hong Kong, we combine strategic vision with creative execution to help businesses expand their market presence and build impactful brand experiences.",
+    "card_right_zh": "從整體 Marketing 策略、Social Media 營運，到 PR 公關佈局與品牌視覺設計，我們為企業提供邁向未來所需的全套藍圖。",
+    "card_right_en": "From overall marketing strategy and social media management to PR execution and brand visual design, we provide comprehensive solutions for future growth."
+  },
+  "services_sec": {
+    "section_label_zh": "服務範疇",
+    "section_label_en": "OUR SERVICES",
+    "main_title_zh": "全方位整合行銷方案",
+    "main_title_en": "Comprehensive Integrated Marketing Solutions",
+    "items": [
+      {
+        "item_title_zh": "社群媒體營運 (Social Media Management)",
+        "item_title_en": "Social Media Management",
+        "item_desc_zh": "內容企劃、視覺設計與廣告投放，建立高互動社群品牌，引爆線上流量。",
+        "item_desc_en": "Content planning, visual design, and ad campaigns to build engaging social brands."
+      },
+      {
+        "item_title_zh": "品牌策略與公關 (Brand Strategy & PR)",
+        "item_title_en": "Brand Strategy & PR",
+        "item_desc_zh": "量身打造品牌定位、新聞稿發布與跨界合作企劃，極速提升品牌聲量與信任度。",
+        "item_desc_en": "Tailored brand positioning, PR releases, and cross-industry collaborations to boost reach."
+      },
+      {
+        "item_title_zh": "活動企劃與線下體驗 (Event & Offline Experience)",
+        "item_title_en": "Event & Offline Marketing",
+        "item_desc_zh": "打造具吸引力的沉浸式線下快閃店、發布會與大型主題活動，實現線上線下雙向轉化。",
+        "item_desc_en": "Creating immersive pop-ups, product launches, and large-scale experiential marketing."
+      }
+    ]
+  },
+  "footer_sec": {
+    "contact_title_zh": "準備好提升你的品牌影響力？",
+    "contact_title_en": "Ready to elevate your brand impact?",
+    "contact_btn_zh": "立即與我們聯絡",
+    "contact_btn_en": "Contact Us Today",
+    "contact_email": "info@nextmarketing.hk",
+    "contact_phone": "+852 1234 5678",
+    "location_zh": "Hong Kong",
+    "location_en": "Hong Kong",
+    "copyright": "© 2026 Next Marketing Limited. All rights reserved."
+  }
+}
