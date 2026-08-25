@@ -79,4 +79,5 @@ collections:
               - { label: "描述 (中)", name: "desc_zh", widget: "text" }
               - { label: "描述 (EN)", name: "desc_en", widget: "text" }
               - { label: "Email", name: "email", widget: "string" }
+              - { label: "Instagram", name: "instagram", widget: "string" }
               - { label: "版權宣告", name: "copyright", widget: "string" }
