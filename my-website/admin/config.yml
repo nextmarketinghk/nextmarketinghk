@@ -3,14 +3,14 @@ backend:
   repo: nextmarketinghk/nextmarketinghk
   branch: main
 
-media_folder: "public/images"
+media_folder: "my-website/public/images"
 public_folder: "/images"
 
 collections:
   - name: "pages"
     label: "網頁內容管理"
     files:
-      - file: "content/site.json"
+      - file: "my-website/content/site.json"
         label: "全站文字設定 (Full Site Content)"
         name: "homepage"
         format: "json"
