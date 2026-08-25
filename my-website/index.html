@@ -339,39 +339,37 @@
 </script>
 
 <script>
+  function toggleLanguage() {
+    const body = document.body;
+    body.classList.toggle('lang-en');
+    body.classList.toggle('lang-zh');
+  }
+</script>
+
+<script>
   fetch('/content/site.json')
     .then(response => response.json())
     .then(data => {
-      // 1. 首頁 Hero 區塊
-      document.querySelectorAll('[data-cms="hero-highlight"]').forEach(el => {
-        el.innerText = data.hero_sec?.hero_title_zh || data.hero_sec?.hero_title || '';
-      });
-      document.querySelectorAll('[data-cms="hero-tag-zh"]').forEach(el => {
-        el.innerText = data.hero_sec?.hero_tagline_zh || '';
-      });
-      document.querySelectorAll('[data-cms="hero-tag-en"]').forEach(el => {
-        el.innerText = data.hero_sec?.hero_tagline_en || '';
-      });
+      const isEn = document.body.classList.contains('lang-en');
+      const lang = isEn ? 'en' : 'zh';
 
-      // 2. 關於我們 區塊 (對應截圖中的欄位)
-      document.querySelectorAll('[data-cms="about-title-zh"]').forEach(el => {
-        el.innerText = data.about_sec?.title_zh || '';
-      });
-      document.querySelectorAll('[data-cms="about-title-en"]').forEach(el => {
-        el.innerText = data.about_sec?.title_en || '';
-      });
-      document.querySelectorAll('[data-cms="about-body-zh"]').forEach(el => {
-        el.innerText = data.about_sec?.body_content_zh || '';
-      });
-      document.querySelectorAll('[data-cms="about-body-en"]').forEach(el => {
-        el.innerText = data.about_sec?.body_content_en || '';
-      });
+      // 動態更新「關於我們」區域
+      if (data.about_sec) {
+        const labelEl = document.querySelector('.yellow-section .section-label') || document.querySelectorAll('.yellow-section p')[0];
+        if (labelEl) labelEl.innerText = data.about_sec[`section_label_${lang}`] || data.about_sec.section_label_zh;
 
-      // 3. 頁尾 區塊
-      document.querySelectorAll('[data-cms="contact-email"]').forEach(el => {
-        el.innerText = data.footer_sec?.contact_email || '';
-      });
+        const titleEl = document.querySelector('.yellow-section h2') || document.querySelector('.yellow-section h1');
+        if (titleEl) titleEl.innerText = data.about_sec[`main_title_${lang}`] || data.about_sec.main_title_zh;
+
+        const cards = document.querySelectorAll('.yellow-section .black-card p, .yellow-section .card p');
+        if (cards.length >= 2) {
+          cards[0].innerText = data.about_sec[`card_left_${lang}`] || data.about_sec.card_left_zh;
+          cards[1].innerText = data.about_sec[`card_right_${lang}`] || data.about_sec.card_right_zh;
+        }
+      }
     });
 </script>
+</body>
+</html>
 </body>
 </html>
