@@ -12,9 +12,7 @@
             --accent-pink: #ff007a;
             --text-light: #ffffff;
             --card-bg: #130d36;
-            --border-thick: 4px solid #000000;
         }
-
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang HK", "Microsoft JhengHei", sans-serif; }
         
@@ -37,9 +35,12 @@
         .hero { min-height: 85vh; padding: 10rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; max-width: 1300px; margin: 0 auto; position: relative; }
         .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
         
-
-        .hero h1 { font-size: 3.2rem; font-weight: 600; line-height: 1.2; margin-bottom: 2rem; color: #ffffff; text-shadow: 2px 2px 0px #000; letter-spacing: 0px; word-break: normal; white-space: nowrap; }
+        .hero h1 { font-size: 3.2rem; font-weight: 600; line-height: 1.2; margin-bottom: 2rem; color: #ffffff; text-shadow: 2px 2px 0px #000; white-space: nowrap; }
         .hero h1 span.highlight { color: var(--accent-yellow); }
+        
+        /* 英文模式下自動在各區段間補上舒適的間距 */
+        body.lang-en .hero h1 span { margin-right: 0.25em; }
+        body.lang-en .hero h1 span:last-child { margin-right: 0; }
 
         .hero-tagline { font-size: 1.15rem; font-weight: 400; color: #ffffff; margin-bottom: 2.5rem; max-width: 800px; line-height: 1.6; background: rgba(0, 0, 0, 0.5); padding: 1.2rem; border-left: 6px solid var(--accent-yellow); }
 
@@ -64,9 +65,7 @@
 
         .contact { padding: 5rem 5%; background: var(--accent-pink); color: #ffffff; border-top: 4px solid #000; }
         .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-        
-        .contact-info h2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang HK", "Microsoft JhengHei", sans-serif !important; font-size: 2.4rem !important; font-weight: 600 !important; margin-bottom: 1rem; text-shadow: 2px 2px 0px #000; line-height: 1.2; letter-spacing: 0px !important; text-transform: none !important; }
-        
+        .contact-info h2 { font-size: 2.4rem !important; font-weight: 600 !important; margin-bottom: 1rem; text-shadow: 2px 2px 0px #000; line-height: 1.2; text-transform: none !important; }
         .contact-info p { color: #ffffff; margin-bottom: 2rem; font-size: 1.1rem; font-weight: 400; }
         .contact-details { background: #000000; padding: 2rem; border: 3px solid #ffffff; box-shadow: 8px 8px 0px #000; }
         .contact-details div { margin-bottom: 1.5rem; }
@@ -78,7 +77,7 @@
         footer { padding: 2rem 5%; background: #000000; text-align: center; color: #a1a1a1; font-size: 0.85rem; font-weight: 400; border-top: 2px solid var(--accent-yellow); }
 
         @media (max-width: 1024px) {
-            .hero h1 { white-space: normal; font-size: 2.6rem; }
+            .hero h1 { white-space: normal; font-size: 2.4rem; }
         }
 
         @media (max-width: 768px) {
@@ -87,9 +86,9 @@
             .logo-img { height: 45px; }
             .nav-right { gap: 1rem; }
             nav ul { gap: 0.8rem; }
-            nav a { font-size: 0.85rem; letter-spacing: 0px; }
+            nav a { font-size: 0.85rem; }
             .hero { padding: 8rem 4% 3rem; min-height: auto; }
-            .hero h1 { font-size: 2.2rem; white-space: normal; }
+            .hero h1 { font-size: 1.9rem; white-space: normal; }
             .hero-tagline { font-size: 1rem; padding: 1rem; }
             .about-grid, .contact-content { grid-template-columns: 1fr; gap: 1.5rem; }
             .about h2 { font-size: 2rem; }
@@ -123,8 +122,8 @@
 
     <section class="hero">
         <div class="hero-subtitle" data-cms="hero_sec.subtitle">Next Marketing HK</div>
-      <h1>
-            <span data-cms="hero_sec.h1_prefix">DEFINING WHAT'S </span> <span class="highlight" data-cms="hero_sec.h1_highlight">NEXT</span> <span data-cms="hero_sec.h1_suffix">IN MARKETING!</span>
+        <h1>
+            <span data-cms="hero_sec.h1_prefix"></span><span class="highlight" data-cms="hero_sec.h1_highlight"></span><span data-cms="hero_sec.h1_suffix"></span>
         </h1>
         <div class="hero-tagline" data-cms="hero_sec.tagline">
             Next Marketing HK is an integrated marketing, PR, and design agency...
@@ -198,7 +197,7 @@
                         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         Instagram
                     </h4>
-                    <a href="https://instagram.com/nextmarketinghk" target="_blank" data-cms="contact_sec.instagram">@nextmarketinghk</a>
+                    <a href="https://instagram.com/nextmarketing.hk" target="_blank" data-cms="contact_sec.instagram">@nextmarketing.hk</a>
                 </div>
             </div>
         </div>
@@ -214,17 +213,31 @@
   function renderContent() {
     if (!siteData) return;
     const isEn = document.body.classList.contains('lang-en');
-    const langKey = isEn ? '_en' : '_zh';
+    const suffix = isEn ? '_en' : '_zh';
 
     document.querySelectorAll('[data-cms]').forEach(el => {
-      const path = el.getAttribute('data-cms').split('.');
-      let val = siteData;
-      for (let p of path) { val = val ? val[p] : null; }
-      if (!val && typeof siteData === 'object') {
-        let parent = siteData[path[0]];
-        if (parent) val = parent[path[1] + langKey] || parent[path[1]];
+      const baseKey = el.getAttribute('data-cms');
+      let val = null;
+
+      // 檢查是否有對應的 _en 或 _zh 欄位
+      const parts = baseKey.split('.');
+      let obj = siteData;
+      for (let p of parts) { obj = obj ? obj[p] : null; }
+
+      if (obj !== null && obj !== undefined) {
+        val = obj;
+      } else {
+        // 自動組合結尾尋找
+        let parentKey = parts[0];
+        let fieldKey = parts[1];
+        if (siteData[parentKey]) {
+          val = siteData[parentKey][fieldKey + suffix] || siteData[parentKey][fieldKey];
+        }
       }
-      if (val) el.innerText = val;
+
+      if (val !== null && val !== undefined) {
+        el.innerText = val;
+      }
     });
   }
 
@@ -238,8 +251,30 @@
     .then(res => res.json())
     .then(data => {
       siteData = data;
+      // 針對 h1 的三個動態屬性建立對應的 data-cms 屬性指向正確的 _zh / _en 欄位
+      const h1Spans = document.querySelectorAll('.hero h1 span');
+      if (h1Spans.length >= 3) {
+        h1Spans[0].setAttribute('data-cms', 'hero_sec.h1_prefix' + (document.body.classList.contains('lang-en') ? '_en' : '_zh'));
+        h1Spans[1].setAttribute('data-cms', 'hero_sec.h1_highlight' + (document.body.classList.contains('lang-en') ? '_en' : '_zh'));
+        h1Spans[2].setAttribute('data-cms', 'hero_sec.h1_suffix' + (document.body.classList.contains('lang-en') ? '_en' : '_zh'));
+      }
       renderContent();
     });
+
+  // 覆蓋原本的 toggleLanguage 確保切換語言時 h1 的 data-cms key 也跟著切換
+  const originalToggle = toggleLanguage;
+  toggleLanguage = function() {
+    document.body.classList.toggle('lang-en');
+    document.body.classList.toggle('lang-zh');
+    const isEn = document.body.classList.contains('lang-en');
+    const h1Spans = document.querySelectorAll('.hero h1 span');
+    if (h1Spans.length >= 3) {
+      h1Spans[0].setAttribute('data-cms', 'hero_sec.h1_prefix' + (isEn ? '_en' : '_zh'));
+      h1Spans[1].setAttribute('data-cms', 'hero_sec.h1_highlight' + (isEn ? '_en' : '_zh'));
+      h1Spans[2].setAttribute('data-cms', 'hero_sec.h1_suffix' + (isEn ? '_en' : '_zh'));
+    }
+    renderContent();
+  };
 </script>
 </body>
 </html>
