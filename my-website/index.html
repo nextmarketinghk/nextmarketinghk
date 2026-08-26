@@ -46,10 +46,13 @@
         .btn { display: inline-block; background: var(--accent-yellow); color: #000000; padding: 1rem 2.5rem; text-decoration: none; font-weight: 700; font-size: 1.1rem; text-transform: uppercase; border: 3px solid #000000; box-shadow: 6px 6px 0px #000000; transition: all 0.2s ease; text-align: center; }
         .btn:hover { background: var(--accent-pink); color: #ffffff; transform: translate(-3px, -3px); box-shadow: 9px 9px 0px #000000; }
 
-        .about { padding: 5rem 5%; background: var(--accent-yellow); color: #000000; border-top: 4px solid #000; border-bottom: 4px solid #000; }
+        .about { padding: 5rem 5%; background: var(--bg-navy); color: #ffffff; border-top: 4px solid #000; border-bottom: 4px solid #000; }
         .container { max-width: 1200px; margin: 0 auto; }
+        
+        /* 統一將所有小標題 (.section-title) 改為粉紅色 */
         .section-title { font-size: 1.3rem; font-weight: 700; color: var(--accent-pink); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
-        .about h2 { font-size: 2.2rem; margin-bottom: 2rem; font-weight: 700; text-transform: uppercase; line-height: 1.2; color: #000000; }
+        
+        .about h2 { font-size: 2.2rem; margin-bottom: 2rem; font-weight: 700; text-transform: uppercase; line-height: 1.2; color: #ffffff; }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
         .about-text { font-size: 1.1rem; font-weight: 400; color: #ffffff; border: 3px solid #000; padding: 1.8rem; background: var(--bg-midnight); box-shadow: 6px 6px 0px #000; white-space: pre-line; }
 
@@ -65,7 +68,7 @@
 
         .selling-image-side { position: relative; display: flex; justify-content: center; align-items: center; }
         .image-box-wrapper { background: var(--card-bg); border: 4px solid #000; box-shadow: 10px 10px 0px var(--accent-yellow); padding: 1rem; width: 100%; max-width: 500px; }
-        .main-mockup-img { width: 100%; height: auto; display: block; border: 2px solid #000; }
+        .main-mockup-img { width: 100%; height: auto; display: block; border: 2px solid #000; background-color: var(--card-bg); }
 
         .services { padding: 5rem 5%; background: var(--bg-midnight); }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
@@ -84,11 +87,11 @@
         .quick-enquire-email a { color: #000000; text-decoration: underline; transition: color 0.2s; }
         .quick-enquire-email a:hover { color: var(--accent-pink); }
 
-        /* 參考圖風格的 Contact 雙欄表單區塊 */
+        /* Contact 雙欄表單區塊 (加入防破圖背景色) */
         .contact { padding: 5rem 5%; background: var(--bg-navy); border-top: 4px solid #000; }
         .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; background: var(--bg-navy); border: 4px solid #000; box-shadow: 10px 10px 0px #000; }
         
-        .contact-image-side { position: relative; min-height: 480px; background: url('contact-bg.jpg') center/cover no-repeat; filter: grayscale(100%); border-right: 4px solid #000; }
+        .contact-image-side { position: relative; min-height: 480px; background: #130d36 url('contact-bg.jpg') center/cover no-repeat; filter: grayscale(100%); border-right: 4px solid #000; }
         
         .contact-form-side { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
         .contact-form-side h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: #ffffff; text-transform: none !important; }
@@ -184,13 +187,12 @@
         </div>
     </section>
 
-    <!-- 賣點/優勢展示區塊 (Selling Points) -->
+    <!-- 賣點/優勢展示區塊 (Selling Points) - 已清理重複標題 -->
     <section class="selling-points" id="why-us">
         <div class="container selling-grid">
             <div class="selling-content">
                 <div class="section-title" data-cms="selling_sec.section_label">Your Online Marketing Agency</div>
                 <h2 data-cms="selling_sec.main_title">Your Next Marketing Agency</h2>
-
                 
                 <ul class="selling-points-list">
                     <li data-cms="selling_sec.point_1">A comprehensive growth marketing strategy</li>
@@ -207,7 +209,8 @@
 
             <div class="selling-image-side">
                 <div class="image-box-wrapper">
-                    <img src="https://www.theswahcomm.com/about" alt="HK Marketing Agency" class="main-mockup-img">
+                    <!-- 修正為正確的本地圖片路徑，避免外部破圖 -->
+                    <img src="https://static.wixstatic.com/media/17bb71_19bedae2ffa844b4b0ae5852d1318e4a~mv2.jpg/v1/fill/w_640,h_394,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/17bb71_19bedae2ffa844b4b0ae5852d1318e4a~mv2.jpg" alt="HK Marketing Agency" class="main-mockup-img">
                 </div>
             </div>
         </div>
@@ -215,7 +218,7 @@
 
     <section class="services" id="services">
         <div class="container">
-            <div class="section-title" style="color: var(--accent-yellow);" data-cms="services_sec.section_label">Core Services</div>
+            <div class="section-title" data-cms="services_sec.section_label">Core Services</div>
             <div class="services-grid">
                 <div class="service-card">
                     <h3 data-cms="services_sec.s1_title">Marketing</h3>
@@ -252,10 +255,10 @@
         </div>
     </div>
 
-    <!-- 參考圖風格的 Contact 雙欄表單區塊 -->
+    <!-- Contact 雙欄表單區塊 -->
     <section class="contact" id="contact">
         <div class="contact-container">
-            <!-- 左側黑白城市風景照 -->
+            <!-- 左側黑白城市風景照 (帶背景色防破圖) -->
             <div class="contact-image-side"></div>
             
             <!-- 右側表單區 -->
@@ -344,7 +347,6 @@
       }
     });
 
-    // 處理 Placeholder 屬性
     document.querySelectorAll('[data-cms-placeholder]').forEach(el => {
       const baseKey = el.getAttribute('data-cms-placeholder');
       let val = null;
