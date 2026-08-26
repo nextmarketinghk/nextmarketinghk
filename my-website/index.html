@@ -206,42 +206,41 @@
                     <form action="https://formspree.io/f/xgawgrqd" method="POST">
                     <div class="form-group full">
                         <label data-cms="contact_sec.lbl_name">Name</label>
-                        <input type="text" class="form-control" data-cms-placeholder="contact_sec.ph_name" placeholder="Elon" required>
+                        <input type="text" name="name" class="form-control" data-cms-placeholder="contact_sec.ph_name" placeholder="Elon" required>
                     </div>
                     
                     <div class="form-grid">
                         <div class="form-group">
                             <label data-cms="contact_sec.lbl_phone">Phone</label>
-                            <input type="tel" class="form-control" data-cms-placeholder="contact_sec.ph_phone" placeholder="2138 8855" required>
+                            <input type="tel" name="phone" class="form-control" data-cms-placeholder="contact_sec.ph_phone" placeholder="2138 8855" required>
                         </div>
                         <div class="form-group">
                             <label data-cms="contact_sec.lbl_email">Business Email</label>
-                            <input type="email" class="form-control" data-cms-placeholder="contact_sec.ph_email" placeholder="elon@abc.com" required>
+                            <input type="email" name="email" class="form-control" data-cms-placeholder="contact_sec.ph_email" placeholder="elon@abc.com" required>
                         </div>
                     </div>
 
                     <div class="form-grid">
                         <div class="form-group">
                             <label data-cms="contact_sec.lbl_company">Company Name</label>
-                            <input type="text" class="form-control" data-cms-placeholder="contact_sec.ph_company" placeholder="ABC Company">
+                            <input type="text" name="company" class="form-control" data-cms-placeholder="contact_sec.ph_company" placeholder="ABC Company">
                         </div>
                         <div class="form-group">
                             <label data-cms="contact_sec.lbl_website">Company Website</label>
-                            <input type="text" class="form-control" data-cms-placeholder="contact_sec.ph_website" placeholder="abc.com">
+                            <input type="text" name="website" class="form-control" data-cms-placeholder="contact_sec.ph_website" placeholder="abc.com">
                         </div>
                     </div>
 
                     <div class="form-grid">
                         <div class="form-group">
                             <label data-cms="contact_sec.lbl_job">Job Title</label>
-                            <input type="text" class="form-control" data-cms-placeholder="contact_sec.ph_job" placeholder="Marketing Director">
+                            <input type="text" name="job_title" class="form-control" data-cms-placeholder="contact_sec.ph_job" placeholder="Marketing Director">
                         </div>
-                        
                     </div>
 
                     <div class="form-group full">
                         <label data-cms="contact_sec.lbl_message">Describe Your Inquiry</label>
-                        <textarea class="form-control" rows="2" data-cms-placeholder="contact_sec.ph_message" placeholder="Message"></textarea>
+                        <textarea class="form-control" name="message" rows="2" data-cms-placeholder="contact_sec.ph_message" placeholder="Message"></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn" data-cms="contact_sec.btn_submit">SEND YOUR MESSAGE</button>
