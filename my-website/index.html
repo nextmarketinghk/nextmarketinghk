@@ -38,7 +38,6 @@
         .hero h1 { font-size: 3.2rem; font-weight: 600; line-height: 1.2; margin-bottom: 2rem; color: #ffffff; text-shadow: 2px 2px 0px #000; white-space: nowrap; }
         .hero h1 span.highlight { color: var(--accent-yellow); }
         
-        /* 英文模式下自動在各區段間補上舒適的間距 */
         body.lang-en .hero h1 span { margin-right: 0.25em; }
         body.lang-en .hero h1 span:last-child { margin-right: 0; }
 
@@ -63,21 +62,36 @@
         .service-card ul li { color: #ffffff; margin-bottom: 0.8rem; font-size: 1rem; font-weight: 400; display: flex; align-items: flex-start; }
         .service-card ul li::before { content: "★"; margin-right: 10px; color: var(--accent-pink); flex-shrink: 0; }
 
-        .contact { padding: 5rem 5%; background: var(--accent-pink); color: #ffffff; border-top: 4px solid #000; }
-        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-        .contact-info h2 { font-size: 2.4rem !important; font-weight: 600 !important; margin-bottom: 1rem; text-shadow: 2px 2px 0px #000; line-height: 1.2; text-transform: none !important; }
-        .contact-info p { color: #ffffff; margin-bottom: 2rem; font-size: 1.1rem; font-weight: 400; }
-        .contact-details { background: #000000; padding: 2rem; border: 3px solid #ffffff; box-shadow: 8px 8px 0px #000; }
-        .contact-details div { margin-bottom: 1.5rem; }
-        .contact-details h4 { color: var(--accent-yellow); font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-        .contact-details h4 svg { width: 16px; height: 16px; fill: var(--accent-yellow); flex-shrink: 0; }
-        .contact-details a { color: #ffffff; text-decoration: none; font-size: 1.15rem; font-weight: 500; word-break: break-all; transition: color 0.2s; }
-        .contact-details a:hover { color: var(--accent-pink); }
+        /* 參考圖風格的 Contact / Form 區塊 */
+        .contact { padding: 5rem 5%; background: var(--bg-navy); border-top: 4px solid #000; }
+        .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: stretch; background: var(--bg-navy); border: 4px solid #000; box-shadow: 10px 10px 0px #000; }
+        
+        .contact-image-side { position: relative; min-height: 450px; background: url('contact-bg.jpg') center/cover no-repeat; filter: grayscale(100%); border-right: 4px solid #000; }
+        
+        .contact-form-side { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+        .contact-form-side h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: #ffffff; }
+        .contact-form-side p { font-size: 0.95rem; color: #ccc; margin-bottom: 2rem; }
+
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.2rem; }
+        .form-group { display: flex; flex-direction: column; margin-bottom: 1.2rem; }
+        .form-group.full { grid-column: span 2; }
+        
+        .form-group label { font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+        .form-group label::after { content: " *"; color: var(--accent-yellow); }
+        
+        .form-control { background: transparent; border: none; border-bottom: 2px solid #ffffff; padding: 0.5rem 0; color: #ffffff; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+        .form-control:focus { border-color: var(--accent-yellow); }
+        select.form-control option { background: var(--bg-navy); color: #fff; }
+
+        .submit-btn { width: 100%; background: var(--accent-yellow); color: #000000; padding: 1rem; font-weight: 700; font-size: 1rem; text-transform: uppercase; border: 3px solid #000; box-shadow: 5px 5px 0px #000; cursor: pointer; transition: all 0.2s; margin-top: 1rem; text-align: center; }
+        .submit-btn:hover { background: var(--accent-pink); color: #fff; transform: translate(-2px, -2px); box-shadow: 7px 7px 0px #000; }
 
         footer { padding: 2rem 5%; background: #000000; text-align: center; color: #a1a1a1; font-size: 0.85rem; font-weight: 400; border-top: 2px solid var(--accent-yellow); }
 
         @media (max-width: 1024px) {
             .hero h1 { white-space: normal; font-size: 2.4rem; }
+            .contact-container { grid-template-columns: 1fr; }
+            .contact-image-side { min-height: 250px; border-right: none; border-bottom: 4px solid #000; }
         }
 
         @media (max-width: 768px) {
@@ -90,10 +104,11 @@
             .hero { padding: 8rem 4% 3rem; min-height: auto; }
             .hero h1 { font-size: 1.9rem; white-space: normal; }
             .hero-tagline { font-size: 1rem; padding: 1rem; }
-            .about-grid, .contact-content { grid-template-columns: 1fr; gap: 1.5rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
             .about h2 { font-size: 2rem; }
-            .contact-info h2 { font-size: 2rem; }
-            .contact-details { padding: 1.5rem; }
+            .contact-form-side { padding: 2rem 1.5rem; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full { grid-column: span 1; }
         }
     </style>
 </head>
@@ -177,28 +192,67 @@
         </div>
     </section>
 
+    <!-- 參考圖風格的 Contact 區塊 -->
     <section class="contact" id="contact">
-        <div class="container contact-content">
-            <div class="contact-info">
-                <div class="section-title" style="color: #000;" data-cms="contact_sec.section_label">Contact Us</div>
-                <h2 data-cms="contact_sec.main_title">Partner with us for what’s next.</h2>
-                <p data-cms="contact_sec.desc">Get in touch to discuss your next marketing campaign...</p>
-            </div>
-            <div class="contact-details">
-                <div>
-                    <h4>
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Email Us
-                    </h4>
-                    <a href="mailto:info@nextmarketing.hk" data-cms="contact_sec.email">info@nextmarketing.hk</a>
-                </div>
-                <div>
-                    <h4>
-                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        Instagram
-                    </h4>
-                    <a href="https://instagram.com/nextmarketinghk" target="_blank" data-cms="contact_sec.instagram">@nextmarketinghk</a>
-                </div>
+        <div class="contact-container">
+            <!-- 左側黑白城市風景照 (請確保資料夾有 contact-bg.jpg 或自行替換圖片路徑) -->
+            <div class="contact-image-side"></div>
+            
+            <!-- 右側表單區 -->
+            <div class="contact-form-side">
+                <h2 data-cms="contact_sec.main_title">Want to Grow Your Business?</h2>
+                <p data-cms="contact_sec.desc">Submit This Form and Work With Us!</p>
+                
+                <form onsubmit="event.preventDefault(); alert('Message Sent!');">
+                    <div class="form-group full">
+                        <label data-cms="contact_sec.lbl_name">Name</label>
+                        <input type="text" class="form-control" data-cms-placeholder="contact_sec.ph_name" placeholder="Elon" required>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label data-cms="contact_sec.lbl_phone">Phone</label>
+                            <input type="tel" class="form-control" data-cms-placeholder="contact_sec.ph_phone" placeholder="2138 8855" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-cms="contact_sec.lbl_email">Business Email</label>
+                            <input type="email" class="form-control" data-cms-placeholder="contact_sec.ph_email" placeholder="elon@abc.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label data-cms="contact_sec.lbl_company">Company Name</label>
+                            <input type="text" class="form-control" data-cms-placeholder="contact_sec.ph_company" placeholder="ABC Company">
+                        </div>
+                        <div class="form-group">
+                            <label data-cms="contact_sec.lbl_website">Company Website</label>
+                            <input type="text" class="form-control" data-cms-placeholder="contact_sec.ph_website" placeholder="abc.com">
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label data-cms="contact_sec.lbl_job">Job Title</label>
+                            <input type="text" class="form-control" data-cms-placeholder="contact_sec.ph_job" placeholder="Marketing Director">
+                        </div>
+                        <div class="form-group">
+                            <label data-cms="contact_sec.lbl_budget">Estimated Monthly Budget</label>
+                            <select class="form-control">
+                                <option value="below_10k" data-cms="contact_sec.opt_budget1">Below HK$ 10,000</option>
+                                <option value="10k_50k" data-cms="contact_sec.opt_budget2">HK$ 10,000 - HK$ 50,000</option>
+                                <option value="above_50k" data-cms="contact_sec.opt_budget3">Above HK$ 50,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group full">
+                        <label data-cms="contact_sec.lbl_message">Describe Your Inquiry</label>
+                        <textarea class="form-control" rows="2" data-cms-placeholder="contact_sec.ph_message" placeholder="Message"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" data-cms="contact_sec.btn_submit">SEND YOUR MESSAGE</button>
+                </form>
             </div>
         </div>
     </section>
@@ -215,11 +269,10 @@
     const isEn = document.body.classList.contains('lang-en');
     const suffix = isEn ? '_en' : '_zh';
 
+    // 處理一般文字
     document.querySelectorAll('[data-cms]').forEach(el => {
       const baseKey = el.getAttribute('data-cms');
       let val = null;
-
-      // 檢查是否有對應的 _en 或 _zh 欄位
       const parts = baseKey.split('.');
       let obj = siteData;
       for (let p of parts) { obj = obj ? obj[p] : null; }
@@ -227,7 +280,6 @@
       if (obj !== null && obj !== undefined) {
         val = obj;
       } else {
-        // 自動組合結尾尋找
         let parentKey = parts[0];
         let fieldKey = parts[1];
         if (siteData[parentKey]) {
@@ -239,33 +291,31 @@
         el.innerText = val;
       }
     });
+
+    // 處理 Placeholder 屬性
+    document.querySelectorAll('[data-cms-placeholder]').forEach(el => {
+      const baseKey = el.getAttribute('data-cms-placeholder');
+      let val = null;
+      const parts = baseKey.split('.');
+      let parentKey = parts[0];
+      let fieldKey = parts[1];
+      if (siteData[parentKey]) {
+        val = siteData[parentKey][fieldKey + suffix] || siteData[parentKey][fieldKey];
+      }
+      if (val !== null && val !== undefined) {
+        el.setAttribute('placeholder', val);
+      }
+    });
   }
 
   function toggleLanguage() {
     document.body.classList.toggle('lang-en');
     document.body.classList.toggle('lang-zh');
+    updateH1CMS();
     renderContent();
   }
 
-  fetch('/content/site.json')
-    .then(res => res.json())
-    .then(data => {
-      siteData = data;
-      // 針對 h1 的三個動態屬性建立對應的 data-cms 屬性指向正確的 _zh / _en 欄位
-      const h1Spans = document.querySelectorAll('.hero h1 span');
-      if (h1Spans.length >= 3) {
-        h1Spans[0].setAttribute('data-cms', 'hero_sec.h1_prefix' + (document.body.classList.contains('lang-en') ? '_en' : '_zh'));
-        h1Spans[1].setAttribute('data-cms', 'hero_sec.h1_highlight' + (document.body.classList.contains('lang-en') ? '_en' : '_zh'));
-        h1Spans[2].setAttribute('data-cms', 'hero_sec.h1_suffix' + (document.body.classList.contains('lang-en') ? '_en' : '_zh'));
-      }
-      renderContent();
-    });
-
-  // 覆蓋原本的 toggleLanguage 確保切換語言時 h1 的 data-cms key 也跟著切換
-  const originalToggle = toggleLanguage;
-  toggleLanguage = function() {
-    document.body.classList.toggle('lang-en');
-    document.body.classList.toggle('lang-zh');
+  function updateH1CMS() {
     const isEn = document.body.classList.contains('lang-en');
     const h1Spans = document.querySelectorAll('.hero h1 span');
     if (h1Spans.length >= 3) {
@@ -273,8 +323,15 @@
       h1Spans[1].setAttribute('data-cms', 'hero_sec.h1_highlight' + (isEn ? '_en' : '_zh'));
       h1Spans[2].setAttribute('data-cms', 'hero_sec.h1_suffix' + (isEn ? '_en' : '_zh'));
     }
-    renderContent();
-  };
+  }
+
+  fetch('/content/site.json')
+    .then(res => res.json())
+    .then(data => {
+      siteData = data;
+      updateH1CMS();
+      renderContent();
+    });
 </script>
 </body>
 </html>
