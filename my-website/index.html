@@ -34,16 +34,15 @@
 
         .hero { min-height: 85vh; padding: 10rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; max-width: 1300px; margin: 0 auto; position: relative; overflow: hidden; }
         
-        /* Full-section rotated background image styling */
+        /* Full-section rotated background image styling - Fixed for 90-degree rotation coverage */
         .hero::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            transform: rotate(90deg);
-            transform-origin: center;
+            top: 50%;
+            left: 50%;
+            width: 140%;
+            height: 140%;
+            transform: translate(-50%, -50%) rotate(90deg);
             background: url('https://mail.google.com/mail/u/1?ui=2&ik=2d1bad4d78&attid=0.1&permmsgid=msg-a:r-4804549826411705627&th=1a03d4725504f4ac&view=fimg&fur=ip&permmsgid=msg-a:r-4804549826411705627&sz=s0-l75-ft&attbid=ANGjdJ9Y0ZFznb-KAcQ7LjZ54AfOK1sG3hwQREDjRlxAaNl8Fbwej8d_tPC7UzBAKcFQl3zvcwT91mVmRgnFbfqtYSqkDDBWfL70ERnpfLsbF3UXWPrVyeiqa4Zi98g&disp=emb&realattid=ii_mt9uy1cq0&zw') center/cover no-repeat;
             opacity: 0.15;
             pointer-events: none;
