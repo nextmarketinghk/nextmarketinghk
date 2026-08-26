@@ -10,13 +10,13 @@
   "hero_sec": {
     "subtitle": "Next Marketing HK",
     "h1_prefix_zh": "打造下一個",
-    "h1_prefix_en": "DEFINING WHAT’S",
+    "h1_prefix_en": "WHAT'S",
     "h1_highlight_zh": "行銷新局",
     "h1_highlight_en": "NEXT",
     "h1_suffix_zh": "！",
-    "h1_suffix_en": "IN MARKETING!",
+    "h1_suffix_en": "IN MARKETING? WE ARE.",
     "tagline_zh": "Next Marketing HK 為全方位整合行銷、公關及視覺設計 Agency。我們結合前瞻性 Marketing 策略、精準 PR 網絡與高質感 Graphic Design，為具遠見的品牌奠定市場影響力。",
-    "tagline_en": "Next Marketing HK is an integrated marketing, PR, and design agency. We deliver strategic marketing solutions, high-impact PR, and sharp graphic design tailored for forward-thinking brands.",
+    "tagline_en": "Next Marketing HK is a boutique integrated agency specialising in marekting strategy, PR, and graphic design. We craft sharp, distinct campaigns that cut through the noise and give ambitious brands their edge.",
     "btn_zh": "預約諮詢",
     "btn_en": "Get In Touch"
   },
@@ -24,11 +24,11 @@
     "section_label_zh": "關於我們",
     "section_label_en": "About Us",
     "main_title_zh": "專業戰略，實效創意。",
-    "main_title_en": "Strategic Vision. Creative Excellence.",
+    "main_title_en": "Bridging Vision and Execution.",
     "card_left_zh": "作為立足香港的品牌行銷顧問，我們將戰略視野與創意落實完美結合，協助企業拓展市場版圖，建立具深度影響力的品牌體驗，實現長遠商業增長。",
-    "card_left_en": "As a Hong Kong-based agency, we bridge brand vision with execution. We help businesses expand their market reach, build meaningful engagement, and drive real growth.",
+    "card_left_en": "With a sharp, uncompromising approach to strategy, we turn bold brand visions into seamless execution. We help ambitious businesses expand their footprint, spark genuine connections, and drive real commercial momentum.",
     "card_right_zh": "從整體 Marketing 策略、Social Media 營運，到 PR 公關佈局與品牌視覺設計，我們為企業提供邁向未來所需的全套藍圖。",
-    "card_right_en": "From overall marketing strategy and social media management to PR distribution and visual design, we provide the ultimate blueprint for what's next."
+    "card_right_en": "From comprehensive marketing strategy and social media management to targeted PR distribution and striking visual design, we build the blueprint for your brand's next big move."
   },
   "services_sec": {
     "section_label_zh": "核心服務範疇",
@@ -60,11 +60,11 @@
     "main_title_zh": "攜手打造下一個成功企劃。",
     "main_title_en": "Partner with us for what’s next.",
     "desc_zh": "歡迎與我們聯絡，探討最符合您品牌目標的 Marketing、PR 及 Graphic Design 方案。",
-    "desc_en": "Get in touch to discuss your next marketing campaign, PR strategy, or design project.",
+    "desc_en": "Let’s talk about your next campaign, PR strategy, or design project. Drop us a line and let’s get to work.",
     "email": "info@nextmarketing.hk",
     "instagram": "@nextmarketinghk",
     "copyright": "© 2026 Next Marketing HK. All rights reserved.",
-    "section_label_en": "Contact Us",
-    "section_label_zh": "聯絡我們"
+    "section_label_zh": "聯絡我們",
+    "section_label_en": "Contact Us"
   }
 }
