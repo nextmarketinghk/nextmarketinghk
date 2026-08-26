@@ -32,7 +32,27 @@
         .lang-switch span { padding: 0.2rem 0.6rem; font-size: 0.8rem; font-weight: 700; border-radius: 20px; transition: all 0.2s ease; color: #000000; }
         body.lang-en .lang-switch .opt-en, body.lang-zh .lang-switch .opt-zh { background: var(--accent-pink); color: #ffffff; }
 
-        .hero { min-height: 85vh; padding: 10rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; max-width: 1300px; margin: 0 auto; position: relative; }
+        .hero { min-height: 85vh; padding: 10rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; max-width: 1300px; margin: 0 auto; position: relative; overflow: hidden; }
+        
+        /* 90-degree rotated background image styling */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%) rotate(90deg);
+            width: 400px;
+            height: 400px;
+            background: url('https://i.pinimg.com/736x/8b/c6/a3/8bc6a33ec2e173bb0fd16efe34729715.jpg') center/contain no-repeat;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
         .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
         
         .hero h1 { font-size: 3.2rem; font-weight: 600; line-height: 1.2; margin-bottom: 2rem; color: #ffffff; text-shadow: 2px 2px 0px #000; white-space: nowrap; }
@@ -49,14 +69,12 @@
         .about { padding: 5rem 5%; background: var(--bg-navy); color: #ffffff; border-top: 4px solid #000; border-bottom: 4px solid #000; }
         .container { max-width: 1200px; margin: 0 auto; }
         
-        /* 統一將所有小標題 (.section-title) 改為粉紅色 */
         .section-title { font-size: 1.3rem; font-weight: 700; color: var(--accent-pink); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
         
         .about h2 { font-size: 2.2rem; margin-bottom: 2rem; font-weight: 700; text-transform: uppercase; line-height: 1.2; color: #ffffff; }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
         .about-text { font-size: 1.1rem; font-weight: 400; color: #ffffff; border: 3px solid #000; padding: 1.8rem; background: var(--bg-midnight); box-shadow: 6px 6px 0px #000; white-space: pre-line; }
 
-        /* Selling Points 專屬樣式 */
         .selling-points { padding: 6rem 5%; background: var(--bg-navy); border-top: 4px solid #000; border-bottom: 4px solid #000; }
         .selling-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; }
         .selling-content h2 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem; text-transform: none; }
@@ -79,7 +97,6 @@
         .service-card ul li { color: #ffffff; margin-bottom: 0.8rem; font-size: 1rem; font-weight: 400; display: flex; align-items: flex-start; }
         .service-card ul li::before { content: "★"; margin-right: 10px; color: var(--accent-pink); flex-shrink: 0; }
 
-        /* Quick Enquire Section Style */
         .quick-enquire-bar { background: #ffffff; color: #000000; padding: 2.5rem 5%; text-align: center; border-top: 4px solid #000; }
         .quick-enquire-content { max-width: 1200px; margin: 0 auto; }
         .quick-enquire-title { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #000000; margin-bottom: 0.5rem; }
@@ -87,11 +104,10 @@
         .quick-enquire-email a { color: #000000; text-decoration: underline; transition: color 0.2s; }
         .quick-enquire-email a:hover { color: var(--accent-pink); }
 
-        /* Contact 雙欄表單區塊 (加入防破圖背景色) */
         .contact { padding: 5rem 5%; background: var(--bg-navy); border-top: 4px solid #000; }
         .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; background: var(--bg-navy); border: 4px solid #000; box-shadow: 10px 10px 0px #000; }
         
-        .contact-image-side { position: relative; min-height: 480px; background: #130d36 url('https://i.pinimg.com/236x/ee/bd/49/eebd496818f18648be53e4874edad4fc.jpg?s=612x612&w=0&k=20&c=tdEpgHGjj47FLXCbSLqqsWXeNpSfwCALbAjI204GchI=?width=237px&height=330px') center/cover no-repeat; filter: grayscale(100%); border-right: 4px solid #000; }
+        .contact-image-side { position: relative; min-height: 480px; background: #130d36 url('contact-bg.jpg') center/cover no-repeat; filter: grayscale(100%); border-right: 4px solid #000; }
         
         .contact-form-side { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
         .contact-form-side h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: #ffffff; text-transform: none !important; }
@@ -115,6 +131,7 @@
 
         @media (max-width: 1024px) {
             .hero h1 { white-space: normal; font-size: 2.4rem; }
+            .hero::before { display: none; }
             .selling-grid { grid-template-columns: 1fr; gap: 3rem; }
             .contact-container { grid-template-columns: 1fr; }
             .contact-image-side { min-height: 250px; border-right: none; border-bottom: 4px solid #000; }
@@ -187,18 +204,16 @@
         </div>
     </section>
 
-
     <section class="selling-points" id="why-us">
         <div class="container selling-grid">
-       <div class="selling-content">
-    <div class="section-title" data-cms="selling_sec.section_label">Your Next Marketing Agency</div>
-    
-    <ul class="selling-points-list">
+            <div class="selling-content">
+                <div class="section-title" data-cms="selling_sec.section_label">Your Next Marketing Agency</div>
+                
+                <ul class="selling-points-list">
                     <li data-cms="selling_sec.point_1">Strategies that turn ambition into measurable growth</li>
-                    <li data-cms="selling_sec.point_2">A dedicated team that works as an extension of yours  </li>
-                    <li data-cms="selling_sec.point_3">Formed by a group of experienced marketing experts with a proven track record  </li>
+                    <li data-cms="selling_sec.point_2">A dedicated team that works as an extension of yours </li>
+                    <li data-cms="selling_sec.point_3">Formed by a group of experienced marketing experts with a proven track record </li>
                     <li data-cms="selling_sec.point_4">Ideas with purpose, execution with impact</li>
-
                 </ul>
 
                 <div style="margin-top: 2rem;">
@@ -208,7 +223,6 @@
 
             <div class="selling-image-side">
                 <div class="image-box-wrapper">
-
                     <img src="https://static.wixstatic.com/media/17bb71_19bedae2ffa844b4b0ae5852d1318e4a~mv2.jpg/v1/fill/w_640,h_394,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/17bb71_19bedae2ffa844b4b0ae5852d1318e4a~mv2.jpg" alt="HK Marketing Agency" class="main-mockup-img">
                 </div>
             </div>
@@ -246,7 +260,6 @@
         </div>
     </section>
 
-    <!-- Quick Enquire Section -->
     <div class="quick-enquire-bar">
         <div class="quick-enquire-content">
             <div class="quick-enquire-title" data-cms="contact_sec.quick_enquire_title">Enquire</div>
@@ -254,13 +267,10 @@
         </div>
     </div>
 
-    <!-- Contact 雙欄表單區塊 -->
     <section class="contact" id="contact">
         <div class="contact-container">
-            <!-- 左側黑白城市風景照 (帶背景色防破圖) -->
             <div class="contact-image-side"></div>
             
-            <!-- 右側表單區 -->
             <div class="contact-form-side">
                 <h2 data-cms="contact_sec.main_title">Partner with us for what’s next.</h2>
                 <p data-cms="contact_sec.desc">Let’s talk about your next campaign...</p>
