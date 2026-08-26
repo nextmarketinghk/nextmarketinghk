@@ -9,23 +9,23 @@
   },
   "hero_sec": {
     "subtitle": "Next Marketing HK",
-    "h1_prefix_zh": "打造下一個",
+    "h1_prefix_zh": "品牌的下一步，",
     "h1_prefix_en": "WHAT'S",
-    "h1_highlight_zh": "行銷新局",
+    "h1_highlight_zh": "由 NEXT 開始。",
     "h1_highlight_en": "NEXT",
     "h1_suffix_zh": "！",
     "h1_suffix_en": "IN MARKETING? WE ARE.",
-    "tagline_zh": "Next Marketing HK 為全方位整合行銷、公關及視覺設計 Agency。我們結合前瞻性 Marketing 策略、精準 PR 網絡與高質感 Graphic Design，為具遠見的品牌奠定市場影響力。",
+    "tagline_zh": "Next Marketing HK 是一間專注於市場推廣策略、公關及平面設計的廣告公司。\n\n我們從品牌本身出發，整理想法、建立方向，再將策略轉化為內容、推廣活動、公關及視覺設計，為不同品牌找到更適合自己的表達方式。",
     "tagline_en": "Next Marketing HK is a boutique integrated agency specialising in Marekting Strategy, Public Relations, and Graphic Design. We craft sharp, distinct campaigns that cut through the noise and give ambitious brands their edge.",
-    "btn_zh": "預約諮詢",
+    "btn_zh": "與我們聯系",
     "btn_en": "Get In Touch"
   },
   "about_sec": {
     "section_label_zh": "關於我們",
     "section_label_en": "About Us",
-    "main_title_zh": "專業戰略，實效創意。",
+    "main_title_zh": "Bridging Vision and Execution",
     "main_title_en": "Bridging Vision and Execution",
-    "card_left_zh": "作為立足香港的品牌行銷顧問，我們將戰略視野與創意落實完美結合，協助企業拓展市場版圖，建立具深度影響力的品牌體驗，實現長遠商業增長。",
+    "card_left_zh": "有好的想法只是開始，真正重要的是如何將它實行。\n\n我們以簡單直接的方式處理每一個項目，從了解品牌、整理方向，到策劃及執行，務求每一個方案都有清晰目的，而不只是「做一個 campaign」。\n\n無論是完整的市場營銷策略、社交媒體管理、公關傳訊，還是視覺設計，我們都會按品牌需要，提供合適的方案，為品牌計劃好下一步。",
     "card_left_en": "With a sharp, uncompromising approach to strategy, we turn bold brand visions into seamless execution. We help ambitious businesses expand their footprint, spark genuine connections, and drive real commercial momentum.",
     "card_right_zh": "從整體 Marketing 策略、Social Media 營運，到 PR 公關佈局與品牌視覺設計，我們為企業提供邁向未來所需的全套藍圖。",
     "card_right_en": "From comprehensive marketing strategy and social media management to targeted PR distribution and striking visual design, we build the blueprint for your brand's next big move."
@@ -59,7 +59,7 @@
   "contact_sec": {
     "main_title_zh": "攜手打造下一個成功企劃。",
     "main_title_en": "Partner with us for what’s next.",
-    "desc_zh": "歡迎與我們聯絡，探討最符合您品牌目標的 Marketing、PR 及 Graphic Design 方案。",
+    "desc_zh": "無論你正在籌備新的推廣活動、重新整理品牌方向，還是需要公關及設計上的支援，我們都可以由你的想法開始。",
     "desc_en": "Let’s talk about your next campaign, PR strategy, or design project. \n\nDrop us a line and let’s get to work.",
     "email": "info@nextmarketing.hk",
     "instagram": "@nextmarketinghk",
