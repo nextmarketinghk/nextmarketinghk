@@ -34,16 +34,13 @@
 
         .hero { min-height: 85vh; padding: 10rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; max-width: 1300px; margin: 0 auto; position: relative; overflow: hidden; }
         
-        /* 90-degree rotated background image styling */
+        /* Full-section rotated background image styling */
         .hero::before {
             content: "";
             position: absolute;
-            top: 50%;
-            right: 5%;
-            transform: translateY(-50%) rotate(90deg);
-            width: 400px;
-            height: 400px;
-            background: url('https://i.pinimg.com/736x/8b/c6/a3/8bc6a33ec2e173bb0fd16efe34729715.jpg') center/contain no-repeat;
+            inset: 0;
+            transform: rotate(90deg);
+            background: url('https://i.pinimg.com/736x/8b/c6/a3/8bc6a33ec2e173bb0fd16efe34729715.jpg') center/cover no-repeat;
             opacity: 0.15;
             pointer-events: none;
             z-index: 0;
