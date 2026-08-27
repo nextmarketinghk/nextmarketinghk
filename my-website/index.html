@@ -21,21 +21,22 @@
 
         .checkered-bar { height: 16px; background-image: repeating-linear-gradient(45deg, var(--accent-yellow) 0, var(--accent-yellow) 10px, #000000 10px, #000000 20px); width: 100%; }
 
-        /* ▼▼▼ 已將 header 高度與 logo 放大 ▼▼▼ */
-        header { position: fixed; top: 0; left: 0; width: 100%; padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; background-color: var(--bg-navy) !important; z-index: 1000; border-bottom: 4px solid var(--accent-yellow); }
+        /* Header 與 Logo 設定 */
+        header { position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 3%; display: flex; justify-content: space-between; align-items: center; background-color: var(--bg-navy) !important; z-index: 1000; border-bottom: 4px solid var(--accent-yellow); }
         .logo-container { display: flex; align-items: center; text-decoration: none; }
-        .logo-img { height: 68px; width: auto; display: block; object-fit: contain; }
-        /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
+        .logo-img { height: 58px; width: auto; display: block; object-fit: contain; }
 
-        .nav-right { display: flex; align-items: center; gap: 1.2rem; }
-        nav ul { display: flex; list-style: none; gap: 1.2rem; }
-        nav a { color: #ffffff; text-decoration: none; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
+        /* 右側導覽與語言切換（確保手機版完整顯示） */
+        .nav-right { display: flex; align-items: center; gap: 0.8rem; }
+        nav ul { display: flex; list-style: none; gap: 0.8rem; }
+        nav a { color: #ffffff; text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s; white-space: nowrap; }
         nav a:hover { color: var(--accent-yellow); }
 
-        .lang-switch { display: flex; align-items: center; background: #ffffff; border: 2px solid #000000; border-radius: 30px; padding: 2px; cursor: pointer; user-select: none; box-shadow: 3px 3px 0px #000000; }
-        .lang-switch span { padding: 0.2rem 0.5rem; font-size: 0.75rem; font-weight: 700; border-radius: 20px; transition: all 0.2s ease; color: #000000; }
+        .lang-switch { display: flex; align-items: center; background: #ffffff; border: 2px solid #000000; border-radius: 30px; padding: 2px; cursor: pointer; user-select: none; box-shadow: 2px 2px 0px #000000; flex-shrink: 0; }
+        .lang-switch span { padding: 0.2rem 0.4rem; font-size: 0.7rem; font-weight: 700; border-radius: 20px; transition: all 0.2s ease; color: #000000; line-height: 1; }
         body.lang-en .lang-switch .opt-en, body.lang-zh .lang-switch .opt-zh { background: var(--accent-pink); color: #ffffff; }
 
+        /* Hero 區塊與背景圖修正 */
         .hero { 
             min-height: 85vh; 
             padding: 9rem 5% 4rem; 
@@ -45,7 +46,7 @@
             width: 100%; 
             position: relative; 
             overflow: hidden;
-            background: linear-gradient(rgba(11, 7, 38, 0.8), rgba(11, 7, 38, 0.8)), url('https://mail.google.com/mail/u/1?ui=2&ik=2d1bad4d78&attid=0.1&permmsgid=msg-a:r-4804549826411705627&th=1a03d4725504f4ac&view=fimg&fur=ip&permmsgid=msg-a:r-4804549826411705627&sz=s0-l75-ft&attbid=ANGjdJ9Y0ZFznb-KAcQ7LjZ54AfOK1sG3hwQREDjRlxAaNl8Fbwej8d_tPC7UzBAKcFQl3zvcwT91mVmRgnFbfqtYSqkDDBWfL70ERnpfLsbF3UXWPrVyeiqa4Zi98g&disp=emb&realattid=ii_mt9uy1cq0&zw') center/cover no-repeat;
+            background: linear-gradient(rgba(11, 7, 38, 0.75), rgba(11, 7, 38, 0.75)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
         }
         
         .hero-inner {
@@ -56,15 +57,15 @@
             z-index: 1;
         }
 
-        .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.2rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
+        .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.2rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
         
-        .hero h1 { font-size: 3rem; font-weight: 600; line-height: 1.2; margin-bottom: 1.5rem; color: #ffffff; text-shadow: 2px 2px 0px #000; }
+        .hero h1 { font-size: 2.8rem; font-weight: 600; line-height: 1.2; margin-bottom: 1.5rem; color: #ffffff; text-shadow: 2px 2px 0px #000; }
         .hero h1 span.highlight { color: var(--accent-yellow); }
         
         body.lang-en .hero h1 span { margin-right: 0.25em; }
         body.lang-en .hero h1 span:last-child { margin-right: 0; }
 
-        .hero-tagline { font-size: 1.1rem; font-weight: 400; color: #ffffff; margin-bottom: 2rem; max-width: 800px; line-height: 1.6; background: rgba(0, 0, 0, 0.5); padding: 1.2rem; border-left: 6px solid var(--accent-yellow); white-space: pre-line; }
+        .hero-tagline { font-size: 1.05rem; font-weight: 400; color: #ffffff; margin-bottom: 2rem; max-width: 800px; line-height: 1.6; background: rgba(0, 0, 0, 0.6); padding: 1.2rem; border-left: 6px solid var(--accent-yellow); white-space: pre-line; }
 
         .btn { display: inline-block; background: var(--accent-yellow); color: #000000; padding: 0.9rem 2.2rem; text-decoration: none; font-weight: 700; font-size: 1rem; text-transform: uppercase; border: 3px solid #000000; box-shadow: 5px 5px 0px #000000; transition: all 0.2s ease; text-align: center; }
         .btn:hover { background: var(--accent-pink); color: #ffffff; transform: translate(-3px, -3px); box-shadow: 8px 8px 0px #000000; }
@@ -72,7 +73,7 @@
         .about { padding: 4rem 5%; background: var(--bg-navy); color: #ffffff; border-top: 4px solid #000; border-bottom: 4px solid #000; }
         .container { max-width: 1200px; margin: 0 auto; }
         
-        .section-title { font-size: 1.2rem; font-weight: 700; color: var(--accent-pink); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .section-title { font-size: 1.1rem; font-weight: 700; color: var(--accent-pink); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
         
         .about h2 { font-size: 2rem; margin-bottom: 1.8rem; font-weight: 700; text-transform: uppercase; line-height: 1.2; color: #ffffff; }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -95,7 +96,7 @@
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; margin-top: 2rem; }
         .service-card { background: var(--card-bg); padding: 1.8rem; border: 4px solid #000000; box-shadow: 6px 6px 0px var(--accent-yellow); transition: transform 0.2s; }
         .service-card:hover { transform: translate(-3px, -3px); box-shadow: 10px 10px 0px var(--accent-pink); }
-        .service-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--accent-yellow); font-weight: 700; text-transform: uppercase; border-bottom: 2px dashed var(--accent-yellow); padding-bottom: 0.4rem; }
+        .service-card h3 { font-size: 1.35rem; margin-bottom: 1rem; color: var(--accent-yellow); font-weight: 700; text-transform: uppercase; border-bottom: 2px dashed var(--accent-yellow); padding-bottom: 0.4rem; }
         .service-card ul { list-style: none; }
         .service-card ul li { color: #ffffff; margin-bottom: 0.7rem; font-size: 0.95rem; font-weight: 400; display: flex; align-items: flex-start; }
         .service-card ul li::before { content: "★"; margin-right: 8px; color: var(--accent-pink); flex-shrink: 0; }
@@ -110,7 +111,7 @@
         .contact { padding: 4rem 5%; background: var(--bg-navy); border-top: 4px solid #000; }
         .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; background: var(--bg-navy); border: 4px solid #000; box-shadow: 8px 8px 0px #000; }
         
-        .contact-image-side { position: relative; min-height: 400px; background: #130d36 url('https://i.pinimg.com/236x/ee/bd/49/eebd496818f18648be53e4874edad4fc.jpg') center/cover no-repeat; filter: grayscale(100%); border-right: 4px solid #000; }
+        .contact-image-side { position: relative; min-height: 400px; background: #130d36 url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat; filter: grayscale(100%); border-right: 4px solid #000; }
         
         .contact-form-side { padding: 2.5rem 2rem; display: flex; flex-direction: column; justify-content: center; }
         .contact-form-side h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #ffffff; }
@@ -132,7 +133,7 @@
 
         footer { padding: 1.5rem 5%; background: #000000; text-align: center; color: #a1a1a1; font-size: 0.8rem; font-weight: 400; border-top: 2px solid var(--accent-yellow); }
 
-        /* Mobile Responsive Breakpoints */
+        /* 手機版響應式優化 (Mobile Responsive) */
         @media (max-width: 1024px) {
             .hero h1 { font-size: 2.2rem; }
             .selling-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -142,43 +143,47 @@
 
         @media (max-width: 768px) {
             body { border-width: 4px; }
-            header { padding: 0.8rem 3%; }
-            .logo-img { height: 46px; } /* 手機版也適度放大 */
-            .nav-right { gap: 0.5rem; }
-            nav ul { gap: 0.4rem; }
-            nav a { font-size: 0.65rem; letter-spacing: 0.2px; }
-            .lang-switch span { padding: 0.1rem 0.3rem; font-size: 0.65rem; }
+            header { padding: 0.7rem 3%; }
+            .logo-img { height: 42px; }
             
-            .hero { padding: 7rem 4% 2.5rem; min-height: auto; }
-            .hero h1 { font-size: 1.6rem; line-height: 1.3; }
-            .hero-subtitle { font-size: 0.85rem; padding: 0.2rem 0.8rem; margin-bottom: 1rem; }
-            .hero-tagline { font-size: 0.9rem; padding: 1rem; margin-bottom: 1.5rem; }
+            /* 調整手機導覽列間距，確保語言切換鈕完整顯示 */
+            .nav-right { gap: 0.5rem; }
+            nav ul { gap: 0.5rem; }
+            nav a { font-size: 0.7rem; letter-spacing: 0px; }
+            .lang-switch { padding: 1px; }
+            .lang-switch span { padding: 0.2rem 0.35rem; font-size: 0.65rem; }
+            
+            .hero { padding: 6.5rem 4% 2.5rem; min-height: auto; }
+            .hero h1 { font-size: 1.5rem; line-height: 1.3; }
+            .hero-subtitle { font-size: 0.8rem; padding: 0.2rem 0.6rem; margin-bottom: 0.8rem; }
+            .hero-tagline { font-size: 0.85rem; padding: 1rem; margin-bottom: 1.5rem; }
+            .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem; }
             
             .about { padding: 3rem 4%; }
-            .about h2 { font-size: 1.6rem; }
+            .about h2 { font-size: 1.5rem; }
             .about-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-            .about-text { font-size: 0.95rem; padding: 1.2rem; }
+            .about-text { font-size: 0.9rem; padding: 1.2rem; }
 
             .selling-points { padding: 3rem 4%; }
-            .selling-content h2 { font-size: 1.6rem; }
-            .selling-content p { font-size: 0.95rem; }
-            .selling-points-list li { font-size: 0.9rem; }
+            .selling-content h2 { font-size: 1.5rem; }
+            .selling-content p { font-size: 0.9rem; }
+            .selling-points-list li { font-size: 0.85rem; }
 
             .services { padding: 3rem 4%; }
             .services-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-            .service-card { padding: 1.5rem; }
-            .service-card h3 { font-size: 1.25rem; }
+            .service-card { padding: 1.4rem; }
+            .service-card h3 { font-size: 1.2rem; }
 
-            .quick-enquire-bar { padding: 1.8rem 4%; }
-            .quick-enquire-title { font-size: 1rem; }
-            .quick-enquire-email { font-size: 0.95rem; }
+            .quick-enquire-bar { padding: 1.5rem 4%; }
+            .quick-enquire-title { font-size: 0.95rem; }
+            .quick-enquire-email { font-size: 0.9rem; }
 
             .contact { padding: 3rem 4%; }
             .contact-form-side { padding: 1.5rem 1.2rem; }
-            .contact-form-side h2 { font-size: 1.5rem; }
+            .contact-form-side h2 { font-size: 1.4rem; }
             .form-grid { grid-template-columns: 1fr; gap: 0; }
             .form-group.full { grid-column: span 1; }
-            .form-group { margin-bottom: 1rem; }
+            .form-group { margin-bottom: 0.8rem; }
         }
     </style>
 </head>
@@ -252,7 +257,7 @@
 
             <div class="selling-image-side">
                 <div class="image-box-wrapper">
-                    <img src="https://static.wixstatic.com/media/17bb71_19bedae2ffa844b4b0ae5852d1318e4a~mv2.jpg" alt="HK Marketing Agency" class="main-mockup-img">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="HK Marketing Agency" class="main-mockup-img">
                 </div>
             </div>
         </div>
@@ -472,7 +477,6 @@
     renderContent();
   }
 
-  // 嘗試載入伺服器的 site.json，若失敗則直接使用內建備用資料以防網站當機
   fetch('/content/site.json')
     .then(res => res.json())
     .then(data => {
@@ -480,7 +484,7 @@
       initPage();
     })
     .catch(() => {
-      initPage(); // 使用上方內建的備用資料
+      initPage();
     });
 
   function initPage() {
