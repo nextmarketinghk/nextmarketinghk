@@ -21,22 +21,21 @@
 
         .checkered-bar { height: 16px; background-image: repeating-linear-gradient(45deg, var(--accent-yellow) 0, var(--accent-yellow) 10px, #000000 10px, #000000 20px); width: 100%; }
 
-        /* Header 與 Logo 設定 */
-        header { position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 3%; display: flex; justify-content: space-between; align-items: center; background-color: var(--bg-navy) !important; z-index: 1000; border-bottom: 4px solid var(--accent-yellow); }
-        .logo-container { display: flex; align-items: center; text-decoration: none; }
-        .logo-img { height: 58px; width: auto; display: block; object-fit: contain; }
+        /* ▼▼▼ 已將 header 高度與 logo 放大 ▼▼▼ */
+        header { position: fixed; top: 0; left: 0; width: 100%; padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; background-color: var(--bg-navy) !important; z-index: 1000; border-bottom: 4px solid var(--accent-yellow); }
+        .logo-container { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+        .logo-img { height: 68px; width: auto; display: block; object-fit: contain; }
+        /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
 
-        /* 右側導覽與語言切換（確保手機版完整顯示） */
-        .nav-right { display: flex; align-items: center; gap: 0.8rem; }
-        nav ul { display: flex; list-style: none; gap: 0.8rem; }
-        nav a { color: #ffffff; text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s; white-space: nowrap; }
+        .nav-right { display: flex; align-items: center; gap: 1.2rem; min-width: 0; }
+        nav ul { display: flex; list-style: none; gap: 1.2rem; }
+        nav a { color: #ffffff; text-decoration: none; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; white-space: nowrap; }
         nav a:hover { color: var(--accent-yellow); }
 
-        .lang-switch { display: flex; align-items: center; background: #ffffff; border: 2px solid #000000; border-radius: 30px; padding: 2px; cursor: pointer; user-select: none; box-shadow: 2px 2px 0px #000000; flex-shrink: 0; }
-        .lang-switch span { padding: 0.2rem 0.4rem; font-size: 0.7rem; font-weight: 700; border-radius: 20px; transition: all 0.2s ease; color: #000000; line-height: 1; }
+        .lang-switch { display: flex; align-items: center; background: #ffffff; border: 2px solid #000000; border-radius: 30px; padding: 2px; cursor: pointer; user-select: none; box-shadow: 3px 3px 0px #000000; flex-shrink: 0; }
+        .lang-switch span { padding: 0.2rem 0.5rem; font-size: 0.75rem; font-weight: 700; border-radius: 20px; transition: all 0.2s ease; color: #000000; white-space: nowrap; }
         body.lang-en .lang-switch .opt-en, body.lang-zh .lang-switch .opt-zh { background: var(--accent-pink); color: #ffffff; }
 
-        /* Hero 區塊與背景圖修正 */
         .hero { 
             min-height: 85vh; 
             padding: 9rem 5% 4rem; 
@@ -46,7 +45,7 @@
             width: 100%; 
             position: relative; 
             overflow: hidden;
-            background: linear-gradient(rgba(11, 7, 38, 0.75), rgba(11, 7, 38, 0.75)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(11, 7, 38, 0.8), rgba(11, 7, 38, 0.8)), url('https://mail.google.com/mail/u/1?ui=2&ik=2d1bad4d78&attid=0.1&permmsgid=msg-a:r-4804549826411705627&th=1a03d4725504f4ac&view=fimg&fur=ip&permmsgid=msg-a:r-4804549826411705627&sz=s0-l75-ft&attbid=ANGjdJ9Y0ZFznb-KAcQ7LjZ54AfOK1sG3hwQREDjRlxAaNl8Fbwej8d_tPC7UzBAKcFQl3zvcwT91mVmRgnFbfqtYSqkDDBWfL70ERnpfLsbF3UXWPrVyeiqa4Zi98g&disp=emb&realattid=ii_mt9uy1cq0&zw') center/cover no-repeat;
         }
         
         .hero-inner {
@@ -57,15 +56,15 @@
             z-index: 1;
         }
 
-        .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.2rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
+        .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.2rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
         
-        .hero h1 { font-size: 2.8rem; font-weight: 600; line-height: 1.2; margin-bottom: 1.5rem; color: #ffffff; text-shadow: 2px 2px 0px #000; }
+        .hero h1 { font-size: 3rem; font-weight: 600; line-height: 1.2; margin-bottom: 1.5rem; color: #ffffff; text-shadow: 2px 2px 0px #000; }
         .hero h1 span.highlight { color: var(--accent-yellow); }
         
         body.lang-en .hero h1 span { margin-right: 0.25em; }
         body.lang-en .hero h1 span:last-child { margin-right: 0; }
 
-        .hero-tagline { font-size: 1.05rem; font-weight: 400; color: #ffffff; margin-bottom: 2rem; max-width: 800px; line-height: 1.6; background: rgba(0, 0, 0, 0.6); padding: 1.2rem; border-left: 6px solid var(--accent-yellow); white-space: pre-line; }
+        .hero-tagline { font-size: 1.1rem; font-weight: 400; color: #ffffff; margin-bottom: 2rem; max-width: 800px; line-height: 1.6; background: rgba(0, 0, 0, 0.5); padding: 1.2rem; border-left: 6px solid var(--accent-yellow); white-space: pre-line; }
 
         .btn { display: inline-block; background: var(--accent-yellow); color: #000000; padding: 0.9rem 2.2rem; text-decoration: none; font-weight: 700; font-size: 1rem; text-transform: uppercase; border: 3px solid #000000; box-shadow: 5px 5px 0px #000000; transition: all 0.2s ease; text-align: center; }
         .btn:hover { background: var(--accent-pink); color: #ffffff; transform: translate(-3px, -3px); box-shadow: 8px 8px 0px #000000; }
@@ -73,7 +72,7 @@
         .about { padding: 4rem 5%; background: var(--bg-navy); color: #ffffff; border-top: 4px solid #000; border-bottom: 4px solid #000; }
         .container { max-width: 1200px; margin: 0 auto; }
         
-        .section-title { font-size: 1.1rem; font-weight: 700; color: var(--accent-pink); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .section-title { font-size: 1.2rem; font-weight: 700; color: var(--accent-pink); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
         
         .about h2 { font-size: 2rem; margin-bottom: 1.8rem; font-weight: 700; text-transform: uppercase; line-height: 1.2; color: #ffffff; }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -96,7 +95,7 @@
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; margin-top: 2rem; }
         .service-card { background: var(--card-bg); padding: 1.8rem; border: 4px solid #000000; box-shadow: 6px 6px 0px var(--accent-yellow); transition: transform 0.2s; }
         .service-card:hover { transform: translate(-3px, -3px); box-shadow: 10px 10px 0px var(--accent-pink); }
-        .service-card h3 { font-size: 1.35rem; margin-bottom: 1rem; color: var(--accent-yellow); font-weight: 700; text-transform: uppercase; border-bottom: 2px dashed var(--accent-yellow); padding-bottom: 0.4rem; }
+        .service-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--accent-yellow); font-weight: 700; text-transform: uppercase; border-bottom: 2px dashed var(--accent-yellow); padding-bottom: 0.4rem; }
         .service-card ul { list-style: none; }
         .service-card ul li { color: #ffffff; margin-bottom: 0.7rem; font-size: 0.95rem; font-weight: 400; display: flex; align-items: flex-start; }
         .service-card ul li::before { content: "★"; margin-right: 8px; color: var(--accent-pink); flex-shrink: 0; }
@@ -111,7 +110,7 @@
         .contact { padding: 4rem 5%; background: var(--bg-navy); border-top: 4px solid #000; }
         .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; background: var(--bg-navy); border: 4px solid #000; box-shadow: 8px 8px 0px #000; }
         
-        .contact-image-side { position: relative; min-height: 400px; background: #130d36 url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat; filter: grayscale(100%); border-right: 4px solid #000; }
+        .contact-image-side { position: relative; min-height: 400px; background: #130d36 url('https://i.pinimg.com/236x/ee/bd/49/eebd496818f18648be53e4874edad4fc.jpg') center/cover no-repeat; filter: grayscale(100%); border-right: 4px solid #000; }
         
         .contact-form-side { padding: 2.5rem 2rem; display: flex; flex-direction: column; justify-content: center; }
         .contact-form-side h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #ffffff; }
@@ -133,7 +132,7 @@
 
         footer { padding: 1.5rem 5%; background: #000000; text-align: center; color: #a1a1a1; font-size: 0.8rem; font-weight: 400; border-top: 2px solid var(--accent-yellow); }
 
-        /* 手機版響應式優化 (Mobile Responsive) */
+        /* Mobile Responsive Breakpoints */
         @media (max-width: 1024px) {
             .hero h1 { font-size: 2.2rem; }
             .selling-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -143,47 +142,43 @@
 
         @media (max-width: 768px) {
             body { border-width: 4px; }
-            header { padding: 0.7rem 3%; }
-            .logo-img { height: 42px; }
-            
-            /* 調整手機導覽列間距，確保語言切換鈕完整顯示 */
+            header { padding: 0.8rem 3%; }
+            .logo-img { height: 46px; } /* 手機版也適度放大 */
             .nav-right { gap: 0.5rem; }
-            nav ul { gap: 0.5rem; }
-            nav a { font-size: 0.7rem; letter-spacing: 0px; }
-            .lang-switch { padding: 1px; }
-            .lang-switch span { padding: 0.2rem 0.35rem; font-size: 0.65rem; }
+            nav ul { gap: 0.4rem; }
+            nav a { font-size: 0.65rem; letter-spacing: 0.2px; }
+            .lang-switch span { padding: 0.1rem 0.3rem; font-size: 0.65rem; }
             
-            .hero { padding: 6.5rem 4% 2.5rem; min-height: auto; }
-            .hero h1 { font-size: 1.5rem; line-height: 1.3; }
-            .hero-subtitle { font-size: 0.8rem; padding: 0.2rem 0.6rem; margin-bottom: 0.8rem; }
-            .hero-tagline { font-size: 0.85rem; padding: 1rem; margin-bottom: 1.5rem; }
-            .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem; }
+            .hero { padding: 7rem 4% 2.5rem; min-height: auto; }
+            .hero h1 { font-size: 1.6rem; line-height: 1.3; }
+            .hero-subtitle { font-size: 0.85rem; padding: 0.2rem 0.8rem; margin-bottom: 1rem; }
+            .hero-tagline { font-size: 0.9rem; padding: 1rem; margin-bottom: 1.5rem; }
             
             .about { padding: 3rem 4%; }
-            .about h2 { font-size: 1.5rem; }
+            .about h2 { font-size: 1.6rem; }
             .about-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-            .about-text { font-size: 0.9rem; padding: 1.2rem; }
+            .about-text { font-size: 0.95rem; padding: 1.2rem; }
 
             .selling-points { padding: 3rem 4%; }
-            .selling-content h2 { font-size: 1.5rem; }
-            .selling-content p { font-size: 0.9rem; }
-            .selling-points-list li { font-size: 0.85rem; }
+            .selling-content h2 { font-size: 1.6rem; }
+            .selling-content p { font-size: 0.95rem; }
+            .selling-points-list li { font-size: 0.9rem; }
 
             .services { padding: 3rem 4%; }
             .services-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-            .service-card { padding: 1.4rem; }
-            .service-card h3 { font-size: 1.2rem; }
+            .service-card { padding: 1.5rem; }
+            .service-card h3 { font-size: 1.25rem; }
 
-            .quick-enquire-bar { padding: 1.5rem 4%; }
-            .quick-enquire-title { font-size: 0.95rem; }
-            .quick-enquire-email { font-size: 0.9rem; }
+            .quick-enquire-bar { padding: 1.8rem 4%; }
+            .quick-enquire-title { font-size: 1rem; }
+            .quick-enquire-email { font-size: 0.95rem; }
 
             .contact { padding: 3rem 4%; }
             .contact-form-side { padding: 1.5rem 1.2rem; }
-            .contact-form-side h2 { font-size: 1.4rem; }
+            .contact-form-side h2 { font-size: 1.5rem; }
             .form-grid { grid-template-columns: 1fr; gap: 0; }
             .form-group.full { grid-column: span 1; }
-            .form-group { margin-bottom: 0.8rem; }
+            .form-group { margin-bottom: 1rem; }
         }
     </style>
 </head>
@@ -257,7 +252,7 @@
 
             <div class="selling-image-side">
                 <div class="image-box-wrapper">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="HK Marketing Agency" class="main-mockup-img">
+                    <img src="https://static.wixstatic.com/media/17bb71_19bedae2ffa844b4b0ae5852d1318e4a~mv2.jpg" alt="HK Marketing Agency" class="main-mockup-img">
                 </div>
             </div>
         </div>
@@ -360,66 +355,7 @@
     </footer>
 
 <script>
-  let siteData = {
-    "nav_sec": { "nav_1": "About", "nav_1_zh": "關於我們", "nav_2": "Services", "nav_2_zh": "核心服務", "nav_3": "Contact", "nav_3_zh": "聯絡我們" },
-    "hero_sec": {
-      "subtitle": "Next Marketing HK", "subtitle_zh": "Next Marketing HK",
-      "h1_prefix": "Empowering Your Brand ", "h1_prefix_zh": "賦予您的品牌 ",
-      "h1_highlight": "Next Level", "h1_highlight_zh": "超越極限的",
-      "h1_suffix": " Growth", "h1_suffix_zh": "增長動力",
-      "tagline": "Next Marketing HK is a boutique integrated agency...", "tagline_zh": "Next Marketing HK 是一間專注於市場推廣策略、公關及平面設計的專業廣告公司。",
-      "btn": "Get In Touch", "btn_zh": "立即查詢"
-    },
-    "about_sec": {
-      "section_label": "About Us", "section_label_zh": "關於我們",
-      "main_title": "Bridging Vision and Execution", "main_title_zh": "連結願景與卓越執行",
-      "card_left": "Next Marketing HK is a dedicated team...", "card_left_zh": "Next Marketing HK 是一支充滿熱誠的市場推廣、公關及設計團隊。",
-      "card_right": "From digital marketing campaigns...", "card_right_zh": "從數碼營銷企劃到大型活動推廣，我們為香港企業提供全方位方案。"
-    },
-    "selling_sec": {
-      "section_label": "Your Next Marketing Agency", "section_label_zh": "您的首選推廣夥伴",
-      "point_1": "Strategies that turn ambition into measurable growth", "point_1_zh": "將宏大抱負化為實際增長業績的策略",
-      "point_2": "A dedicated team that works as an extension of yours", "point_2_zh": "猶如您公司團隊延伸的專業專屬支援",
-      "point_3": "Formed by a group of experienced marketing experts with a proven track record", "point_3_zh": "由具備豐富實戰經驗的市場營銷專家組成",
-      "point_4": "Ideas with purpose, execution with impact", "point_4_zh": "兼具創意與成效的精準執行方案",
-      "btn": "Grow My Brand Now 🚀", "btn_zh": "立即拓展品牌 🚀"
-    },
-    "services_sec": {
-      "section_label": "Core Services", "section_label_zh": "核心服務",
-      "s1_title": "Marketing", "s1_title_zh": "市場推廣",
-      "s1_item1": "Integrated Marketing Strategy", "s1_item1_zh": "綜合市場推廣策略",
-      "s1_item2": "Social Media Management", "s1_item2_zh": "社交媒體管理",
-      "s1_item3": "Campaign Strategy & Execution", "s1_item3_zh": "活動策劃與執行",
-      "s1_item4": "Content Marketing & Copywriting", "s1_item4_zh": "內容行銷與文案創作",
-      "s2_title": "Public Relations", "s2_title_zh": "公關傳訊",
-      "s2_item1": "Media Relations & Communication", "s2_item1_zh": "傳媒關係與公關溝通",
-      "s2_item2": "Press Release & Media Kit", "s2_item2_zh": "新聞稿撰寫與媒體套件",
-      "s3_title": "Graphic Design", "s3_title_zh": "平面設計",
-      "s3_item1": "Brand Identity & Key Visual", "s3_item1_zh": "品牌形象與主視覺設計",
-      "s3_item2": "Social Media Feed & Digital Design", "s3_item2_zh": "社交媒體版面與數碼設計"
-    },
-    "contact_sec": {
-      "quick_enquire_title": "Enquire", "quick_enquire_title_zh": "快速查詢",
-      "main_title": "Partner with us for what’s next.", "main_title_zh": "與我們攜手開創下一步。",
-      "desc": "Let’s talk about your next campaign...", "desc_zh": "讓我們一起討論您的下一個推廣企劃...",
-      "lbl_name": "Name", "lbl_name_zh": "姓名",
-      "ph_name": "Elon", "ph_name_zh": "請輸入您的姓名",
-      "lbl_phone": "Phone", "lbl_phone_zh": "電話",
-      "ph_phone": "2138 8855", "ph_phone_zh": "請輸入電話號碼",
-      "lbl_email": "Business Email", "lbl_email_zh": "商業電郵",
-      "ph_email": "elon@abc.com", "ph_email_zh": "請輸入電郵地址",
-      "lbl_company": "Company Name", "lbl_company_zh": "公司名稱",
-      "ph_company": "ABC Company", "ph_company_zh": "請輸入公司名稱",
-      "lbl_website": "Company Website", "lbl_website_zh": "公司網址",
-      "ph_website": "abc.com", "ph_website_zh": "請輸入公司網址",
-      "lbl_job": "Job Title", "lbl_job_zh": "職位",
-      "ph_job": "Marketing Manager", "ph_job_zh": "請輸入您的職位",
-      "lbl_message": "Describe Your Inquiry", "lbl_message_zh": "查詢內容",
-      "ph_message": "Message", "ph_message_zh": "請輸入您的查詢詳情...",
-      "btn_submit": "SEND YOUR MESSAGE", "btn_submit_zh": "發送訊息",
-      "copyright": "&copy; 2026 Next Marketing HK. All rights reserved.", "copyright_zh": "&copy; 2026 Next Marketing HK. 版權所有。"
-    }
-  };
+  let siteData = null;
 
   function renderContent() {
     if (!siteData) return;
@@ -481,22 +417,15 @@
     .then(res => res.json())
     .then(data => {
       siteData = data;
-      initPage();
-    })
-    .catch(() => {
-      initPage();
+      const isEn = document.body.classList.contains('lang-en');
+      const h1Spans = document.querySelectorAll('.hero h1 span');
+      if (h1Spans.length >= 3) {
+        h1Spans[0].setAttribute('data-cms', 'hero_sec.h1_prefix' + (isEn ? '_en' : '_zh'));
+        h1Spans[1].setAttribute('data-cms', 'hero_sec.h1_highlight' + (isEn ? '_en' : '_zh'));
+        h1Spans[2].setAttribute('data-cms', 'hero_sec.h1_suffix' + (isEn ? '_en' : '_zh'));
+      }
+      renderContent();
     });
-
-  function initPage() {
-    const isEn = document.body.classList.contains('lang-en');
-    const h1Spans = document.querySelectorAll('.hero h1 span');
-    if (h1Spans.length >= 3) {
-      h1Spans[0].setAttribute('data-cms', 'hero_sec.h1_prefix' + (isEn ? '_en' : '_zh'));
-      h1Spans[1].setAttribute('data-cms', 'hero_sec.h1_highlight' + (isEn ? '_en' : '_zh'));
-      h1Spans[2].setAttribute('data-cms', 'hero_sec.h1_suffix' + (isEn ? '_en' : '_zh'));
-    }
-    renderContent();
-  }
 </script>
 </body>
 </html>
