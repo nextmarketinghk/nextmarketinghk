@@ -33,24 +33,27 @@
         .lang-switch span { padding: 0.2rem 0.5rem; font-size: 0.75rem; font-weight: 700; border-radius: 20px; transition: all 0.2s ease; color: #000000; }
         body.lang-en .lang-switch .opt-en, body.lang-zh .lang-switch .opt-zh { background: var(--accent-pink); color: #ffffff; }
 
-        .hero { min-height: 85vh; padding: 9rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; max-width: 1300px; margin: 0 auto; position: relative; overflow: hidden; }
-        
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://mail.google.com/mail/u/1?ui=2&ik=2d1bad4d78&attid=0.1&permmsgid=msg-a:r-4804549826411705627&th=1a03d4725504f4ac&view=fimg&fur=ip&permmsgid=msg-a:r-4804549826411705627&sz=s0-l75-ft&attbid=ANGjdJ9Y0ZFznb-KAcQ7LjZ54AfOK1sG3hwQREDjRlxAaNl8Fbwej8d_tPC7UzBAKcFQl3zvcwT91mVmRgnFbfqtYSqkDDBWfL70ERnpfLsbF3UXWPrVyeiqa4Zi98g&disp=emb&realattid=ii_mt9uy1cq0&zw') center/cover no-repeat;
-            opacity: 0.2;
-            pointer-events: none;
-            z-index: 0;
+        /* ▼▼▼ 已調整為滿版背景圖片設定 ▼▼▼ */
+        .hero { 
+            min-height: 85vh; 
+            padding: 9rem 5% 4rem; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            width: 100%; 
+            position: relative; 
+            overflow: hidden;
+            background: linear-gradient(rgba(11, 7, 38, 0.8), rgba(11, 7, 38, 0.8)), url('https://mail.google.com/mail/u/1?ui=2&ik=2d1bad4d78&attid=0.1&permmsgid=msg-a:r-4804549826411705627&th=1a03d4725504f4ac&view=fimg&fur=ip&permmsgid=msg-a:r-4804549826411705627&sz=s0-l75-ft&attbid=ANGjdJ9Y0ZFznb-KAcQ7LjZ54AfOK1sG3hwQREDjRlxAaNl8Fbwej8d_tPC7UzBAKcFQl3zvcwT91mVmRgnFbfqtYSqkDDBWfL70ERnpfLsbF3UXWPrVyeiqa4Zi98g&disp=emb&realattid=ii_mt9uy1cq0&zw') center/cover no-repeat;
         }
-        .hero > * {
+        
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
             position: relative;
             z-index: 1;
         }
+        /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
 
         .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.2rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
         
@@ -202,15 +205,17 @@
     </header>
 
     <section class="hero">
-        <div class="hero-subtitle" data-cms="hero_sec.subtitle">Next Marketing HK</div>
-        <h1>
-            <span data-cms="hero_sec.h1_prefix"></span><span class="highlight" data-cms="hero_sec.h1_highlight"></span><span data-cms="hero_sec.h1_suffix"></span>
-        </h1>
-        <div class="hero-tagline" data-cms="hero_sec.tagline">
-            Next Marketing HK is a boutique integrated agency...
-        </div>
-        <div>
-            <a href="#contact" class="btn" data-cms="hero_sec.btn">Get In Touch</a>
+        <div class="hero-inner">
+            <div class="hero-subtitle" data-cms="hero_sec.subtitle">Next Marketing HK</div>
+            <h1>
+                <span data-cms="hero_sec.h1_prefix"></span><span class="highlight" data-cms="hero_sec.h1_highlight"></span><span data-cms="hero_sec.h1_suffix"></span>
+            </h1>
+            <div class="hero-tagline" data-cms="hero_sec.tagline">
+                Next Marketing HK is a boutique integrated agency...
+            </div>
+            <div>
+                <a href="#contact" class="btn" data-cms="hero_sec.btn">Get In Touch</a>
+            </div>
         </div>
     </section>
 
@@ -415,7 +420,7 @@
       const h1Spans = document.querySelectorAll('.hero h1 span');
       if (h1Spans.length >= 3) {
         h1Spans[0].setAttribute('data-cms', 'hero_sec.h1_prefix' + (isEn ? '_en' : '_zh'));
-        h1Spans[1].setAttribute('data-cms', 'hero_sec.h1_highlight' + (isEn ? '_en' : '_zh'));
+        h1_highlight = h1Spans[1].setAttribute('data-cms', 'hero_sec.h1_highlight' + (isEn ? '_en' : '_zh'));
         h1Spans[2].setAttribute('data-cms', 'hero_sec.h1_suffix' + (isEn ? '_en' : '_zh'));
       }
       renderContent();
