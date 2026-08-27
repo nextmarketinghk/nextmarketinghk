@@ -21,9 +21,12 @@
 
         .checkered-bar { height: 16px; background-image: repeating-linear-gradient(45deg, var(--accent-yellow) 0, var(--accent-yellow) 10px, #000000 10px, #000000 20px); width: 100%; }
 
-        header { position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; background-color: var(--bg-navy) !important; z-index: 1000; border-bottom: 4px solid var(--accent-yellow); }
+        /* ▼▼▼ 已將 header 高度與 logo 放大 ▼▼▼ */
+        header { position: fixed; top: 0; left: 0; width: 100%; padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; background-color: var(--bg-navy) !important; z-index: 1000; border-bottom: 4px solid var(--accent-yellow); }
         .logo-container { display: flex; align-items: center; text-decoration: none; }
-        .logo-img { height: 50px; width: auto; display: block; object-fit: contain; }
+        .logo-img { height: 68px; width: auto; display: block; object-fit: contain; }
+        /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
+
         .nav-right { display: flex; align-items: center; gap: 1.2rem; }
         nav ul { display: flex; list-style: none; gap: 1.2rem; }
         nav a { color: #ffffff; text-decoration: none; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
@@ -33,7 +36,6 @@
         .lang-switch span { padding: 0.2rem 0.5rem; font-size: 0.75rem; font-weight: 700; border-radius: 20px; transition: all 0.2s ease; color: #000000; }
         body.lang-en .lang-switch .opt-en, body.lang-zh .lang-switch .opt-zh { background: var(--accent-pink); color: #ffffff; }
 
-        /* ▼▼▼ 已調整為滿版背景圖片設定 ▼▼▼ */
         .hero { 
             min-height: 85vh; 
             padding: 9rem 5% 4rem; 
@@ -53,7 +55,6 @@
             position: relative;
             z-index: 1;
         }
-        /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
 
         .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.2rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
         
@@ -141,8 +142,8 @@
 
         @media (max-width: 768px) {
             body { border-width: 4px; }
-            header { padding: 0.6rem 3%; }
-            .logo-img { height: 32px; }
+            header { padding: 0.8rem 3%; }
+            .logo-img { height: 46px; } /* 手機版也適度放大 */
             .nav-right { gap: 0.5rem; }
             nav ul { gap: 0.4rem; }
             nav a { font-size: 0.65rem; letter-spacing: 0.2px; }
@@ -420,7 +421,7 @@
       const h1Spans = document.querySelectorAll('.hero h1 span');
       if (h1Spans.length >= 3) {
         h1Spans[0].setAttribute('data-cms', 'hero_sec.h1_prefix' + (isEn ? '_en' : '_zh'));
-        h1_highlight = h1Spans[1].setAttribute('data-cms', 'hero_sec.h1_highlight' + (isEn ? '_en' : '_zh'));
+        h1Spans[1].setAttribute('data-cms', 'hero_sec.h1_highlight' + (isEn ? '_en' : '_zh'));
         h1Spans[2].setAttribute('data-cms', 'hero_sec.h1_suffix' + (isEn ? '_en' : '_zh'));
       }
       renderContent();
