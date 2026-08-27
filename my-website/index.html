@@ -21,11 +21,10 @@
 
         .checkered-bar { height: 16px; background-image: repeating-linear-gradient(45deg, var(--accent-yellow) 0, var(--accent-yellow) 10px, #000000 10px, #000000 20px); width: 100%; }
 
-        /* ▼▼▼ Header & Logo Fixes for Mobile friendliness ▼▼▼ */
+        /* Header & Logo Fixes for Mobile friendliness */
         header { position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 4%; display: flex; justify-content: space-between; align-items: center; background-color: var(--bg-navy) !important; z-index: 1000; border-bottom: 4px solid var(--accent-yellow); }
         .logo-container { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; max-width: 50%; }
         .logo-img { height: 68px; max-height: 50px; width: auto; display: block; object-fit: contain; }
-        /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
 
         .nav-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
         nav ul { display: flex; list-style: none; gap: 1rem; }
@@ -48,16 +47,8 @@
             background: linear-gradient(rgba(11, 7, 38, 0.8), rgba(11, 7, 38, 0.8)), url('https://mail.google.com/mail/u/1?ui=2&ik=2d1bad4d78&attid=0.1&permmsgid=msg-a:r-4804549826411705627&th=1a03d4725504f4ac&view=fimg&fur=ip&permmsgid=msg-a:r-4804549826411705627&sz=s0-l75-ft&attbid=ANGjdJ9Y0ZFznb-KAcQ7LjZ54AfOK1sG3hwQREDjRlxAaNl8Fbwej8d_tPC7UzBAKcFQl3zvcwT91mVmRgnFbfqtYSqkDDBWfL70ERnpfLsbF3UXWPrVyeiqa4Zi98g&disp=emb&realattid=ii_mt9uy1cq0&zw') center/cover no-repeat;
         }
         
-        .hero-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
+        .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
         .hero-subtitle { background: var(--accent-pink); color: #ffffff; display: inline-block; padding: 0.3rem 1rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.2rem; width: fit-content; border: 2px solid #000; box-shadow: 4px 4px 0px #000; }
-        
         .hero h1 { font-size: 3rem; font-weight: 600; line-height: 1.2; margin-bottom: 1.5rem; color: #ffffff; text-shadow: 2px 2px 0px #000; }
         .hero h1 span.highlight { color: var(--accent-yellow); }
         
@@ -71,9 +62,7 @@
 
         .about { padding: 4rem 5%; background: var(--bg-navy); color: #ffffff; border-top: 4px solid #000; border-bottom: 4px solid #000; }
         .container { max-width: 1200px; margin: 0 auto; }
-        
         .section-title { font-size: 1.2rem; font-weight: 700; color: var(--accent-pink); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
-        
         .about h2 { font-size: 2rem; margin-bottom: 1.8rem; font-weight: 700; text-transform: uppercase; line-height: 1.2; color: #ffffff; }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .about-text { font-size: 1rem; font-weight: 400; color: #ffffff; border: 3px solid #000; padding: 1.5rem; background: var(--bg-midnight); box-shadow: 5px 5px 0px #000; white-space: pre-line; }
@@ -82,7 +71,6 @@
         .selling-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; }
         .selling-content h2 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1.2rem; }
         .selling-content p { color: #cccccc; font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.6; white-space: pre-line; }
-        
         .selling-points-list { list-style: none; margin-bottom: 2rem; }
         .selling-points-list li { color: #ffffff; margin-bottom: 0.8rem; font-size: 0.95rem; font-weight: 500; display: flex; align-items: flex-start; }
         .selling-points-list li::before { content: "★"; margin-right: 10px; color: var(--accent-yellow); flex-shrink: 0; }
@@ -109,9 +97,7 @@
 
         .contact { padding: 4rem 5%; background: var(--bg-navy); border-top: 4px solid #000; }
         .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; background: var(--bg-navy); border: 4px solid #000; box-shadow: 8px 8px 0px #000; }
-        
         .contact-image-side { position: relative; min-height: 400px; background: #130d36 url('https://i.pinimg.com/236x/ee/bd/49/eebd496818f18648be53e4874edad4fc.jpg') center/cover no-repeat; filter: grayscale(100%); border-right: 4px solid #000; }
-        
         .contact-form-side { padding: 2.5rem 2rem; display: flex; flex-direction: column; justify-content: center; }
         .contact-form-side h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #ffffff; }
         .contact-form-side p { font-size: 0.9rem; color: #ccc; margin-bottom: 1.5rem; white-space: pre-line; }
@@ -119,10 +105,8 @@
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
         .form-group { display: flex; flex-direction: column; margin-bottom: 1rem; }
         .form-group.full { grid-column: span 2; }
-        
         .form-group label { font-size: 0.8rem; font-weight: 600; color: #fff; margin-bottom: 0.3rem; }
         .form-group label::after { content: " *"; color: var(--accent-yellow); }
-        
         .form-control { background: transparent; border: none; border-bottom: 2px solid #ffffff; padding: 0.4rem 0; color: #ffffff; font-size: 0.95rem; outline: none; transition: border-color 0.2s; width: 100%; }
         .form-control:focus { border-color: var(--accent-yellow); }
         select.form-control option { background: var(--bg-navy); color: #fff; }
@@ -132,7 +116,6 @@
 
         footer { padding: 1.5rem 5%; background: #000000; text-align: center; color: #a1a1a1; font-size: 0.8rem; font-weight: 400; border-top: 2px solid var(--accent-yellow); }
 
-        /* Mobile Responsive Breakpoints */
         @media (max-width: 1024px) {
             .hero h1 { font-size: 2.2rem; }
             .selling-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -143,36 +126,30 @@
         @media (max-width: 768px) {
             body { border-width: 4px; }
             header { padding: 0.6rem 3%; }
-            .logo-img { height: 42px; max-height: 40px; } /* 限制手機版 Logo 最大高度避免撐開 Header */
+            .logo-img { height: 42px; max-height: 40px; }
             .nav-right { gap: 0.4rem; }
             nav ul { gap: 0.4rem; }
             nav a { font-size: 0.65rem; letter-spacing: 0.1px; }
             .lang-switch span { padding: 0.1rem 0.3rem; font-size: 0.6rem; }
-            
             .hero { padding: 7rem 4% 2.5rem; min-height: auto; }
             .hero h1 { font-size: 1.6rem; line-height: 1.3; }
             .hero-subtitle { font-size: 0.85rem; padding: 0.2rem 0.8rem; margin-bottom: 1rem; }
             .hero-tagline { font-size: 0.9rem; padding: 1rem; margin-bottom: 1.5rem; }
-            
             .about { padding: 3rem 4%; }
             .about h2 { font-size: 1.6rem; }
             .about-grid { grid-template-columns: 1fr; gap: 1.2rem; }
             .about-text { font-size: 0.95rem; padding: 1.2rem; }
-
             .selling-points { padding: 3rem 4%; }
             .selling-content h2 { font-size: 1.6rem; }
             .selling-content p { font-size: 0.95rem; }
             .selling-points-list li { font-size: 0.9rem; }
-
             .services { padding: 3rem 4%; }
             .services-grid { grid-template-columns: 1fr; gap: 1.2rem; }
             .service-card { padding: 1.5rem; }
             .service-card h3 { font-size: 1.25rem; }
-
             .quick-enquire-bar { padding: 1.8rem 4%; }
             .quick-enquire-title { font-size: 1rem; }
             .quick-enquire-email { font-size: 0.95rem; }
-
             .contact { padding: 3rem 4%; }
             .contact-form-side { padding: 1.5rem 1.2rem; }
             .contact-form-side h2 { font-size: 1.5rem; }
@@ -183,4 +160,134 @@
     </style>
 </head>
 <body class="lang-en">
-   <!-- (Rest of the markup and scripts remain unchanged) -->
+
+    <div class="checkered-bar"></div>
+
+    <header>
+        <a href="#" class="logo-container">
+            <img src="YOUR_LOGO_URL_HERE" alt="Next Marketing HK Logo" class="logo-img">
+        </a>
+        <div class="nav-right">
+            <nav>
+                <ul>
+                    <li><a href="#about" class="nav-about">About</a></li>
+                    <li><a href="#services" class="nav-services">Services</a></li>
+                    <li><a href="#contact" class="nav-contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switch" id="langSwitch" onclick="toggleLanguage()">
+                <span class="opt-en">EN</span>
+                <span class="opt-zh">繁中</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-subtitle">Professional Marketing & PR Agency</div>
+            <h1>Empowering Your Brand <span class="highlight">Next Level</span> Growth</h1>
+            <p class="hero-tagline">We combine creative design, strategic marketing, and high-impact PR solutions to accelerate business growth for enterprises across Hong Kong.</p>
+            <a href="#contact" class="btn">Get a Free Consultation</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">About Us</div>
+            <h2>Driving Success Through Strategic Innovation</h2>
+            <div class="about-grid">
+                <div class="about-text">Next Marketing HK is a dedicated team of marketing strategists, public relations professionals, and creative designers. We partner with ambitious brands to craft meaningful campaigns that resonate deeply with audiences and drive measurable business performance.</div>
+                <div class="about-text">From digital marketing campaigns and social media management to large-scale event promotions and brand identity design, we deliver comprehensive marketing solutions customized for the dynamic Hong Kong market landscape.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">Our Services</div>
+            <h2>Comprehensive Marketing Solutions</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Marketing Strategy</h3>
+                    <ul>
+                        <li>Comprehensive Campaign Planning</li>
+                        <li>Market Research & Competitor Analysis</li>
+                        <li>Brand Positioning & Strategy</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Public Relations</h3>
+                    <ul>
+                        <li>Media Relations & Press Releases</li>
+                        <li>Event Management & PR Stunts</li>
+                        <li>Crisis Communications</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Creative & Design</h3>
+                    <ul>
+                        <li>Brand Identity & Logo Design</li>
+                        <li>Social Media Visuals & Content</li>
+                        <li>Marketing Collaterals & Print</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-image-side"></div>
+                <div class="contact-form-side">
+                    <h2>Let's Talk Business</h2>
+                    <p>Ready to elevate your brand presence? Fill out the form below or drop us an email.</p>
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group full">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="form-group full">
+                            <label>Service Interest</label>
+                            <select class="form-control">
+                                <option>Marketing Strategy</option>
+                                <option>Public Relations</option>
+                                <option>Creative & Design</option>
+                                <option>Other Inquiry</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Next Marketing HK. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            if (body.classList.contains('lang-en')) {
+                body.classList.remove('lang-en');
+                body.classList.add('lang-zh');
+            } else {
+                body.classList.remove('lang-zh');
+                body.classList.add('lang-en');
+            }
+        }
+    </script>
+</body>
+</html>
