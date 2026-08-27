@@ -21,11 +21,9 @@
 
         .checkered-bar { height: 16px; background-image: repeating-linear-gradient(45deg, var(--accent-yellow) 0, var(--accent-yellow) 10px, #000000 10px, #000000 20px); width: 100%; }
 
-        /* ▼▼▼ 已將 header 高度與 logo 放大 ▼▼▼ */
         header { position: fixed; top: 0; left: 0; width: 100%; padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; background-color: var(--bg-navy) !important; z-index: 1000; border-bottom: 4px solid var(--accent-yellow); }
         .logo-container { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
         .logo-img { height: 68px; width: auto; display: block; object-fit: contain; }
-        /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
 
         .nav-right { display: flex; align-items: center; gap: 1.2rem; min-width: 0; }
         nav ul { display: flex; list-style: none; gap: 1.2rem; }
@@ -45,7 +43,7 @@
             width: 100%; 
             position: relative; 
             overflow: hidden;
-            background: linear-gradient(rgba(11, 7, 38, 0.8), rgba(11, 7, 38, 0.8)), url('https://mail.google.com/mail/u/1?ui=2&ik=2d1bad4d78&attid=0.1&permmsgid=msg-a:r-4804549826411705627&th=1a03d4725504f4ac&view=fimg&fur=ip&permmsgid=msg-a:r-4804549826411705627&sz=s0-l75-ft&attbid=ANGjdJ9Y0ZFznb-KAcQ7LjZ54AfOK1sG3hwQREDjRlxAaNl8Fbwej8d_tPC7UzBAKcFQl3zvcwT91mVmRgnFbfqtYSqkDDBWfL70ERnpfLsbF3UXWPrVyeiqa4Zi98g&disp=emb&realattid=ii_mt9uy1cq0&zw') center/cover no-repeat;
+            background: linear-gradient(rgba(11, 7, 38, 0.8), rgba(11, 7, 38, 0.8)), url('https://raw.githubusercontent.com/nextmarketinghk/nextmarketinghk/refs/heads/main/my-website/herobg.jpeg') center/cover no-repeat;
         }
         
         .hero-inner {
@@ -143,7 +141,7 @@
         @media (max-width: 768px) {
             body { border-width: 4px; }
             header { padding: 0.8rem 3%; }
-            .logo-img { height: 46px; } /* 手機版也適度放大 */
+            .logo-img { height: 46px; }
             .nav-right { gap: 0.5rem; }
             nav ul { gap: 0.4rem; }
             nav a { font-size: 0.65rem; letter-spacing: 0.2px; }
